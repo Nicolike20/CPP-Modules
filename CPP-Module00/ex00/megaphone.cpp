@@ -20,10 +20,10 @@ int	main(int argc, char **argv)
 			std::string string = std::string(argv[i]);
 			while (++j < string.length())
 			{
-				std::toupper(string[j]);
+				std::cout << (char)std::toupper(string[j]);
 			}
-			std::cout << string << std::endl;
 		}
+		std::cout << std::endl;
 	}
 
 	return (0);
