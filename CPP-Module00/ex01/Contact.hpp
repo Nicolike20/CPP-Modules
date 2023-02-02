@@ -2,7 +2,7 @@
 #include <string>
 
 class Contact {
-	public:
+/*	public:
 		std::string getName();
 		void setName(std::string);
 		std::string getSurname();
@@ -12,11 +12,12 @@ class Contact {
 		std::string getPhone();
 		void setPhone(std::string);
 		std::string getSecret();
-		void setSecret(std::string);
+		void setSecret(std::string);*/
 	private:
+		int index;
 		std::string _name;
 		std::string _surname;
 		std::string _nickname;
-		std::string _phone_number;
-		std::string _darkest_secret;
+		std::string _phoneNumber;
+		std::string _darkestSecret;
 };

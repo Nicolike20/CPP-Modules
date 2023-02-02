@@ -1,5 +1,7 @@
 #include <string>
+#include "Contact.hpp"
 
 class Phonebook {
-	public Contact[8] Contacts;
+	private:
+		Contact Contacts[8];
 };

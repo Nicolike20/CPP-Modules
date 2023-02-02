@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MD
 
 # Sources
 
-SRCS = Phonebook.cpp Contact.cpp
+SRCS = Phonebook.cpp Contact.cpp main.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 

@@ -1,6 +1,6 @@
 #include "Contact.hpp"
 
-std::string Contact::getName() {
+/*std::string Contact::getName() {
 	return this -> _name;
 }
 
@@ -38,4 +38,4 @@ std::string Contact::getSecret() {
 
 void Contact::setSecret(std::string s) {
 	this -> _darkest_secret = s;
-}
+}*/
