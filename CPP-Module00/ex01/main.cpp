@@ -1,5 +1,7 @@
 #include "Phonebook.hpp"
 #include <ostream>
+#include <string>
+
 
 int main(void) {
 	std::string input;
