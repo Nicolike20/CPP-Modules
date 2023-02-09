@@ -3,7 +3,9 @@
 
 class Phonebook {
 	public:
-		void addContact(Phonebook *pbook);
+		void setIndex(int i);
+		void addContact(void);
 	private:
 		Contact Contacts[8];
+		int index;
 };
