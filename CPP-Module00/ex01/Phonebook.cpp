@@ -12,15 +12,15 @@ void Phonebook::addContact(void) {
 		this->checker = 1;
 	}
 	std::string input;
-	std::cout << "Name: "; std::getline(std::cin, input);
+	std::cout << "--- Name:           "; std::getline(std::cin, input);
 	this->Contacts[index].setName(input);
-	std::cout << "Surname: "; std::getline(std::cin, input);
+	std::cout << "--- Surname:        "; std::getline(std::cin, input);
 	this->Contacts[index].setSurname(input);
-	std::cout << "Nickname: "; std::getline(std::cin, input);
+	std::cout << "--- Nickname:       "; std::getline(std::cin, input);
 	this->Contacts[index].setNickname(input);
-	std::cout << "Phone number: "; std::getline(std::cin, input);
+	std::cout << "--- Phone number:   "; std::getline(std::cin, input);
 	this->Contacts[index].setPhone(input);
-	std::cout << "Darkest secret: "; std::getline(std::cin, input);
+	std::cout << "--- Darkest secret: "; std::getline(std::cin, input);
 	this->Contacts[index].setSecret(input);
 	if (!this->Contacts[index].getName().empty()
 		&& !this->Contacts[index].getSurname().empty()
