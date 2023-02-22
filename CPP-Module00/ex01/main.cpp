@@ -1,7 +1,4 @@
 #include "Phonebook.hpp"
-#include <ostream>
-#include <string>
-
 
 int main(void) {
 	std::string input;
@@ -18,7 +15,7 @@ int main(void) {
 			pbook->addContact();
 		}
 		else if (input == "SEARCH") {
-			std::cout << "SEARCH\n";
+			pbook->searchContact();
 		}
 		else if (input == "EXIT") {
 			break ;

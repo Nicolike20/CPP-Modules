@@ -1,5 +1,13 @@
 #include "Contact.hpp"
 
+int Contact::getContIndex() {
+	return this -> _contIndex;
+}
+
+void Contact::setContIndex(int i) {
+	this -> _contIndex = i;
+}
+
 std::string Contact::getName() {
 	return this -> _name;
 }

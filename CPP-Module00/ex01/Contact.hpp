@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class Contact {
 	public:
+		int getContIndex();
+		void setContIndex(int);
 		std::string getName();
 		void setName(std::string);
 		std::string getSurname();
@@ -14,7 +17,7 @@ class Contact {
 		std::string getSecret();
 		void setSecret(std::string);
 	private:
-//		int index;
+		int _contIndex;
 		std::string _name;
 		std::string _surname;
 		std::string _nickname;
