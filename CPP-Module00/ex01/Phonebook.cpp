@@ -1,6 +1,8 @@
 #include "Phonebook.hpp"
 
-//TODO: AÑADIR IFNDEF Y ENDIF A LOS HPP
+//TODO: AÑADIR IFNDEF Y ENDIF A LOS HPP;
+//TODO: NECESITO CONSTRUCTORES Y DESTRUCTORES?;
+//TODO: LIMPIAR CODIGO;
 
 void Phonebook::setIndex(int i) {
 	this->index = i;

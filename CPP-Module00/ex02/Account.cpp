@@ -1,69 +1,50 @@
-// ************************************************************************** //
-//                                                                            //
-//                Account.hpp for GlobalBanksters United                //
-//                Created on  : Thu Nov 20 19:43:15 1989                      //
-//                Last update : Wed Jan 04 14:54:06 1992                      //
-//                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
-//                                                                            //
-// ************************************************************************** //
+#include "Account.hpp"
 
+int Account::_nbAccounts;
+int Account::_totalAmount;
+int Account::_nbDeposits;    //check si esto esta bien;
+int Account::_nbWithdrawals; //iniciar a 0 o algo?;
 
-#pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+int Account::getNbAccounts(void) {
+    return _nbAccounts;
+}
 
-// ************************************************************************** //
-//                               Account Class                                //
-// ************************************************************************** //
+int Account::getTotalAmount(void) {
+    return _totalAmount;
+}
 
-class Account {
+int Account::getNbDeposits(void) {
+    return _nbDeposits;
+}
 
+int Account::getNbWithdrawals(void) {
+    return _nbWithdrawals;
+}
 
-public:
+void	displayAccountsInfos( void ) {
 
-	typedef Account		t;
+}
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
-	static void	displayAccountsInfos( void );
+Account::Account( int initial_deposit ) {
+    //?
+}
 
-	Account( int initial_deposit );
-	~Account( void );
+Account::~Account( void ) {
+    //?
+}
 
-	void	makeDeposit( int deposit );
-	bool	makeWithdrawal( int withdrawal );
-	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;
+void	makeDeposit( int deposit ) {
 
+}
 
-private:
+bool	makeWithdrawal( int withdrawal ){
 
-	static int	_nbAccounts;
-	static int	_totalAmount;
-	static int	_totalNbDeposits;
-	static int	_totalNbWithdrawals;
+}
 
-	static void	_displayTimestamp( void );
+int		checkAmount( void ) const{
 
-	int				_accountIndex;
-	int				_amount;
-	int				_nbDeposits;
-	int				_nbWithdrawals;
+}
 
-	Account( void );
+void	displayStatus( void ) const{
 
-};
-
-
-
-// ************************************************************************** //
-// vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
-// -*- indent-tabs-mode:t;                                                   -*-
-// -*- mode: c++-mode;                                                       -*-
-// -*- fill-column: 75; comment-column: 75;                                  -*-
-// ************************************************************************** //
-
-
-#endif /* __ACCOUNT_H__ */
+}
