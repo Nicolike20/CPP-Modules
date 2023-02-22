@@ -4,13 +4,12 @@
 
 void Phonebook::setIndex(int i) {
 	this->index = i;
+	this->checker = 0;
 }
 void Phonebook::addContact(void) {
-	int checker = 0;
-
 	if (this->index > 7) {
 		this->index = 0;
-		checker = 1;
+		this->checker = 1;
 	}
 	std::string input;
 	std::cout << "Name: "; std::getline(std::cin, input);
@@ -28,8 +27,6 @@ void Phonebook::addContact(void) {
 		&& !this->Contacts[index].getNickname().empty()
 		&& !this->Contacts[index].getPhone().empty()
 		&& !this->Contacts[index].getSecret().empty()) {
-		if (checker == 1)
-			this->index = 7; //cambiar continuamente el primero? o seguir palante cambiandolos uno a uno?
 		this->Contacts[index].setContIndex(this->index + 1);
 		this->index += 1;
 	}
@@ -51,12 +48,23 @@ void Phonebook::searchContact(void) {
 		std::cout << "/-------------------------------------------\\" << std::endl;
 		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 		std::cout << "|-------------------------------------------|" << std::endl;
-		for (int i = 0; i < this -> index; i++) {
-			std::cout << "|         " << this->Contacts[i].getContIndex() << "|";
-			printContact(this->Contacts[i].getName());
-			printContact(this->Contacts[i].getSurname());
-			printContact(this->Contacts[i].getNickname());
-			std::cout << std::endl;
+		if (this -> checker == 0) {
+			for (int i = 0; i < this -> index; i++) {
+				std::cout << "|         " << this->Contacts[i].getContIndex() << "|";
+				printContact(this->Contacts[i].getName());
+				printContact(this->Contacts[i].getSurname());
+				printContact(this->Contacts[i].getNickname());
+				std::cout << std::endl;
+			}
+		}
+		else {
+			for (int i = 0; i < 8; i++) {
+				std::cout << "|         " << this->Contacts[i].getContIndex() << "|";
+				printContact(this->Contacts[i].getName());
+				printContact(this->Contacts[i].getSurname());
+				printContact(this->Contacts[i].getNickname());
+				std::cout << std::endl;
+			}
 		}
 		std::cout << "\\-------------------------------------------/" << std::endl;
 		searchIndex();
@@ -82,7 +90,7 @@ void Phonebook::printContact(std::string s) {
 void Phonebook::searchIndex(void) {
 	std::string input;
 	std::cout << "\033[1;35mSearch index: \033[0m"; std::getline(std::cin, input);
-	if (input.length() > 1 || input[0] < '1' || input[0] > '8' || stoi(input) > this -> index) {
+	if (input.length() > 1 || input[0] < '1' || input[0] > '8' || (stoi(input) > this -> index && this->checker == 0)) {
 		std::cout << "--- Invalid Index" << std::endl;
 	}
 	else {
