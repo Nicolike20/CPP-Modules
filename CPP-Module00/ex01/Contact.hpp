@@ -14,7 +14,7 @@ class Contact {
 		std::string getSecret();
 		void setSecret(std::string);
 	private:
-		int index;
+//		int index;
 		std::string _name;
 		std::string _surname;
 		std::string _nickname;

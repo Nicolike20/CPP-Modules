@@ -2,14 +2,17 @@
 #include <iterator>
 
 //TODO: comprobar si el contacto que tiene que cambiar es el ultimo o el primero;
-//TODO: comprobar si tengo que checkear que los campos a rellenar no esten vacios;
+//TODO: comprobar si tengo que checkear que los campos a rellenar no esten vacios; -> esto esta bien hecho?
 
 void Phonebook::setIndex(int i) {
 	this->index = i;
 }
 void Phonebook::addContact(void) {
+	int checker = 0;
+
 	if (this->index > 7) {
-		this->index = 7;
+		this->index = 0;
+		checker = 1;
 		std::cout << this->index << std::endl;
 		std::cout << "test names: " << this->Contacts[0].getName() << std::endl;
 		std::cout << "test surnames: " << this->Contacts[0].getSurname() << std::endl;
@@ -68,5 +71,21 @@ void Phonebook::addContact(void) {
 	std::cout << "Darkest secret: "; std::getline(std::cin, input);
 	this->Contacts[index].setSecret(input);
 	std::cout << "test secret: " << this->Contacts[index].getSecret() << std::endl;
-	this->index += 1;
+	if (!this->Contacts[index].getName().empty()
+		&& !this->Contacts[index].getSurname().empty()
+		&& !this->Contacts[index].getNickname().empty()
+		&& !this->Contacts[index].getPhone().empty()
+		&& !this->Contacts[index].getSecret().empty()) {
+		if (checker == 1)
+			this->index = 7;
+		this->index += 1;
+	}
+	else {
+		std::cout << "None of the fields can be empty" << std::endl;
+		this->Contacts[index].getName() = "";
+		this->Contacts[index].getSurname() = "";
+		this->Contacts[index].getNickname() = "";
+		this->Contacts[index].getPhone() = "";
+		this->Contacts[index].getSecret() = "";
+	}
 }
