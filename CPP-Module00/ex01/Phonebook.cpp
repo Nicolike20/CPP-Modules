@@ -1,6 +1,6 @@
 #include "Phonebook.hpp"
 
-//TODO: comprobar si tengo que checkear que los campos a rellenar no esten vacios; -> esto esta bien hecho?
+//TODO: AÑADIR IFNDEF Y ENDIF A LOS HPP
 
 void Phonebook::setIndex(int i) {
 	this->index = i;
