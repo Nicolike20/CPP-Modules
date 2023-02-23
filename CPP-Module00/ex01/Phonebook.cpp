@@ -1,70 +1,73 @@
+#include <sstream>
+#include <iomanip>
+
 #include "Phonebook.hpp"
 
-//TODO: AÑADIR IFNDEF Y ENDIF A LOS HPP;
 //TODO: NECESITO CONSTRUCTORES Y DESTRUCTORES?;
-//TODO: LIMPIAR CODIGO;
+//TODO: quitar std::endl donde proceda;
+//TODO: LIMPIAR CODIGO Y TESTEAR;
 
 void Phonebook::setIndex(int i) {
-	this->index = i;
-	this->checker = 0;
+	index_ = i;
+	checker_ = 0;
 }
 void Phonebook::addContact(void) {
-	if (this->index > 7) {
-		this->index = 0;
-		this->checker = 1;
+	if (index_ > 7) {
+		index_ = 0;
+		checker_ = 1;
 	}
 	std::string input;
 	std::cout << "--- Name:           "; std::getline(std::cin, input);
-	this->Contacts[index].setName(input);
+	Contacts[index_].setName(input);
 	std::cout << "--- Surname:        "; std::getline(std::cin, input);
-	this->Contacts[index].setSurname(input);
+	Contacts[index_].setSurname(input);
 	std::cout << "--- Nickname:       "; std::getline(std::cin, input);
-	this->Contacts[index].setNickname(input);
+	Contacts[index_].setNickname(input);
 	std::cout << "--- Phone number:   "; std::getline(std::cin, input);
-	this->Contacts[index].setPhone(input);
+	Contacts[index_].setPhone(input);
 	std::cout << "--- Darkest secret: "; std::getline(std::cin, input);
-	this->Contacts[index].setSecret(input);
-	if (!this->Contacts[index].getName().empty()
-		&& !this->Contacts[index].getSurname().empty()
-		&& !this->Contacts[index].getNickname().empty()
-		&& !this->Contacts[index].getPhone().empty()
-		&& !this->Contacts[index].getSecret().empty()) {
-		this->Contacts[index].setContIndex(this->index + 1);
-		this->index += 1;
+	Contacts[index_].setSecret(input);
+	if (!Contacts[index_].getName().empty()
+		&& !Contacts[index_].getSurname().empty()
+		&& !Contacts[index_].getNickname().empty()
+		&& !Contacts[index_].getPhone().empty()
+		&& !Contacts[index_].getSecret().empty()) {
+		Contacts[index_].setContIndex(index_ + 1);
+		index_ += 1;
 	}
 	else {
 		std::cout << "None of the fields can be empty" << std::endl;
-		this->Contacts[index].getName() = "";
-		this->Contacts[index].getSurname() = "";
-		this->Contacts[index].getNickname() = "";
-		this->Contacts[index].getPhone() = "";
-		this->Contacts[index].getSecret() = "";
+		Contacts[index_].getName() = "";
+		Contacts[index_].getSurname() = "";
+		Contacts[index_].getNickname() = "";
+		Contacts[index_].getPhone() = "";
+		Contacts[index_].getSecret() = "";
 	}
 }
 
 void Phonebook::searchContact(void) {
-	if (this -> index == 0) {
+	if (index_ == 0) {
 		std::cout << "--- No contacts added. Use the ADD command to save a contact" << std::endl;
 	}
 	else {
 		std::cout << "/-------------------------------------------\\" << std::endl;
 		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 		std::cout << "|-------------------------------------------|" << std::endl;
-		if (this -> checker == 0) {
-			for (int i = 0; i < this -> index; i++) {
-				std::cout << "|         " << this->Contacts[i].getContIndex() << "|";
-				printContact(this->Contacts[i].getName());
-				printContact(this->Contacts[i].getSurname());
-				printContact(this->Contacts[i].getNickname());
+		if (checker_ == 0) {
+			for (int i = 0; i < index_; i++) {
+				std::cout << "|         " << Contacts[i].getContIndex() << "|";
+				printContact(Contacts[i].getName());
+				printContact(Contacts[i].getSurname());
+				printContact(Contacts[i].getNickname());
 				std::cout << std::endl;
 			}
 		}
 		else {
 			for (int i = 0; i < 8; i++) {
-				std::cout << "|         " << this->Contacts[i].getContIndex() << "|";
-				printContact(this->Contacts[i].getName());
-				printContact(this->Contacts[i].getSurname());
-				printContact(this->Contacts[i].getNickname());
+				std::cout << "|         " << Contacts[i].getContIndex() << "|";
+				printContact(Contacts[i].getName());
+				printContact(Contacts[i].getSurname());
+				printContact(Contacts[i].getNickname());
 				std::cout << std::endl;
 			}
 		}
@@ -74,33 +77,37 @@ void Phonebook::searchContact(void) {
 }
 
 void Phonebook::printContact(std::string s) {
-	int spaces;
 	if (s.length() <= 10) {
-		spaces = 10 - s.length();
-		while (spaces-- > 0)
-			std::cout << " ";
-		std::cout << s << "|";
-	}
-	else {
-		for (int j = 0; j < 9; j++) {
-			std::cout << s[j];
-		}
-		std::cout << ".|";
+		std::cout << std::right << std::setw(10) << s << "|";
+	} else {
+		std::cout << s.substr(0,9) << ".|";
 	}
 }
 
-void Phonebook::searchIndex(void) {
-	std::string input;
-	std::cout << "\033[1;35mSearch index: \033[0m"; std::getline(std::cin, input);
-	if (input.length() > 1 || input[0] < '1' || input[0] > '8' || (stoi(input) > this -> index && this->checker == 0)) {
-		std::cout << "--- Invalid Index" << std::endl;
+int Phonebook::alphaString(std::string str) {
+	for (std::string::size_type i = 0; i < str.length(); ++i) {
+		if (isalpha(str[i]) || str[i] == ' ') {
+			return (1);
+		}
 	}
-	else {
-		int i = stoi(input) - 1;
-		std::cout << "--- Name:           " << this->Contacts[i].getName() << std::endl;
-		std::cout << "--- Surname:        " << this->Contacts[i].getSurname() << std::endl;
-		std::cout << "--- Nickname:       " << this->Contacts[i].getNickname() << std::endl;
-		std::cout << "--- Phone number:   " << this->Contacts[i].getPhone() << std::endl;
-		std::cout << "--- Darkest secret: " << this->Contacts[i].getSecret() << std::endl;
+	return (0);
+}
+
+void Phonebook::searchIndex(void) {
+	int n;
+	std::string input;
+
+	std::cout << "\033[1;35mSearch index: \033[0m"; std::getline(std::cin, input);
+	std::istringstream(input) >> n;
+	if (alphaString(input) || input.empty()) {
+		std::cout << "--- Input must be a number\n";
+	} else if (n < 1 || n  > 8 || (n > index_ && checker_ == 0)) {
+		std::cout << "--- Invalid index\n";
+	} else {
+		std::cout << "--- Name:           " << Contacts[n - 1].getName() << std::endl;
+		std::cout << "--- Surname:        " << Contacts[n - 1].getSurname() << std::endl;
+		std::cout << "--- Nickname:       " << Contacts[n - 1].getNickname() << std::endl;
+		std::cout << "--- Phone number:   " << Contacts[n - 1].getPhone() << std::endl;
+		std::cout << "--- Darkest secret: " << Contacts[n - 1].getSecret() << std::endl;
 	}
 }

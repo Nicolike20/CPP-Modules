@@ -1,25 +1,29 @@
+#include <memory>
+
+#include "SmartPointer.hpp"
 #include "Phonebook.hpp"
 
-int main(void) {
+void loop() {
 	std::string input;
-	//std::cout << "Name:"; std::getline(std::cin, input);
-	//Contact::setName(input);
-	//std::cout << "Hola: " << Contact::getName() << std::endl;
-
-	Phonebook *pbook = new Phonebook;
+	//std::auto_ptr<Phonebook> pbook(new Phonebook);
+	SmartPointer<Phonebook> pbook(new Phonebook);
 	
 	pbook->setIndex(0);
+	//pbook.operator->()->setIndex(0);
 	while (1) {
 		std::cout << "\033[1;36mPh0n3b😎😎k: \033[0m"; std::getline(std::cin, input);
 		if (input == "ADD") {
 			pbook->addContact();
-		}
-		else if (input == "SEARCH") {
+		} else if (input == "SEARCH") {
 			pbook->searchContact();
-		}
-		else if (input == "EXIT") {
+		} else if (input == "EXIT") {
 			break ;
 		}
 	}
+}
+
+int main() {
+	loop();
+	//system("leaks -q phonebook");
 	return (0);
 }

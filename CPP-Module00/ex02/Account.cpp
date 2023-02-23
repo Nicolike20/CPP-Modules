@@ -1,12 +1,12 @@
 #include "Account.hpp"
 
-int Account::_nbAccounts;
+int Account::_nbAccounts = 4;
 int Account::_totalAmount;
 int Account::_nbDeposits;    //check si esto esta bien;
 int Account::_nbWithdrawals; //iniciar a 0 o algo?;
 
 int Account::getNbAccounts(void) {
-    return _nbAccounts;
+    return Account::_nbAccounts;
 }
 
 int Account::getTotalAmount(void) {
@@ -28,7 +28,7 @@ void	displayAccountsInfos( void ) {
 Account::Account( int initial_deposit ) {
     //?
 }
-
+∫
 Account::~Account( void ) {
     //?
 }

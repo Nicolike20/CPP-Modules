@@ -1,49 +1,49 @@
 #include "Contact.hpp"
 
 int Contact::getContIndex() {
-	return this -> _contIndex;
+	return contIndex_;
 }
 
 void Contact::setContIndex(int i) {
-	this -> _contIndex = i;
+	contIndex_ = i;
 }
 
 std::string Contact::getName() {
-	return this -> _name;
+	return name_;
 }
 
 void Contact::setName(std::string s) {
-	this -> _name = s;
+	name_ = s;
 }
 
 std::string Contact::getSurname() {
-	return this -> _surname;
+	return surname_;
 }
 
 void Contact::setSurname(std::string s) {
-	this -> _surname = s;
+	surname_ = s;
 }
 
 std::string Contact::getNickname() {
-	return this -> _nickname;
+	return nickname_;
 }
 
 void Contact::setNickname(std::string s) {
-	this -> _nickname = s;
+	nickname_ = s;
 }
 
 std::string Contact::getPhone() {
-	return this -> _phoneNumber;
+	return phoneNumber_;
 }
 
 void Contact::setPhone(std::string s) {
-	this -> _phoneNumber = s;
+	phoneNumber_ = s;
 }
 
 std::string Contact::getSecret() {
-	return this -> _darkestSecret;
+	return darkestSecret_;
 }
 
 void Contact::setSecret(std::string s) {
-	this -> _darkestSecret = s;
+	darkestSecret_ = s;
 }
