@@ -1,3 +1,7 @@
+#include <ctime>
+#include <iostream>
+#include <iomanip>
+
 #include "Account.hpp"
 
 int Account::_nbAccounts = 0;
@@ -18,10 +22,11 @@ int Account::getNbDeposits(void) {
 }
 
 int Account::getNbWithdrawals(void) {
+    Account::_displayTimestamp();
     return Account::_totalNbWithdrawals;
 }
 
-void	displayAccountsInfos( void ) {
+/*void	displayAccountsInfos( void ) {
 
 }
 
@@ -48,7 +53,17 @@ int		checkAmount( void ) const{
 void	displayStatus( void ) const{
 
 }
+*/
 
-void	_displayTimestamp( void ) {
-    
+void Account::_displayTimestamp( void ) {
+    std::time_t time = std::time(NULL);
+    std::tm *now = localtime(&time);
+
+    std::cout << "["  << std::setfill('0')
+    << now->tm_year + 1900
+    << std::setw(2) << now->tm_mon + 1
+    << std::setw(2) << now->tm_mday << "_"
+    << std::setw(2) << now->tm_hour
+    << std::setw(2) << now->tm_min
+    << std::setw(2) << now->tm_sec <<"]";
 }
