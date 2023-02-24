@@ -9,7 +9,7 @@ class Phonebook {
 		void addContact(void);
 		void searchContact(void);
 		void printContact(std::string s);
-		int	 alphaString(std::string str);
+		int	 numString(std::string str);
 		void searchIndex(void);
 
 	private:

@@ -36,7 +36,7 @@ void Phonebook::addContact(void) {
 		index_ += 1;
 	}
 	else {
-		std::cout << "None of the fields can be empty" << std::endl;
+		std::cout << "None of the fields can be empty\n";
 		Contacts[index_].getName() = "";
 		Contacts[index_].getSurname() = "";
 		Contacts[index_].getNickname() = "";
@@ -47,19 +47,19 @@ void Phonebook::addContact(void) {
 
 void Phonebook::searchContact(void) {
 	if (index_ == 0) {
-		std::cout << "--- No contacts added. Use the ADD command to save a contact" << std::endl;
+		std::cout << "--- No contacts added. Use the ADD command to save a contact\n";
 	}
 	else {
-		std::cout << "/-------------------------------------------\\" << std::endl;
-		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "/-------------------------------------------\\\n";
+		std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
+		std::cout << "|-------------------------------------------|\n";
 		if (checker_ == 0) {
 			for (int i = 0; i < index_; i++) {
 				std::cout << "|         " << Contacts[i].getContIndex() << "|";
 				printContact(Contacts[i].getName());
 				printContact(Contacts[i].getSurname());
 				printContact(Contacts[i].getNickname());
-				std::cout << std::endl;
+				std::cout << "\n";
 			}
 		}
 		else {
@@ -68,10 +68,10 @@ void Phonebook::searchContact(void) {
 				printContact(Contacts[i].getName());
 				printContact(Contacts[i].getSurname());
 				printContact(Contacts[i].getNickname());
-				std::cout << std::endl;
+				std::cout << "\n";
 			}
 		}
-		std::cout << "\\-------------------------------------------/" << std::endl;
+		std::cout << "\\-------------------------------------------/\n";
 		searchIndex();
 	}
 }
@@ -84,9 +84,9 @@ void Phonebook::printContact(std::string s) {
 	}
 }
 
-int Phonebook::alphaString(std::string str) {
+int Phonebook::numString(std::string str) {
 	for (std::string::size_type i = 0; i < str.length(); ++i) {
-		if (isalpha(str[i]) || str[i] == ' ') {
+		if (!isnumber(str[i]) || str[i] == ' ') {
 			return (1);
 		}
 	}
@@ -99,15 +99,15 @@ void Phonebook::searchIndex(void) {
 
 	std::cout << "\033[1;35mSearch index: \033[0m"; std::getline(std::cin, input);
 	std::istringstream(input) >> n;
-	if (alphaString(input) || input.empty()) {
-		std::cout << "--- Input must be a number\n";
+	if (numString(input) || input.empty()) {
+		std::cout << "--- Invalid must be a number\n";
 	} else if (n < 1 || n  > 8 || (n > index_ && checker_ == 0)) {
 		std::cout << "--- Invalid index\n";
 	} else {
-		std::cout << "--- Name:           " << Contacts[n - 1].getName() << std::endl;
-		std::cout << "--- Surname:        " << Contacts[n - 1].getSurname() << std::endl;
-		std::cout << "--- Nickname:       " << Contacts[n - 1].getNickname() << std::endl;
-		std::cout << "--- Phone number:   " << Contacts[n - 1].getPhone() << std::endl;
-		std::cout << "--- Darkest secret: " << Contacts[n - 1].getSecret() << std::endl;
+		std::cout << "--- Name:           " << Contacts[n - 1].getName() << "\n";
+		std::cout << "--- Surname:        " << Contacts[n - 1].getSurname() << "\n";
+		std::cout << "--- Nickname:       " << Contacts[n - 1].getNickname() << "\n";
+		std::cout << "--- Phone number:   " << Contacts[n - 1].getPhone() << "\n";
+		std::cout << "--- Darkest secret: " << Contacts[n - 1].getSecret() << "\n";
 	}
 }
