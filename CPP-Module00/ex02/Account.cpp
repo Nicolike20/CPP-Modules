@@ -48,3 +48,7 @@ int		checkAmount( void ) const{
 void	displayStatus( void ) const{
 
 }
+
+void	_displayTimestamp( void ) {
+    
+}
