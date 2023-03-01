@@ -2,7 +2,9 @@ NAME = megaphone
 
 CXX = c++
 
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MD
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -Wpedantic -Wconversion -MMD
+
+UNAME_S := $(shell uname -s)
 
 # Sources
 
@@ -20,10 +22,10 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 ifeq ($(UNAME_S),Linux)
-sanitize: CFLAGS += -pedantic -g3 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=bounds -fsanitize=null
+sanitize: CXXFLAGS += -g3 -fsanitize=address -fsanitize=leak -fsanitize=undefined -fsanitize=bounds -fsanitize=null
 endif
 ifeq ($(UNAME_S),Darwin)
-sanitize: CFLAGS += -pedantic -g3 -fsanitize=address
+sanitize: CXXFLAGS += -g3 -fsanitize=address
 endif
 sanitize: $(NAME)
 

@@ -1,19 +1,22 @@
 #include <iostream>
-#include <cstdio>
 #include <string>
 
-int	main(int argc, char **argv)
-{
+int	main(int argc, char **argv) {
 	if (argc == 1) {
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		return 0;
 	}
+	std::string s;
 	for (int i = 1; i < argc; ++i) {
-		std::string string = std::string(argv[i]);
-		for (size_t j = 0; j < string.length(); ++j) {
-			std::cout << (char)std::toupper(string[j]);
+		s = argv[i];
+		//for (size_t j = 0; j < s.length(); ++j) {
+		for (std::string::const_iterator it = s.begin(); it != s.end(); ++it) {
+			std::cout << static_cast<char>(std::toupper(*it)); //s[j]);
 		}
+
 	}
-	std::cout << std::endl;
-	return (0);
+	std::cout << "\n";
+
+	std::stoi("5");
+	return 0;
 }

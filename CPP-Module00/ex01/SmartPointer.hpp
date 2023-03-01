@@ -4,14 +4,20 @@ class SmartPointer {
 		SmartPointer(T *pointer) {
 			pointer_ = pointer;
 		}
-		~SmartPointer(){
+		~SmartPointer() {
 			if (pointer_ != NULL) {
 				delete pointer_;
 			}
 		}
-		T *operator->() {
+		T* operator->() {
 			return pointer_;
 		}
+		/*const T* operator->() const {
+			return pointer_;
+		}*/
+		/*T& operator*() {
+			return *pointer_;
+		}*/
 
 	private:
 		T *pointer_;
