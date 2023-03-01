@@ -16,7 +16,5 @@ int	main(int argc, char **argv) {
 
 	}
 	std::cout << "\n";
-
-	std::stoi("5");
 	return 0;
 }
