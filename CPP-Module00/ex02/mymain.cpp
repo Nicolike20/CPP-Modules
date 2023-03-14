@@ -31,10 +31,31 @@ int main() {
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
+	for ( acc_int_t it( acc_begin, dep_begin );
+		  it.first != acc_end && it.second != dep_end;
+		  ++(it.first), ++(it.second) ) {
+
+		(*(it.first)).makeDeposit( *(it.second) );
+	}
+
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+
+	for ( acc_int_t it( acc_begin, wit_begin );
+		  it.first != acc_end && it.second != wit_end;
+		  ++(it.first), ++(it.second) ) {
+
+		(*(it.first)).makeWithdrawal( *(it.second) );
+	}
+
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+
+	return 0;
 //	Account *test = new Account(7);
 //	std::cout << "Testing getNBAccounts:    " << Account::getNbAccounts() << "\n";
 //	std::cout << "Testing getTotalAmount:   " << Account::getTotalAmount() << "\n";
 //	std::cout << "Testing getNbDeposits:    " << Account::getNbDeposits() << "\n";
 //	std::cout << "Testing getNbWithdrawals: " << Account::getNbWithdrawals() << "\n";
-	return (0);
+//	return (0);
 }
