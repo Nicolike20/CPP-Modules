@@ -2,13 +2,16 @@
 # define ZOMBIE_HPP_
 
 # include <string>
+# include <iostream>
 
 class Zombie {
     public:
-        void announce(void); //esto privado o publico?
-        //constructor y destructor?
+        Zombie(std::string name);
+        ~Zombie();
+        void announce(void);
+
     private:
-        string _name;
+        std::string _name;
 };
 
 #endif
