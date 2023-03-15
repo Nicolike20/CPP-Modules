@@ -3,10 +3,6 @@
 
 #include "Phonebook.hpp"
 
-//TODO: NECESITO CONSTRUCTORES Y DESTRUCTORES?;
-//TODO: quitar std::endl donde proceda;
-//TODO: LIMPIAR CODIGO Y TESTEAR;
-
 void Phonebook::setIndex(int i) {
 	index_ = i;
 	checker_ = 0;

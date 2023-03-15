@@ -9,7 +9,6 @@ void loop() {
 	SmartPointer<Phonebook> pbook(new Phonebook);
 	
 	pbook->setIndex(0);
-	//pbook.operator->()->setIndex(0);
 	while (1) {
 		std::cout << "\033[1;36mPh0n3b😎😎k: \033[0m"; std::getline(std::cin, input);
 		if (input == "ADD") {
@@ -24,6 +23,7 @@ void loop() {
 
 int main() {
 	loop();
-	//system("leaks -q phonebook");
 	return (0);
 }
+
+//system("leaks -q phonebook");
