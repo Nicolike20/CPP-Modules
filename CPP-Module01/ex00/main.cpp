@@ -1,27 +1,24 @@
 #include "Zombie.hpp"
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
+//- new (o malloc) te reserva memoria en el heap y por eso hay que liberarla;
+//- si no se usa new, las variables se crean en el stack;
+//- "Zombie *zom = new Zombie("Zombrero");" crea una variable en el stack que
+//  apunta a una direccion de memoria en el heap;
+//- "Zombie zom("paco");" crea la variable en el stack y se liberara al terminar el scope;
 
-//TODO: por que con randomchump no tengo que borrarlo?;
-//TODO: mejor delete o llamada al destructor?;
-//TODO: no podria usar newZombie en randomChump?;
-//TODO: que cojones es lo de heap or stack?;
-//TODO: por que no tengo que borrar a juan?;
-
-int main(void) {
+int main() {
     Zombie *zom = new Zombie("Zombrero");
     zom->announce();
     delete zom;
-//    zom->~Zombie();
 
     std::cout << "----------------\n";
 
     Zombie *test = newZombie("Test");
     test->announce();
     delete test;
-//    test->~Zombie();
 
     std::cout << "----------------\n";
 
@@ -31,8 +28,8 @@ int main(void) {
 
     Zombie g("Juan");
     g.announce();
-    //delete g;
+
+    return 0;
+}
 
  // system ("leaks -q zombies");
-    return (0);
-}

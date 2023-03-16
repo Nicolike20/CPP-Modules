@@ -96,7 +96,7 @@ void Phonebook::searchIndex(void) {
 	std::cout << "\033[1;35mSearch index: \033[0m"; std::getline(std::cin, input);
 	std::istringstream(input) >> n;
 	if (numString(input) || input.empty()) {
-		std::cout << "--- Invalid must be a number\n";
+		std::cout << "--- Index must be a number\n";
 	} else if (n < 1 || n  > 8 || (n > index_ && checker_ == 0)) {
 		std::cout << "--- Invalid index\n";
 	} else {

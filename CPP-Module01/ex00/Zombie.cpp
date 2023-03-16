@@ -1,7 +1,5 @@
 #include "Zombie.hpp"
 
-//#include <string>
-
 Zombie::Zombie(std::string name) {
     _name = name;
     std::cout << "Created zombie " << _name << "\n";
