@@ -7,6 +7,17 @@ void Phonebook::setIndex(int i) {
 	index_ = i;
 	checker_ = 0;
 }
+
+int Phonebook::validString(std::string s) {
+	int check = 1;
+	if (!s.empty()) {
+		for (size_t i = 0; i < s.length(); i++) {
+			if (check != 0)
+				check = isspace(s[i]);
+		}
+	}
+	return (check);
+}
 void Phonebook::addContact(void) {
 	if (index_ > 7) {
 		index_ = 0;
@@ -23,21 +34,16 @@ void Phonebook::addContact(void) {
 	Contacts[index_].setPhone(input);
 	std::cout << "--- Darkest secret: "; std::getline(std::cin, input);
 	Contacts[index_].setSecret(input);
-	if (!Contacts[index_].getName().empty()
-		&& !Contacts[index_].getSurname().empty()
-		&& !Contacts[index_].getNickname().empty()
-		&& !Contacts[index_].getPhone().empty()
-		&& !Contacts[index_].getSecret().empty()) {
+	if (!validString(Contacts[index_].getName())
+		&& !validString(Contacts[index_].getSurname())
+		&& !validString(Contacts[index_].getNickname())
+		&& !validString(Contacts[index_].getPhone())
+		&& !validString(Contacts[index_].getSecret())) {
 		Contacts[index_].setContIndex(index_ + 1);
 		index_ += 1;
 	}
 	else {
 		std::cout << "None of the fields can be empty\n";
-		Contacts[index_].getName() = "";
-		Contacts[index_].getSurname() = "";
-		Contacts[index_].getNickname() = "";
-		Contacts[index_].getPhone() = "";
-		Contacts[index_].getSecret() = "";
 	}
 }
 

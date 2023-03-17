@@ -6,6 +6,7 @@
 class Phonebook {
 	public:
 		void setIndex(int i);
+		int  validString(std::string s);
 		void addContact(void);
 		void searchContact(void);
 		void printContact(std::string s);
