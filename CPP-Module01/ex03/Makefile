@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MD
 
 # Sources
 
-SRCS = main.cpp Weapon.cpp HumanA.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 

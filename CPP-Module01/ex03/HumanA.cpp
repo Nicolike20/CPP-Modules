@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-HumanA::HumanA(std::string name, Weapon &weapon) : name_(name), weapon_(weapon) {}
-    //name_ = name;
+HumanA::HumanA(std::string name, const Weapon &weapon) : weapon_(weapon) {
+    name_ = name;
     //weapon_ = weapon;
-//}
+}
 
 HumanA::~HumanA() {}
 

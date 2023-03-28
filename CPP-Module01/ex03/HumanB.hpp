@@ -8,11 +8,12 @@ class HumanB {
     public:
         HumanB(std::string name);
         ~HumanB();
+        void setWeapon(Weapon &weapon); //las referencias tienen que ser siempre const?;
         void attack();
 
     private:
         std::string name_;
-        Weapon weapon_;
+        Weapon *weapon_;
 };
 
 #endif
