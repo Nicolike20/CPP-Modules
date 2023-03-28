@@ -4,7 +4,7 @@
 
 
 //abrir y cerrar archivos con ifstream y ofstream o con open y close?;
-//pasar todo esto a otro archivo cpp?;
+//pasar todo esto a otro archivo cpp? / por que hace falta usar clases en este caso?;
 
 void openFile(std::string fileName, std::string s1, std::string s2) {
     
@@ -12,7 +12,7 @@ void openFile(std::string fileName, std::string s1, std::string s2) {
         std::cout << "One or more empty arguments\n";
         exit (EXIT_FAILURE);
     }
-    
+
     std::ifstream infile(fileName);
     if (!infile) {
         std::cout << "Failed to open infile\n";
