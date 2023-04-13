@@ -1,12 +1,9 @@
-#include <iostream>
-
-#include <fstream>
-
+#include "Sed.hpp"
 
 //abrir y cerrar archivos con ifstream y ofstream o con open y close?;
 //pasar todo esto a otro archivo cpp? / por que hace falta usar clases en este caso?;
 
-void openFile(std::string fileName, std::string s1, std::string s2) {
+/*void openFile(std::string fileName, std::string s1, std::string s2) {
     
     if (fileName.empty() || s1.empty() || s2.empty()) {
         std::cout << "One or more empty arguments\n";
@@ -35,14 +32,14 @@ void openFile(std::string fileName, std::string s1, std::string s2) {
     std::cout << infile; //quitar
     std::cout << "\npirateo1: " << s1 << "\n"; //quitar
     std::cout << "pirateo2: " << s2 << "\n"; //quitar
-}
+}*/
 
 int main(int argc, char **argv)
 {
     if (argc != 4) {
         std::cout << "Error: 3 arguments expected\n";
     } else {
-        openFile(argv[1], argv[2], argv[3]);
+        Sed::replace(argv[1], argv[2], argv[3]);
     }
     return (0);
 }

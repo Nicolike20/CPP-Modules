@@ -2,11 +2,11 @@ NAME = test
 
 CXX = c++
 
-CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MD
+CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp
+SRCS = main.cpp Sed.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
