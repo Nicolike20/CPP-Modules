@@ -1,5 +1,9 @@
 #include "Sed.hpp"
 
+#include <cstdlib>
+#include <fstream>
+#include <string>
+
 Sed::Sed(){}
 
 Sed::~Sed(){}
@@ -7,32 +11,31 @@ Sed::~Sed(){}
 void Sed::replace(std::string fileName, std::string s1, std::string s2) {
     if (fileName.empty() || s1.empty() || s2.empty()) {
         std::cout << "One or more empty arguments\n";
-        exit (EXIT_FAILURE);
+        exit(1);
     }
 
-    std::ifstream infile(fileName);
+    std::ifstream infile(fileName.c_str());
     if (!infile) {
         std::cout << "Failed to open infile\n";
-        exit (EXIT_FAILURE);
+        exit(1);
     }
 
-    std::ofstream outfile(fileName + ".replace");
+    std::ofstream outfile((fileName + ".replace").c_str(), std::fstream::in | std::ifstream::trunc);
     if (!outfile) {
         std::cout << "Failed to open outfile\n";
-        exit (EXIT_FAILURE);
+        exit(1);
     }
 
     std::string line;
-    while (infile >> line) { //funcionamiento de infile y outfile
-        //std::cout << infile << " " << line << "\n";
-        outfile << Sed::findStr(line, s1, s2) << "\n";
+    while (std::getline(infile, line, '\n')) { //funcionamiento de infile y outfile
+        outfile << Sed::findStr(line, s1, s2);
+        if (infile.eof() == 0) {
+            outfile << "\n";
+        }
         //outfile << line << "\n";
     }
-
-    //file se pone a 0 cuando llega al final del archivo;
-  //  std::cout << infile; //quitar
-  //  std::cout << "\npirateo1: " << s1 << "\n"; //quitar
-  //  std::cout << "pirateo2: " << s2 << "\n"; //quitar
+    infile.close();
+    outfile.close();
 }
 
 std::string Sed::findStr(std::string line, std::string s1, std::string s2) {
@@ -41,7 +44,6 @@ std::string Sed::findStr(std::string line, std::string s1, std::string s2) {
     int index;
 
     index = line.find(s1, first);
-//    std::cout << "test index: " << index << "\n" << "pirateo: " << s2 << "\n";
     if (index != -1) {
         res.append(line, first, index);
         res.append(s2, 0, s2.length());
