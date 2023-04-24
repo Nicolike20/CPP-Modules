@@ -6,7 +6,7 @@ Weapon::Weapon(std::string type) {
 
 Weapon::~Weapon() {};
 
-std::string Weapon::getType() const{ //cosnt va ahi o detras de getType()? referencia?
+std::string Weapon::getType() const{
     return (type_);
 }
 
