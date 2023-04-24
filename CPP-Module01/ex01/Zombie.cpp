@@ -1,7 +1,7 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie() {
-    std::cout << "Created zombie\n"; //cambiar msg para diferenciarlo?
+    std::cout << "Created zombie\n";
 }
 
 Zombie::Zombie(std::string name) {

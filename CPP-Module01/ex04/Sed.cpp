@@ -27,12 +27,11 @@ void Sed::replace(std::string fileName, std::string s1, std::string s2) {
     }
 
     std::string line;
-    while (std::getline(infile, line, '\n')) { //funcionamiento de infile y outfile
+    while (std::getline(infile, line, '\n')) {
         outfile << Sed::findStr(line, s1, s2);
         if (infile.eof() == 0) {
             outfile << "\n";
         }
-        //outfile << line << "\n";
     }
     infile.close();
     outfile.close();
@@ -52,6 +51,5 @@ std::string Sed::findStr(std::string line, std::string s1, std::string s2) {
     } else {
         res.append(line);
     }
-//    std::cout << "funka?: " << res << "\n";
     return (res);
 }

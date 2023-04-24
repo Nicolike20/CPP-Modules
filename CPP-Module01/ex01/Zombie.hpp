@@ -4,11 +4,9 @@
 # include <string>
 # include <iostream>
 
-//crear funcion para asignar nombres?
-
 class Zombie {
     public:
-        Zombie(); // esto lo necesito?
+        Zombie();
         Zombie(std::string name);
         ~Zombie();
         void announce(void);

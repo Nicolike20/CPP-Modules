@@ -3,7 +3,7 @@
 #include <iostream>
 
 HumanB::HumanB(std::string name) {
-    name_ = name; //add creation msg?;
+    name_ = name;
     weapon_ = NULL;
 }
 

@@ -4,7 +4,6 @@
 
 HumanA::HumanA(std::string name, const Weapon &weapon) : weapon_(weapon) {
     name_ = name;
-    //weapon_ = weapon;
 }
 
 HumanA::~HumanA() {}
