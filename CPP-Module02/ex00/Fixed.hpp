@@ -6,17 +6,16 @@
 class Fixed {
 	public:
 		Fixed();
-		Fixed(const Fixed &copy);
-		//otro constructor con un numero como parametro?
+		Fixed(const Fixed &rhs);
 		~Fixed();
 
-		Fixed & operator=(const Fixed &assign);
+		Fixed& operator=(const Fixed &assign);
 
 		int getRawBits(void) const;
-		void setRawBits(int const raw);
+		void setRawBits(const int raw);
 	private:
-		int _point;
-		static const int frac;
+		int _raw;
+		static const int frac = 8;
 
 };
 
