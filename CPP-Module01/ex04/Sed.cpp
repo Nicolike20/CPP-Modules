@@ -39,17 +39,32 @@ void Sed::replace(std::string fileName, std::string s1, std::string s2) {
 
 std::string Sed::findStr(std::string line, std::string s1, std::string s2) {
     std::string res;
-    int first = 0;
-    int index;
+    size_t first = 0;
+    size_t index;
 
-    index = line.find(s1, first);
-    if (index != -1) {
+    //index = line.find(s1, first);
+   // if (index != -1) {
+    while (1) {
+//        index = 0;
+        index = line.find(s1, first);
+//        std::cout << "test index before: " << index << "\n";
+//        std::cout << "test first before: " << first << "\n";
+//        std::cout << "test res before:" << res << "\n";
+        if (index == std::string::npos) {
+            break ;
+        }
+        index -= first;
         res.append(line, first, index);
+//        std::cout << "test res MIDDLE:" << res << "\n";
         res.append(s2, 0, s2.length());
         first += index + s1.length();
-        res.append(line, first, line.length() - first);
-    } else {
-        res.append(line);
+//        std::cout << "test index after: " << index << "\n";
+//        std::cout << "test first after: " << first << "\n";
+//        std::cout << "test res after:" << res << "\n";
     }
+//        res.append(line, first, line.length() - first);
+//    } else {
+    res.append(line, first);
+//    }
     return (res);
 }
