@@ -11,7 +11,13 @@ class Fixed {
 		~Fixed();
 
 		Fixed & operator=(const Fixed &assign);
+
+		int getRawBits(void) const;
+		void setRawBits(int const raw);
 	private:
+		int _point;
+		static const int frac;
+
 };
 
 #endif
