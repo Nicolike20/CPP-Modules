@@ -11,10 +11,13 @@ Fixed::Fixed(const Fixed &copy) {
 }
 
 Fixed::Fixed(int i) {
-    //klk;
+    std::cout << "Int constructor called\n";
+    _raw = i;
+    //good?;
 }
 
 Fixed::Fixed(float f) {
+    std::cout << "Float constructor called\n";
     //klk;
 }
 
@@ -30,7 +33,8 @@ Fixed& Fixed::operator=(const Fixed &rhs) {
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Fixed &rhs) {
+std::ostream& Fixed::operator<<(std::ostream& os, const Fixed &rhs) {
+    std::cout << this->getRawBits();
     return os; //good?;
 }
 

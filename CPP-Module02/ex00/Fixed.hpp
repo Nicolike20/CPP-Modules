@@ -6,7 +6,7 @@
 class Fixed {
 	public:
 		Fixed();
-		Fixed(const Fixed &rhs);
+		Fixed(const Fixed &copy);
 		~Fixed();
 
 		Fixed& operator=(const Fixed &rhs);
