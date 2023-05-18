@@ -12,13 +12,17 @@ Fixed::Fixed(const Fixed &copy) {
 
 Fixed::Fixed(int i) {
     std::cout << "Int constructor called\n";
-    _raw = i;
-    //good?;
+    _raw = i << frac;
 }
+
+//en los constructores con int y float basicamente está transformando el parametro al punto fijo, que es como un tipo
+//de numero distinto que se puede usar para pasarlo de un tipo a otro. lo de i << frac (bitwise) es como multiplicar por
+//256 aka 2^8, el f * (1 << frac) tb pero hay que redondearlo parriba, y hay que ponerlo asi para que no de problemas
+//de conversion de const int a float.
 
 Fixed::Fixed(float f) {
     std::cout << "Float constructor called\n";
-    //klk;
+    _raw = roundf(f * (1 << frac));
 }
 
 Fixed::~Fixed() {
@@ -28,22 +32,23 @@ Fixed::~Fixed() {
 Fixed& Fixed::operator=(const Fixed &rhs) {
     std::cout << "Assignation operator called\n";
     if (this != &rhs) {
-        _raw = rhs.getRawBits();
+        _raw = rhs._raw;
     }
     return *this;
 }
 
-std::ostream& Fixed::operator<<(std::ostream& os, const Fixed &rhs) {
-    std::cout << this->getRawBits();
-    return os; //good?;
+std::ostream& operator<<(std::ostream& os, const Fixed &rhs) {
+    std::cout << rhs.toFloat();
+    return os;
 }
 
 int Fixed::toInt(void) const {
-    //klk;
+    return _raw >> frac; //_raw / 256 aka 2^8;
 }
 
 float Fixed::toFloat(void) const {
-    //klk;
+    return (float)_raw / (1 << frac); //(float)_raw / 256 aka 2^8;
+    //hay que ponerlo asi para que no de problemas de conversion de const int a float;
 }
 
 int Fixed::getRawBits(void) const {

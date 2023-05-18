@@ -2,6 +2,7 @@
 # define FIXED_HPP_
 
 # include <iostream>
+# include <cmath>
 
 class Fixed {
 	public:
@@ -12,7 +13,6 @@ class Fixed {
 		~Fixed();
 
 		Fixed& operator=(const Fixed &rhs);
-		std::ostream& operator<<(std::ostream& os, const Fixed &rhs); //esto va aqui?
 
 		int toInt(void) const;
 		float toFloat(void) const;
@@ -24,5 +24,7 @@ class Fixed {
 		static const int frac = 8;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed &rhs); //esto va aqui?
 
 #endif
