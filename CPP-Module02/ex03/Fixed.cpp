@@ -9,11 +9,11 @@ Fixed::Fixed(const Fixed &copy) {
 }
 
 Fixed::Fixed(int i) {
-    _raw = i << frac; //aka: i * 2^frac
+    _raw = i << frac;
 }
 
 Fixed::Fixed(float f) {
-    _raw = roundf(f * (1 << frac)); //aka: f * 2^frac
+    _raw = roundf(f * (1 << frac));
 }
 
 Fixed::~Fixed() {}
@@ -147,11 +147,11 @@ const Fixed& Fixed::max(const Fixed &lhs, const Fixed &rhs) {
 /*--------------------------------------------------------------------------*/
 
 int Fixed::toInt(void) const {
-    return _raw >> frac; //aka: i / 2^frac
+    return _raw >> frac;
 }
 
 float Fixed::toFloat(void) const {
-    return (float)_raw / (1 << frac); //aka: f / 2^frac
+    return (float)_raw / (1 << frac);
 }
 
 int Fixed::getRawBits(void) const {
