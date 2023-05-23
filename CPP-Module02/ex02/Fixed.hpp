@@ -26,10 +26,10 @@ class Fixed {
 		Fixed operator*(const Fixed &rhs) const;
 		Fixed operator/(const Fixed &rhs) const;
 
-		Fixed& operator++(); //estas no tienen que ser const?
-		Fixed& operator++(int);
+		Fixed& operator++(); //estas no tienen que ser const? //pre
+		Fixed operator++(int);                                //post
 		Fixed& operator--();
-		Fixed& operator--(int);
+		Fixed operator--(int);
 
 		static Fixed& min(Fixed &lhs, Fixed &rhs); //estas no tienen que ser const?
 		static const Fixed& min(const Fixed &lhs, const Fixed &rhs);
@@ -47,6 +47,6 @@ class Fixed {
 
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed &rhs); //esto va aqui?
+std::ostream& operator<<(std::ostream& os, const Fixed &rhs);
 
 #endif
