@@ -18,7 +18,7 @@ Fixed::Fixed(int i) {
 //en los constructores con int y float basicamente está transformando el parametro al punto fijo, que es como un tipo
 //de numero distinto que se puede usar para pasarlo de un tipo a otro. lo de i << frac (bitwise) es como multiplicar por
 //256 aka 2^8, el f * (1 << frac) tb pero hay que redondearlo parriba, y hay que ponerlo asi para que no de problemas
-//de conversion de const int a float.
+//de conversion de const int a float. ((ver ejemplo de bitwise debajo, esta explicacion es de tiesos));
 
 Fixed::Fixed(float f) {
     std::cout << "Float constructor called\n";
@@ -42,13 +42,25 @@ std::ostream& operator<<(std::ostream& os, const Fixed &rhs) {
     return os;
 }
 
+
+//
+// 0110 1100 -> 108
+//    6   12
+//
+// 0110 1100 >> 4
+// 0000 0110 -> 6
+//
+// 0000 0001 >> 4
+// 0001 0000 -> 16
+// 108 / 16  -> 6.12
+//
+
 int Fixed::toInt(void) const {
     return _raw >> frac; //_raw / 256 aka 2^8;
 }
 
 float Fixed::toFloat(void) const {
     return (float)_raw / (1 << frac); //(float)_raw / 256 aka 2^8;
-    //hay que ponerlo asi para que no de problemas de conversion de const int a float;
 }
 
 int Fixed::getRawBits(void) const {
