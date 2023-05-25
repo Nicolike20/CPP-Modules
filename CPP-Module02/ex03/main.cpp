@@ -1,11 +1,14 @@
 #include "Point.hpp"
 
-int main( void ) {
-    Point a(0, 0);
-    Point b(10, 30);
-    Point c(20, 0);
-    Point point(10, 15);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
+int main( void ) {
+    Point const a(0, 0);
+    Point const b(10, 30);
+    Point const c(20, 0);
+    Point const point(10, 15);
+
+    std::cout << "hola?\n" << a.getX() << " " << b.getX() << " " << c.getX() << " " << point.getX() << "\n";
     bool res = bsp(a, b, c, point);
     if (res) {
         std::cout << "tamos dentro\n";
