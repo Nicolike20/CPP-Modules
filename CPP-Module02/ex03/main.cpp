@@ -7,50 +7,56 @@ int main( void ) {
     Point const b(10, 30);
     Point const c(20, 0);
     Point const point(10, 15);
-    Point const otro(30, 15);
-    Point const limitDentro(10, 1);
-    Point const vertice(10, 30);
-    Point const lado(10, 0);
+    Point const outside(30, 15);
+    Point const limitTest(10, 1);
+    Point const vertex(10, 30);
+    Point const side(10, 0);
 
 //    std::cout << "hola?\n" << a.getX() << " " << b.getX() << " " << c.getX() << " " << point.getX() << "\n";
-    bool res1 = bsp(a, b, c, point);        //dentro
-    bool res2 = bsp(a, b, c, otro);         //fuera
-    bool res3 = bsp(a, b, c,limitDentro);   //dentro
-    bool res4 = bsp(a, b, c, vertice);      //fuera    -> probar imprimiendo las areas a ver que pasa
-    bool res5 = bsp(a, b, c, lado);         //fuera
-    if (res1) {
-        std::cout << "tamos dentro\n"; //estos if else se tienen que poder hacer mas clean fs;
+//    bool res1 = bsp(a, b, c, point);        //dentro
+//    bool res2 = bsp(a, b, c, otro);         //fuera
+//    bool res3 = bsp(a, b, c,limitDentro);   //dentro
+//    bool res4 = bsp(a, b, c, vertice);      //fuera
+//    bool res5 = bsp(a, b, c, lado);         //fuera
+
+	std::cout << "Point: (" << point.getX() << ", " << point.getY() << ")\n";
+    if (bsp(a, b, c, point)) {			// dentro
+        std::cout << "Inside\n\n";
     } else {
-        std::cout << "tamos fuera\n";
+        std::cout << "Outside\n\n";
     }
 
-    if (res2) {
-        std::cout << "tamos dentro\n";
+	std::cout << "Point: (" << outside.getX() << ", " << outside.getY() << ")\n";
+    if (bsp(a, b, c, outside)) {		// fuera
+        std::cout << "Inside\n\n";
     } else {
-        std::cout << "tamos fuera\n";
+        std::cout << "Outside\n\n";
     }
 
-    if (res3) {
-        std::cout << "tamos dentro\n";
+	std::cout << "Point: (" << limitTest.getX() << ", " << limitTest.getY() << ")\n";
+    if (bsp(a, b, c,limitTest)) {		// dentro
+        std::cout << "Inside\n\n";
     } else {
-        std::cout << "tamos fuera\n";
+        std::cout << "Outside\n\n";
     }
 
-    if (res4) {
-        std::cout << "tamos dentro\n";
+	std::cout << "Point: (" << vertex.getX() << ", " << vertex.getY() << ")\n";
+    if (bsp(a, b, c, vertex)) {			// fuera
+        std::cout << "Inside\n\n";
     } else {
-        std::cout << "tamos fuera\n";
+        std::cout << "Outside\n\n";
     }
 
-    if (res5) {
-        std::cout << "tamos dentro\n";
+	std::cout << "Point: (" << side.getX() << ", " << side.getY() << ")\n";
+    if (bsp(a, b, c, side)) {			// fuera
+        std::cout << "Inside\n\n";
     } else {
-        std::cout << "tamos fuera\n";
+        std::cout << "Outside\n\n";
     }
 
     return 0;
-//TODO: FALTA QUE PILLE VERTICES Y PERIMETRO COMO FUERA DEL AREA
-//      crear multiples tests en main;
+
+//TODO: crear multiples tests en main; ->  testear esto a jierro;
 //      cambiar nombre de las variables que estan en español
 //      comprobar todos los detalles del modulo; quitar comentarios innecesarios;
 }

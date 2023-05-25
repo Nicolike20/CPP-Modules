@@ -12,5 +12,9 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
     float ap2 = areaCalc(point, a, c);
     float ap3 = areaCalc(point, b, c);
 
-    return (area == ap1 + ap2 + ap3);
+
+//    std::cout << "AREA:  " << area << "\n";
+//    std::cout << "TOTAL: " << ap1 + ap2 + ap3 << "\n";
+    
+    return ((area == ap1 + ap2 + ap3) && ap1 && ap2 && ap3);
 }
