@@ -5,13 +5,12 @@ float areaCalc(Point const p1, Point const p2, Point const p3) {
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-    std::cout << "waddup\n" << a.getX() << b.getX() << c.getX() << point.getX() << "\n";
+//    std::cout << "hola?\n" << a.getX() << " " << b.getX() << " " << c.getX() << " " << point.getX() << "\n";
 
- //   float area = areaCalc(a, b, c);
- //   float ap1 = areaCalc(point, a, b);
- //   float ap2 = areaCalc(point, a, c);
- //   float ap3 = areaCalc(point, b, c);
+    float area = areaCalc(a, b, c);
+    float ap1 = areaCalc(point, a, b);
+    float ap2 = areaCalc(point, a, c);
+    float ap3 = areaCalc(point, b, c);
 
-    return true;
-//    return (area == ap1 + ap2 + ap3);
+    return (area == ap1 + ap2 + ap3);
 }
