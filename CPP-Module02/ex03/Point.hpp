@@ -13,9 +13,6 @@ class Point {
 		Fixed getX() const;
 		Fixed getY() const;
 
-
-		//getters pa x e y?
-		//constructor con Fixed points?
 	private:
 		const Fixed _x;
 		const Fixed _y;
