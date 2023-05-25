@@ -10,6 +10,9 @@ class Point {
 		Point(const float x, const float y);
 		Point& operator=(const Point &rhs);
 		~Point();
+		Fixed getX() const;
+		Fixed getY() const;
+
 
 		//getters pa x e y?
 		//constructor con Fixed points?
