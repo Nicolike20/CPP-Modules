@@ -147,11 +147,11 @@ const Fixed& Fixed::max(const Fixed &lhs, const Fixed &rhs) {
 /*--------------------------------------------------------------------------*/
 
 int Fixed::toInt(void) const {
-    return _raw >> frac; //aka: i / 2^frac
+    return _raw >> frac; //aka: _raw / 2^frac
 }
 
 float Fixed::toFloat(void) const {
-    return (float)_raw / (1 << frac); //aka: f / 2^frac
+    return (float)_raw / (1 << frac); //aka: (float)_raw / 2^frac
 }
 
 int Fixed::getRawBits(void) const {
