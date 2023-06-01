@@ -1,24 +1,24 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-    : _hp(10)
+    : _name("Nameless")
+    , _hp(10)
     , _ep(10)
-    , _ad(0)
-    , _name("Nameless") {
+    , _ad(0) {
     std::cout << _name << " ClapTrap created\n";
 }
 
 ClapTrap::ClapTrap(std::string name)
-    : _hp(10)
+    : _name(name)
+    , _hp(10)
     , _ep(10)
-    , _ad(0)
-    , _name(name) {
+    , _ad(0) {
     std::cout << _name << " ClapTrap created\n";
     }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
-    *this = other;
-    std::cout << "Copy of " << other._name << " created\n";
+    *this = copy;
+    std::cout << "Copy of " << copy._name << " created\n";
 }
 
 ClapTrap::~ClapTrap() {
@@ -54,7 +54,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
     }
     _hp -= amount;
     if (_hp <= 0) {
-        std::cout << _name << " ClapTrap takes " << amount << "points of damage, and is now dead!\n";
+        std::cout << _name << " ClapTrap takes " << amount << " points of damage, and is now dead!\n";
         _hp = 0;
         return ;
     }

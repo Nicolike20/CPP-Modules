@@ -1,4 +1,4 @@
-NAME = fixed
+NAME = clap
 
 CXX = c++
 
@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp ClapTrap.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
