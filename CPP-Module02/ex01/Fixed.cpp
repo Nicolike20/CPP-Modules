@@ -12,12 +12,12 @@ Fixed::Fixed(const Fixed &copy) {
 
 Fixed::Fixed(int i) {
     std::cout << "Int constructor called\n";
-    _raw = i << frac; //aka: i * 2^frac
+    _raw = i << frac;
 }
 
 Fixed::Fixed(float f) {
     std::cout << "Float constructor called\n";
-    _raw = roundf(f * (1 << frac)); //aka: f * 2^frac
+    _raw = roundf(f * (1 << frac));
 }
 
 Fixed::~Fixed() {
@@ -38,11 +38,11 @@ std::ostream& operator<<(std::ostream& os, const Fixed &rhs) {
 }
 
 int Fixed::toInt(void) const {
-    return _raw >> frac; //_raw / 256 aka 2^frac;
+    return _raw >> frac;
 }
 
 float Fixed::toFloat(void) const {
-    return (float)_raw / (1 << frac); //(float)_raw / 256 aka 2^frac;
+    return (float)_raw / (1 << frac);
 }
 
 int Fixed::getRawBits(void) const {
@@ -62,7 +62,7 @@ void Fixed::setRawBits(const int raw) {
 // 0110 1100 >> 4       (raw >> frac)
 // 0000 0110 -> 6
 //
-// 0000 0001 >> 4       (1 << frac)
+// 0000 0001 << 4       (1 << frac)
 // 0001 0000 -> 16
 // 108 / 16  -> 6.12    _raw / (1 << frac)
 //

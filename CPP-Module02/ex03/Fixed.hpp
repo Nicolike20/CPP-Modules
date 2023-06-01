@@ -26,8 +26,8 @@ class Fixed {
 		Fixed operator*(const Fixed &rhs) const;
 		Fixed operator/(const Fixed &rhs) const;
 
-		Fixed& operator++();	//pre
-		Fixed operator++(int);	//post
+		Fixed& operator++();
+		Fixed operator++(int);
 		Fixed& operator--();
 		Fixed operator--(int);
 
