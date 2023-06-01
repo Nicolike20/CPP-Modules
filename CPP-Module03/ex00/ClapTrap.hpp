@@ -18,8 +18,8 @@ class ClapTrap {
 		void beRepaired(unsigned int amount);
 	private:
 		std::string _name;
-		int _hp; //cambiar estos a nombre completo?;
-		int _ep; //inicializar estos aqui?;
+		int _hp;
+		int _ep;
 		int _ad;
 };
 
