@@ -32,7 +32,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
     _ad = other._ad;
 
     std::cout << "Operator = called for " << other._name << "\n";
-    return *this
+    return *this;
 }
 		
 void ScavTrap::attack(const std::string& target) {

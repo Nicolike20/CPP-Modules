@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
