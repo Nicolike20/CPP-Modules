@@ -5,7 +5,7 @@ int main(void) {
 	//new?;
 	//no use of ep?;
 	//cambiar los nombres lol;
-	//CAMBIAR LOS ATRIBUTOS INT A UNSIGNED INT;
+	//CAMBIAR LOS ATRIBUTOS INT A UNSIGNED INT; -> check si está bien hecho fr, y cambiarlo en ex01
 
 	ClapTrap c1;
 	ClapTrap c2("Clapini");

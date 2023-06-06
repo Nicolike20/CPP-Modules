@@ -3,9 +3,8 @@
 
 int main(void) {
 
-	//new?;
-	//no use of ep?;
-	//cambiar los nombres lol;
+	//TODO: cambiar ints por unsigned ints como en ex00;
+	//TODO: cambiar main y probar mas cosas;
 
 	ClapTrap c1;
 	ClapTrap c2("Clapini");
