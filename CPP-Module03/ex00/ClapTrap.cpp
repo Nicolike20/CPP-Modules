@@ -66,7 +66,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
     if (_hp == 0) {
-        std::cout << _name << " ClapTrap can't repair itself, because it's aready dead!\n";
+        std::cout << _name << " ClapTrap can't repair itself, because it's already dead!\n";
     } else if (_ep == 0){
         std::cout << _name << " ClapTrap can't repair itself, because it has no Energy Points!\n";
     } else {
