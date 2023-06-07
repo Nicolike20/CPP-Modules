@@ -16,7 +16,7 @@ FragTrap::FragTrap(std::string name) {
     std::cout << _name << " FragTrap created\n";
 }
 
-FragTrap::FragTrap(const ScavTrap &copy) {
+FragTrap::FragTrap(const FragTrap &copy) {
     *this = copy;
     std::cout << copy._name << " FragTrap copy created\n";
 }
