@@ -53,8 +53,12 @@ void ClapTrap::takeDamage(unsigned int amount) {
         std::cout << _name << " ClapTrap can't take damage, because it's already dead!\n";
         return ;
     }
-    _hp -= amount;
-    if (_hp <= 0) {
+    if ((int)(_hp - amount) <= 0) {
+        _hp = 0;
+    } else {
+        _hp -= amount;
+    }
+    if (_hp == 0) {
         std::cout << _name << " ClapTrap takes " << amount << " points of damage, and is now dead!\n";
         _hp = 0;
         return ;

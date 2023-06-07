@@ -37,7 +37,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
 
 
 void ClapTrap::attack(const std::string& target) {
-    if (_hp == 0) { // == 0?
+    if (_hp == 0) {
         std::cout << _name << " ClapTrap can't attack, because it's dead!\n";
     } else if (_ep == 0) {
         std::cout << _name << " ClapTrap can't attack, because it has no Energy Points!\n";
@@ -48,11 +48,11 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-    if (_hp == 0) { // == 0?
+    if (_hp == 0) {
         std::cout << _name << " ClapTrap can't take damage, because it's already dead!\n";
         return ;
     }
-    if ((int)(_hp - amount) <= 0) {
+    if ((int)(_hp - amount) <= 0) { //se puede cambiar el <= por solo <, creo
         _hp = 0;
     } else {
         _hp -= amount;
@@ -65,9 +65,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (_hp == 0) { // == 0?
+    if (_hp == 0) {
         std::cout << _name << " ClapTrap can't repair itself, because it's aready dead!\n";
-    } else if (_ep == 0){ //cambiar los else if por returns y solo ifs?
+    } else if (_ep == 0){
         std::cout << _name << " ClapTrap can't repair itself, because it has no Energy Points!\n";
     } else {
         _hp += amount;
