@@ -1,4 +1,4 @@
-NAME = clap
+NAME = scav
 
 CXX = c++
 
