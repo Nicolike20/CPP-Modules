@@ -5,6 +5,9 @@ FragTrap::FragTrap() {
     _hp = 100;
     _ep = 100;
     _ad = 30;
+    std::cout << "tenemo " << _hp << " de vida en frag\n";
+    std::cout << "tenemo " << _ep << " de enrg en frag\n";
+    std::cout << "tenemo " << _ad << " de daño en frag\n";
     std::cout << _name << " FragTrap created\n";
 }
 

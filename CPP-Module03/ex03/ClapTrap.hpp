@@ -9,11 +9,11 @@ class ClapTrap {
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		ClapTrap& operator=(const ClapTrap &other);
 
-		void attack(const std::string& target);
+		void attack(const std::string& target); //virtual?
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 	protected:

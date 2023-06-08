@@ -5,6 +5,9 @@ ScavTrap::ScavTrap() {
     _hp = 100;
     _ep = 50;
     _ad = 20;
+    std::cout << "tenemo " << _hp << " de vida en scav\n";
+    std::cout << "tenemo " << _ep << " de enrg en scav\n";
+    std::cout << "tenemo " << _ad << " de daño en scav\n";
     std::cout << _name << " ScavTrap created\n";
 }
 

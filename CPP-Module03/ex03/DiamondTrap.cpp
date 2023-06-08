@@ -6,6 +6,9 @@ DiamondTrap::DiamondTrap() {
     _hp = FragTrap::_hp;
     _ep = ScavTrap::_ep;
     _ad = FragTrap::_ad;
+    std::cout << "tenemo " << FragTrap::_hp << " de vida en diamond\n";
+    std::cout << "tenemo " << FragTrap::_ep << " de enrg en diamond\n";
+    std::cout << "tenemo " << FragTrap::_ad << " de daño en diamond\n";
     std::cout << _name << " DiamondTrap created\n";
 }
 
@@ -37,8 +40,10 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
     return *this;
 }
 
-		void whoAmI();
+void DiamondTrap::whoAmI() {
+    std::cout << "Hi! This is " << _name << ", AKA " << ClapTrap::_name << "\n";
+}
 
 void DiamondTrap::attack(const std::string& target) {
-    ScavTrap::attack(target);
+    this->ScavTrap::attack(target); //por que salen 20 ad?
 }

@@ -108,6 +108,26 @@ int main(void) {
 	std::cout << "\n";*/
 
 	DiamondTrap d1;
+	DiamondTrap d2("Test");
+	DiamondTrap d3(d2);
+	FragTrap f1("Frag");
+	ScavTrap s1("Scav");
+	ClapTrap c1("Clap");
 	
+	std::cout << "\n";
+
+/*	d1.attack("Test"); //not working
+	d2.attack("Maming");
+	d3.attack("Someone");
+	f1.attack("Someone else");
+	s1.attack("Something");
+	c1.attack("No one");*/
+
+	std::cout << "\n";
+
+
+	//TODO: attack no muestra el mensaje correcto
+	//TODO: pueden recibir ataque si estan muertos? si esto falla cambiarlo en los anteriores tb
+	//TODO: los diamond deberian mostrar su nombre o su nombre_clap_name?
 	return 0;
 }

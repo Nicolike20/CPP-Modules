@@ -4,7 +4,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap {
+class DiamondTrap : public FragTrap, public ScavTrap { //si le doy la vuelta a la herencia, diamond pilla todo lo del otro
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
