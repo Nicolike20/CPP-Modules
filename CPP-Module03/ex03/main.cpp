@@ -1,5 +1,4 @@
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void) {
 
@@ -70,7 +69,7 @@ int main(void) {
 
 	std::cout << "\n";*/
 
-	FragTrap f1;
+	/*FragTrap f1;
 	FragTrap f2("Test");
 	FragTrap f3(f1);
 	ScavTrap s1("Scav");
@@ -106,7 +105,9 @@ int main(void) {
 	f2.highFivesGuys();	
 	f3.highFivesGuys();	
 
-	std::cout << "\n";
+	std::cout << "\n";*/
 
+	DiamondTrap d1;
+	
 	return 0;
 }
