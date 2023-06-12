@@ -116,12 +116,12 @@ int main(void) {
 	
 	std::cout << "\n";
 
-/*	d1.attack("Test"); //not working
+	d1.attack("Test"); //not working
 	d2.attack("Maming");
 	d3.attack("Someone");
 	f1.attack("Someone else");
 	s1.attack("Something");
-	c1.attack("No one");*/
+	c1.attack("No one");
 
 	std::cout << "\n";
 
@@ -129,5 +129,6 @@ int main(void) {
 	//TODO: attack no muestra el mensaje correcto
 	//TODO: pueden recibir ataque si estan muertos? si esto falla cambiarlo en los anteriores tb
 	//TODO: los diamond deberian mostrar su nombre o su nombre_clap_name?
+	//TODO: no parece que el problema esté en diamond ni en clap. probar en las otras clases. -> probar cambiando lo de hp a ad en scavtrap
 	return 0;
 }

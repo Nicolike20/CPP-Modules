@@ -6,9 +6,9 @@ DiamondTrap::DiamondTrap() {
     _hp = FragTrap::_hp;
     _ep = ScavTrap::_ep;
     _ad = FragTrap::_ad;
-    std::cout << "tenemo " << FragTrap::_hp << " de vida en diamond\n";
-    std::cout << "tenemo " << FragTrap::_ep << " de enrg en diamond\n";
-    std::cout << "tenemo " << FragTrap::_ad << " de daño en diamond\n";
+    std::cout << FragTrap::_ad << "\n";
+    std::cout << "tenemo " << this->FragTrap::_hp << " de vida en diamond\n";
+    std::cout << "tenemo " << this->FragTrap::_ep << " de enrg en diamond\n";
     std::cout << _name << " DiamondTrap created\n";
 }
 
@@ -32,6 +32,7 @@ DiamondTrap::~DiamondTrap() {
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
     _name = other._name;
+    ClapTrap::_name = other.ClapTrap::_name;
     _hp = other._hp;
     _ep = other._ep;
     _ad = other._ad;

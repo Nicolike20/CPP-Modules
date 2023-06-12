@@ -13,7 +13,7 @@ class ClapTrap {
 
 		ClapTrap& operator=(const ClapTrap &other);
 
-		void attack(const std::string& target); //virtual?
+		virtual void attack(const std::string& target); //xq virtual?
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 	protected:

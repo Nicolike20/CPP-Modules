@@ -4,7 +4,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap { //si le doy la vuelta a la herencia, diamond pilla todo lo del otro
+class DiamondTrap : public FragTrap, public ScavTrap {
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
@@ -20,3 +20,6 @@ class DiamondTrap : public FragTrap, public ScavTrap { //si le doy la vuelta a l
 };
 
 #endif
+
+
+ //si le doy la vuelta a la herencia, diamond pilla todo lo del otro, funciona pa que ponga 30 pero no arregla el problema.
