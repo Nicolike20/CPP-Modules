@@ -1,18 +1,18 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() {
+DiamondTrap::DiamondTrap()/*: ClapTrap("Nameless"), FragTrap("Nameless"), ScavTrap("Nameless")*/ {
     _name = "Nameless";
     ClapTrap::_name = std::string("Nameless").append("_clap_name");
     _hp = FragTrap::_hp;
     _ep = ScavTrap::_ep;
     _ad = FragTrap::_ad;
-    std::cout << FragTrap::_ad << "\n";
     std::cout << "tenemo " << this->FragTrap::_hp << " de vida en diamond\n";
     std::cout << "tenemo " << this->FragTrap::_ep << " de enrg en diamond\n";
+    std::cout << "tenemo " << this->FragTrap::_ad << " de daño en diamond\n";
     std::cout << _name << " DiamondTrap created\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name) {
+DiamondTrap::DiamondTrap(std::string name)/*: ClapTrap(name), FragTrap(name), ScavTrap(name)*/ {
     _name = name;
     ClapTrap::_name = name.append("_clap_name");
     _hp = FragTrap::_hp;
