@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name) {
     std::cout << _name << " ScavTrap created\n";
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) { //esto está bien?
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap() {
     *this = copy;
     std::cout << copy._name << " ScavTrap copy created\n";
 }

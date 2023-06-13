@@ -5,9 +5,6 @@ ScavTrap::ScavTrap() {
     _hp = 100;
     _ep = 50;
     _ad = 20;
-//    std::cout << "tenemo " << _hp << " de vida en scav\n";
-//    std::cout << "tenemo " << _ep << " de enrg en scav\n";
-//    std::cout << "tenemo " << _ad << " de daño en scav\n";
     std::cout << _name << " ScavTrap created\n";
 }
 
@@ -19,7 +16,7 @@ ScavTrap::ScavTrap(std::string name) {
     std::cout << _name << " ScavTrap created\n";
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy) { //ta bien??
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap() {
     *this = copy;
     std::cout << copy._name << " ScavTrap copy created\n";
 }
