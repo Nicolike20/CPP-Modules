@@ -35,8 +35,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
     return *this;
 }
 
-
-//he tenido que cambiar algunos mensajes, porque ahora hay distintos tipos de robots y no solo claptraps
 void ClapTrap::attack(const std::string& target) {
     if (_hp == 0) {
         std::cout << _name << " ClapTrap can't attack, because it's dead!\n";
@@ -65,7 +63,6 @@ void ClapTrap::takeDamage(unsigned int amount) {
     }
     std::cout << _name << " ClapTrap takes " << amount << " points of damage, and is left with " << _hp << " Hit Points!\n";
 }
-
 
 void ClapTrap::beRepaired(unsigned int amount) {
     if (_hp == 0) {

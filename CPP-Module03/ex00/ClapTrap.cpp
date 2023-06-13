@@ -52,7 +52,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
         std::cout << _name << " ClapTrap can't take damage, because it's already dead!\n";
         return ;
     }
-    if ((int)(_hp - amount) <= 0) { //se puede cambiar el <= por solo <, creo
+    if ((int)(_hp - amount) <= 0) {
         _hp = 0;
     } else {
         _hp -= amount;

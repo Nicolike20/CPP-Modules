@@ -1,6 +1,6 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()/*: ClapTrap("Nameless"), FragTrap("Nameless"), ScavTrap("Nameless")*/ {
+DiamondTrap::DiamondTrap() { //: ClapTrap("Nameless"), FragTrap("Nameless"), ScavTrap("Nameless") {
     _name = "Nameless";
     ClapTrap::_name = std::string("Nameless").append("_clap_name");
     _hp = FragTrap::_hp;
@@ -12,7 +12,7 @@ DiamondTrap::DiamondTrap()/*: ClapTrap("Nameless"), FragTrap("Nameless"), ScavTr
     std::cout << _name << " DiamondTrap created\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name)/*: ClapTrap(name), FragTrap(name), ScavTrap(name)*/ {
+DiamondTrap::DiamondTrap(std::string name) { //: ClapTrap(name), FragTrap(name), ScavTrap(name) {
     _name = name;
     ClapTrap::_name = name.append("_clap_name");
     _hp = FragTrap::_hp;
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(std::string name)/*: ClapTrap(name), FragTrap(name), Sc
     std::cout << _name << " DiamondTrap created\n";
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy) {
+DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), FragTrap(copy), ScavTrap(copy) { //ta bien? cambiar orden si cambio el orden de herencia
     *this = copy;
     std::cout << copy._name << " DiamondTrap copy created\n";
 }

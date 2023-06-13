@@ -20,6 +20,3 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 };
 
 #endif
-
-
- //si le doy la vuelta a la herencia, diamond pilla todo lo del otro, funciona pa que ponga 30 pero no arregla el problema.
