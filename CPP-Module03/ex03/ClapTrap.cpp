@@ -28,7 +28,7 @@ ClapTrap::~ClapTrap() {
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
     _name = other._name;
     _hp = other._hp;
-    _ep = other._hp;
+    _ep = other._ep;
     _ad = other._ad;
 
     std::cout << "Operator = called for " << other._name << "\n";

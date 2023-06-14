@@ -28,7 +28,7 @@ ScavTrap::~ScavTrap() {
 ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
     _name = other._name;
     _hp = other._hp;
-    _ep = other._hp;
+    _ep = other._ep;
     _ad = other._ad;
 
     std::cout << "Operator = called for " << other._name << "\n";
