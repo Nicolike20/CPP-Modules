@@ -4,6 +4,7 @@
 
 //TODO: deep copy?;
 //TODO: cambiar cosas en cat y dog (y animal?);
+//TODO: hacer main;
 
 int main()
 {
