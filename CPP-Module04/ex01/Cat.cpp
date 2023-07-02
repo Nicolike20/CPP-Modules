@@ -1,20 +1,20 @@
 #include "Cat.hpp"
 
 Cat::Cat() { //add brain;
-	_type = "Cat";
 	_brain = new Brain();
+	_type = "Cat";
 	std::cout << "Default Cat constructor called\n";
 }
 
 Cat::Cat(const Cat &copy) : Animal() { //add brain;
-	*this = copy;
 	_brain = new Brain();
+	*this = copy;
 	std::cout << "Copy Cat constructor called\n";
 }
 
 Cat::~Cat() {
-	std::cout << "Cat destructor called\n";
 	delete _brain;
+	std::cout << "Cat destructor called\n";
 }
 
 //añadir operator= para poder igualarle el brain;
