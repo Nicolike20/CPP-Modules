@@ -3,7 +3,6 @@
 #include "WrongCat.hpp"
 
 //TODO: deep copy?; -> check si está bien hecho
-//TODO: hacer main array (subject);
 //TODO: check explicacion d e virtual destructor en github;
 //TODO: check leaks;
 
