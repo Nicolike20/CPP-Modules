@@ -8,7 +8,7 @@ class WrongAnimal {
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal &copy);
-		virtual ~WrongAnimal(); //quitar el virtual de aqui tb?;
+		~WrongAnimal();
 
 		WrongAnimal& operator=(const WrongAnimal &other);
 
