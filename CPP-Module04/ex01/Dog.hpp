@@ -13,6 +13,7 @@ class Dog : public Animal {
 		Dog& operator=(const Dog &other);
 
 		void makeSound() const;
+		Brain* getBrain() const;
 	
 	private:
 		Brain *_brain; //xq puntero?;

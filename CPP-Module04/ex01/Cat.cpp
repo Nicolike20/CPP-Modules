@@ -31,3 +31,7 @@ Cat& Cat::operator=(const Cat &other) {
 void Cat::makeSound() const{
 	std::cout << "*meows*\n";
 }
+
+Brain* Cat::getBrain() const {
+	return _brain;
+}

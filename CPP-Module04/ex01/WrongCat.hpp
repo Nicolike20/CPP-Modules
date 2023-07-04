@@ -1,5 +1,5 @@
 #ifndef WRONGCAT_HPP_
-# define WRONGCAT_HPP
+# define WRONGCAT_HPP_
 
 # include "WrongAnimal.hpp"
 

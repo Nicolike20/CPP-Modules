@@ -11,8 +11,8 @@ class Brain {
 
 		Brain& operator=(const Brain &other);
 
-	private:
 		std::string _ideas[100];
+	private:
 };
 
 #endif
