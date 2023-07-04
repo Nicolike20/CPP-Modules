@@ -3,21 +3,21 @@
 #include "WrongCat.hpp"
 
 //TODO: deep copy?; -> check si está bien hecho
-//TODO: check explicacion d e virtual destructor en github;
+//TODO: por qué puedo crear un array de
 //TODO: check leaks;
 
 int main()
 {
-	const Animal* animal = new Animal();
+//	const AAnimal* animal = new AAnimal();
 	const Dog* dog = new Dog();
 	const Cat* cat = new Cat();
 
 	std::cout << "\n";
 
-	std::cout << animal->getType() << "\n";
+//	std::cout << animal->getType() << "\n";
 	std::cout << dog->getType() << "\n";
 	std::cout << cat->getType() << "\n";
-	animal->makeSound();
+//	animal->makeSound();
 	dog->makeSound();
 	cat->makeSound();
 
@@ -48,7 +48,7 @@ int main()
 
 	std::cout << "\n";
 	
-	delete animal;
+//	delete animal;
 	delete dog;
 	delete cat;
 	delete cat2;
@@ -57,7 +57,7 @@ int main()
 
 	//testing array of animals
 
-	Animal *animals[8];
+	AAnimal *animals[8]; //por qué esto si se puede?
 
 	for (int i = 0; i < 8; i++) {
 		if (i < 8 / 2) {

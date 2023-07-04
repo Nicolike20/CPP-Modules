@@ -6,7 +6,7 @@ Dog::Dog() {
 	std::cout << "Default Dog constructor called\n";
 }
 
-Dog::Dog(const Dog &copy) : Animal() {
+Dog::Dog(const Dog &copy) : AAnimal() {
 	_brain = new Brain();
 	*this = copy;
 	std::cout << "Copy Dog constructor called\n";
@@ -18,7 +18,7 @@ Dog::~Dog() {
 }
 
 Dog& Dog::operator=(const Dog &other) {
-	this->Animal::operator=(other); //igualar _type aqui instead?;
+	this->AAnimal::operator=(other); //igualar _type aqui instead?;
 
 	//this->brain = other.brain; // shallow copy
 	*this->_brain = *other._brain; // deep copy -> INVESTIGAR

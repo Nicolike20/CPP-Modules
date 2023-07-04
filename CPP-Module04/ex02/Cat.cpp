@@ -6,7 +6,7 @@ Cat::Cat() { //add brain;
 	std::cout << "Default Cat constructor called\n";
 }
 
-Cat::Cat(const Cat &copy) : Animal() { //add brain;
+Cat::Cat(const Cat &copy) : AAnimal() { //add brain;
 	_brain = new Brain();
 	*this = copy;
 	std::cout << "Copy Cat constructor called\n";
@@ -19,7 +19,7 @@ Cat::~Cat() {
 
 //añadir operator= para poder igualarle el brain;
 Cat& Cat::operator=(const Cat &other) {
-	this->Animal::operator=(other);
+	this->AAnimal::operator=(other);
 
 	//this->_brain = other._brain;	//shallow copy
 	*this->_brain = *other._brain;	//deep copy		INVESTIGAR

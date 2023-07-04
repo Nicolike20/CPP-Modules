@@ -1,10 +1,10 @@
 #ifndef CAT_HPP_
 # define CAT_HPP_
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	public:
 		Cat();
 		Cat(const Cat &copy);
