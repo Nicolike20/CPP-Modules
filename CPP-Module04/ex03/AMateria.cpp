@@ -20,5 +20,5 @@ const std::string& AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter &target) {
-	target.getName();
+	(void)target; //pa que no haga nada, no?
 }
