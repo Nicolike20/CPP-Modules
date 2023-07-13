@@ -15,8 +15,6 @@ AMateria& AMateria::operator=(const AMateria &other) { //esto tiene sentido?
 	return *this;
 }
 
-//clone????
-
 const std::string& AMateria::getType() const {
 	return _type;
 }
