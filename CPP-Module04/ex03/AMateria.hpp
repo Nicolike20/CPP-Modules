@@ -8,7 +8,10 @@ class AMateria
 	public:
 		AMateria(const std::string &type);
 		//constructor default y de copia?
+		AMateria();
+		AMateria(const AMateria &copy);
 		//operador =?
+		AMateria& operator=(const AMateria &other);
 		virtual ~AMateria();
 
 		const std::string& getType() const; //Returns the materia type
