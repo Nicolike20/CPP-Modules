@@ -18,7 +18,7 @@ Dog::~Dog() {
 }
 
 Dog& Dog::operator=(const Dog &other) {
-	this->AAnimal::operator=(other); //igualar _type aqui instead?;
+	this->AAnimal::operator=(other);
 
 	//this->brain = other.brain; // shallow copy
 	*this->_brain = *other._brain; // deep copy -> INVESTIGAR

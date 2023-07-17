@@ -3,7 +3,7 @@
 #include "WrongCat.hpp"
 
 //TODO: deep copy?; -> check si está bien hecho
-//TODO: por qué puedo crear un array de
+//TODO: por qué puedo crear un array de AAnimals;
 //TODO: check leaks;
 
 int main()

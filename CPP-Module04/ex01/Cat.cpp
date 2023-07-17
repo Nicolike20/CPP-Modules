@@ -1,12 +1,12 @@
 #include "Cat.hpp"
 
-Cat::Cat() { //add brain;
+Cat::Cat() {
 	_brain = new Brain();
 	_type = "Cat";
 	std::cout << "Default Cat constructor called\n";
 }
 
-Cat::Cat(const Cat &copy) : Animal() { //add brain;
+Cat::Cat(const Cat &copy) : Animal() {
 	_brain = new Brain();
 	*this = copy;
 	std::cout << "Copy Cat constructor called\n";
@@ -17,13 +17,11 @@ Cat::~Cat() {
 	std::cout << "Cat destructor called\n";
 }
 
-//añadir operator= para poder igualarle el brain;
 Cat& Cat::operator=(const Cat &other) {
 	this->Animal::operator=(other);
 
 	//this->_brain = other._brain;	//shallow copy
 	*this->_brain = *other._brain;	//deep copy		INVESTIGAR
-	//no puedo igualar el _type aqui en vez de llamar al operator= de animal?
 	std::cout << "Cat assignment operator called\n";
 	return *this;
 }
