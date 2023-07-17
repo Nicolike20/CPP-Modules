@@ -14,7 +14,7 @@ Ice& Ice::operator=(const Ice &other) {
 }
 
 AMateria* Ice::clone() const { //QUE SIGNIFICABA EL CONST AL FINAL DEL PROTOTIPO DE LA FUNCION?
-	return new Ice(*this);
+	return new Ice(*this); //ESTO NO DA LEAKS?
 }
 
 void Ice::use(ICharacter &target) {
