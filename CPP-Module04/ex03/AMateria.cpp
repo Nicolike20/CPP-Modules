@@ -11,7 +11,7 @@ AMateria::AMateria(const AMateria &copy) { //esto tiene sentido? lo puedo quitar
 AMateria::~AMateria() {}
 
 AMateria& AMateria::operator=(const AMateria &other) { //esto tiene sentido?
-	_type = other._type;
+	_type = other._type; //quitar esto?
 	return *this;
 }
 
