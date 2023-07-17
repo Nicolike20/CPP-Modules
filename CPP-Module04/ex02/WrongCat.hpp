@@ -9,7 +9,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat(const WrongCat &copy);
 		~WrongCat();
 
-		void makeSound(); //consttt???
+		void makeSound() const;
 };
 
 #endif

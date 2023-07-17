@@ -2,9 +2,10 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-//TODO: deep copy?; -> check si está bien hecho
+//TODO: deep copy?; -> check si está bien hecho;
 //TODO: check explicacion d e virtual destructor en github;
 //TODO: check leaks;
+//TODO: que era lo de poner const al final del prototipo?;
 
 int main()
 {

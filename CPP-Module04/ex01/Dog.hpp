@@ -16,7 +16,7 @@ class Dog : public Animal {
 		Brain* getBrain() const;
 	
 	private:
-		Brain *_brain; //xq puntero?;
+		Brain *_brain;
 };
 
 #endif
