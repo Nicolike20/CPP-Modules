@@ -2,10 +2,6 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-//TODO: deep copy?; -> check si está bien hecho
-//TODO: por qué puedo crear un array de AAnimals;
-//TODO: check leaks;
-
 int main()
 {
 //	const AAnimal* animal = new AAnimal();
@@ -14,10 +10,9 @@ int main()
 
 	std::cout << "\n";
 
-//	std::cout << animal->getType() << "\n";
 	std::cout << dog->getType() << "\n";
 	std::cout << cat->getType() << "\n";
-//	animal->makeSound();
+
 	dog->makeSound();
 	cat->makeSound();
 
@@ -48,7 +43,6 @@ int main()
 
 	std::cout << "\n";
 	
-//	delete animal;
 	delete dog;
 	delete cat;
 	delete cat2;
@@ -57,7 +51,7 @@ int main()
 
 	//testing array of animals
 
-	AAnimal *animals[8]; //por qué esto si se puede?
+	AAnimal *animals[8];
 
 	for (int i = 0; i < 8; i++) {
 		if (i < 8 / 2) {
@@ -77,3 +71,5 @@ int main()
 
 	return 0;
 }
+
+//	system("leaks -q animals");
