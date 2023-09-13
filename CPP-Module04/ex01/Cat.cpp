@@ -21,7 +21,7 @@ Cat& Cat::operator=(const Cat &other) {
 	this->Animal::operator=(other);
 
 	//this->_brain = other._brain;	//shallow copy
-	*this->_brain = *other._brain;	//deep copy		INVESTIGAR
+	*this->_brain = *other._brain;	//deep copy
 	std::cout << "Cat assignment operator called\n";
 	return *this;
 }

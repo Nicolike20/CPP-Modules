@@ -2,11 +2,6 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-//TODO: deep copy?; -> check si está bien hecho;
-//TODO: check explicacion d e virtual destructor en github;
-//TODO: check leaks;
-//TODO: que era lo de poner const al final del prototipo?;
-
 int main()
 {
 	const Animal* animal = new Animal();
@@ -28,24 +23,24 @@ int main()
 	cat->getBrain()->_ideas[1] = "idea1";
 
 	std::cout << "Cat idea #0: " << cat->getBrain()->_ideas[0] << "\n";
-	std::cout << "Cat idea #1: " << cat->getBrain()->_ideas[1] << "\n";
+	std::cout << "Cat idea #1: " << cat->getBrain()->_ideas[1] << "\n\n";
 
 	Cat *cat2 = new Cat(); //create new cat
 
 	std::cout << "Cat2 idea #0: " << cat2->getBrain()->_ideas[0] << "\n";
-	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n";
+	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n\n";
 
 	*cat2 = *cat; //copy cat to cat2;
 
 	std::cout << "Cat2 idea #0: " << cat2->getBrain()->_ideas[0] << "\n";
-	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n";
+	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n\n";
 
 	cat->getBrain()->_ideas[0] = "no idea";
 
 	std::cout << "Cat idea #0: " << cat->getBrain()->_ideas[0] << "\n";
 	std::cout << "Cat idea #1: " << cat->getBrain()->_ideas[1] << "\n";
 	std::cout << "Cat2 idea #0: " << cat2->getBrain()->_ideas[0] << "\n";
-	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n";
+	std::cout << "Cat2 idea #1: " << cat2->getBrain()->_ideas[1] << "\n\n";
 
 	std::cout << "\n";
 	
@@ -78,3 +73,5 @@ int main()
 
 	return 0;
 }
+
+//	system("leaks -q animals");

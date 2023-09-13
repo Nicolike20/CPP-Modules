@@ -21,7 +21,7 @@ Dog& Dog::operator=(const Dog &other) {
 	this->Animal::operator=(other);
 
 	//this->brain = other.brain; // shallow copy
-	*this->_brain = *other._brain; // deep copy -> INVESTIGAR
+	*this->_brain = *other._brain; // deep copy
 
 	std::cout << "Dog assignment operator called\n";
 	return *this;
