@@ -1,4 +1,4 @@
-NAME = animals
+NAME = bureaucrats
 
 CXX = c++
 
@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp AAnimal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Bureaucrat.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
