@@ -37,12 +37,13 @@ void Bureaucrat::upgrade() {
 	try {
 		if (grade_ > 1) {
 			grade_ -= 1;
+			std::cout << name_ << "'s grade is now " << grade_ << "\n";
 		} else {
 			throw (grade_); //name tambien?;
 		}
 	}
 	catch (int grade) {
-		std::cout << "Can't increment the bureaucrat's grade\n";
+		std::cout << "Can't increment " << name_ << "'s grade\n";
 	}
 }
 
@@ -50,11 +51,12 @@ void Bureaucrat::downgrade() {
 	try {
 		if (grade_ < 150) {
 			grade_ += 1;
+			std::cout << name_ << "'s grade is now " << grade_ << "\n";
 		} else {
-			throw (grade_); //name tambien?;
+			throw (grade_); //name tambien?, o incluso "throw()" sin argumentos;
 		}
 	}
 	catch (int grade) {
-		std::cout << "Can't decrement the bureaucrat's grade\n";
+		std::cout << "Can't decrement " << name_ << "'s grade\n";
 	}
 }
