@@ -12,11 +12,7 @@ Bureaucrat::~Bureaucrat() {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name), grade_(grade) {
-	if (grade > 150) {
-		throw Bureaucrat::GradeTooLowException();
-	} if (grade < 1) {
-		throw Bureaucrat::GradeTooLowException();
-	}
+	checkGrade(grade_);
 	std::cout << *this << " created \n";
 }
 
@@ -47,19 +43,21 @@ int Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::upgrade() {
-	if (grade_ <= 1) {
-		throw Bureaucrat::GradeTooHighException();
-	} else {
-			grade_ -= 1;
-			std::cout << name_ << "'s grade is now " << grade_ << "\n";
-	}
+	checkGrade(grade_ - 1);
+	grade_ -= 1;
+	std::cout << name_ << "'s grade is now " << grade_ << "\n";
 }
 
 void Bureaucrat::downgrade() {
-	if (grade_ >= 150) {
+	checkGrade(grade_ + 1);
+	grade_ += 1;
+	std::cout << name_ << "'s grade is now " << grade_ << "\n";
+}
+
+void Bureaucrat::checkGrade(int grade) {
+	if (grade > 150) {
 		throw Bureaucrat::GradeTooLowException();
-	} else {
-		grade_ += 1;
-		std::cout << name_ << "'s grade is now " << grade_ << "\n";
+	} if (grade < 1) {
+		throw Bureaucrat::GradeTooHighException();
 	}
 }
