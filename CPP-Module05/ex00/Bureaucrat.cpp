@@ -1,8 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-	std::cout << "Bureaucrat default constructor called\n";
-}
+Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) {
 	*this = copy;
@@ -20,7 +18,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name), grade_
 		throw Bureaucrat::GradeTooLowException();
 	}
 	std::cout << *this << " created \n";
-} //const std::string &name?
+}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other) {
 	grade_ = other.grade_;
@@ -33,10 +31,10 @@ std::ostream& operator<<(std::ostream &stream, const Bureaucrat &br) {
 	return stream;
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const _NOEXCEPT {
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return "Exception: Grade too high\n";
 }
-const char* Bureaucrat::GradeTooLowException::what() const _NOEXCEPT {
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return "Exception: Grade too low\n";
 }
 

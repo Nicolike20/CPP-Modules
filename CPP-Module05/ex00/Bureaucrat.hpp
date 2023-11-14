@@ -8,7 +8,7 @@
 class Bureaucrat {
 	public:
 		Bureaucrat(const Bureaucrat &copy);
-		Bureaucrat(const std::string &name, int grade); //const std::string &name? -> por que?
+		Bureaucrat(const std::string &name, int grade);
 		~Bureaucrat();
 
 		Bureaucrat& operator=(const Bureaucrat &other);
@@ -19,10 +19,10 @@ class Bureaucrat {
 		void downgrade();
 
 		class GradeTooHighException : public std::exception {
-			public: const char* what() const _NOEXCEPT; //throw()? -> por que?
+			public: const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
-			public: const char* what() const _NOEXCEPT; //throw()?
+			public: const char* what() const throw();
 		};
 	private:
 		Bureaucrat();
@@ -32,6 +32,6 @@ class Bureaucrat {
 
 };
 
-std::ostream& operator<<(std::ostream &stream, const Bureaucrat &br); //esto aqui o fuera de la clase? -> por que?
+std::ostream& operator<<(std::ostream &stream, const Bureaucrat &br);
 
 #endif
