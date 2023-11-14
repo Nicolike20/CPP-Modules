@@ -3,7 +3,7 @@
 Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) {
-	*this = copy;
+	*this = copy; //cambiar esto aqui y en ex00?
 	std::cout << "Bureaucrat copy constructor called\n";
 }
 
@@ -60,4 +60,8 @@ void Bureaucrat::checkGrade(int grade) {
 	} if (grade < 1) {
 		throw Bureaucrat::GradeTooHighException();
 	}
+}
+
+void Bureaucrat::signForm(Form &form) {
+	form.beSigned(*this);
 }

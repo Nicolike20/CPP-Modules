@@ -1,6 +1,8 @@
 #ifndef BUREAUCRAT_HPP_
 # define BUREAUCRAT_HPP_
 
+# include "Form.hpp"
+
 # include <string>
 # include <iostream>
 # include <exception>
@@ -25,6 +27,8 @@ class Bureaucrat {
 		class GradeTooLowException : public std::exception {
 			public: const char* what() const throw();
 		};
+
+		void signForm(Form &form);
 	private:
 		Bureaucrat();
 	

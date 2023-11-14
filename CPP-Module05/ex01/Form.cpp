@@ -3,7 +3,7 @@
 Form::Form() {}
 
 Form::Form(const Form &copy) {
-    *this = copy;
+    *this = copy; //cambiar esto y en bureaucrats?
     std::cout << "Form copy constructor called\n";
 }
 
@@ -13,6 +13,7 @@ Form::~Form() {
 
 Form::Form(const std::string &name, const int sGrade, const int eGrade) : 
  name_(name),
+ signed_(false),
  sGrade_(sGrade),
  eGrade_(eGrade) {
     //checkGrade()?;
@@ -25,7 +26,8 @@ Form& Form::operator=(cosnt Form &other) {
 }
 
 std::ostream& operator<<(std::ostream &stream, const Form &form) {
-    stream << form.getName() << " form, signing grade " << form.getSGrade()
+    stream << form.getName() << " form, currently " << (form.getBool() ? "signed" : "not signed") 
+    << " signing grade " << form.getSGrade()
     << ", executing grade " << form.getEGrade() << "\n";
 }
 
@@ -54,5 +56,11 @@ const int getEGrade() {
 }
 
 void beSigned(const Bureaucrat &br) {
-    //klk;
+    if (br.getGrade() <= sGrade_) {
+        signed_ = true;
+        std::cout << br.getName() << " signed " << name_ << "\n";
+    } else {
+        std::cout << br.getName() << " couldn't sign " << name_ << "\n";
+        throw Form::GradeTooLowException();
+    }
 }

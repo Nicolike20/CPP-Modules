@@ -27,7 +27,7 @@ class Form {
 		const int getSGrade();
 		const int getEGrade();
 
-		void beSigned(const Bureaucrat &br); //signForm() en Bureaucrats klk?
+		void beSigned(const Bureaucrat &br);
 	private:
 		Form();
 		
