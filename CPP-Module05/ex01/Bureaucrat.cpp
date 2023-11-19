@@ -2,8 +2,7 @@
 
 Bureaucrat::Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy) {
-	*this = copy; //cambiar esto aqui y en ex00?
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {
 	std::cout << "Bureaucrat copy constructor called\n";
 }
 
