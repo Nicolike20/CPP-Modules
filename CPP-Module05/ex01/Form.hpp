@@ -29,6 +29,7 @@ class Form {
 		int getSGrade() const;
 		int getEGrade() const;
 
+		void checkGrades(int sGrade, int eGrade);
 		void beSigned(const Bureaucrat &br);
 	private:
 		Form();

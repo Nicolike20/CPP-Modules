@@ -46,7 +46,7 @@ int main() {
 	std::cout << "\n" << b2 << "\n" << f2 << "\n\n"; //por qué no sale el nombre del burocrata?;
 
 	Bureaucrat b3(b2);
-	Form f3("Grocery list", 149, 100);
+	Form f3("Grocery List", 149, 100);
 	try {
 //		b3.signForm(f3);
 		b3.upgrade();
@@ -56,6 +56,12 @@ int main() {
 	}
 	
 	std::cout << "\n" << b3 << "\n" << f3 << "\n\n";
+
+	try {
+		Form f4("Bad Form", 200, 200);
+	} catch (std::exception& e) {
+		std::cout << e.what();
+	}
 
 	return (0);
 }

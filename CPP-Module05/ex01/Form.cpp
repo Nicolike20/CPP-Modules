@@ -16,7 +16,7 @@ Form::Form(const std::string &name, const int sGrade, const int eGrade)
  signed_(false),
  sGrade_(sGrade),
  eGrade_(eGrade) {
-    //checkGrade()?;
+    checkGrades(sGrade_, eGrade_);
     std::cout << *this << " created\n";
 }
 
@@ -32,7 +32,7 @@ Form& Form::operator=(const Form &other) {
 std::ostream& operator<<(std::ostream &stream, const Form &form) {
     stream << form.getName() << " form, currently " << (form.getBool() ? "signed." : "not signed.") 
     << " Signing grade " << form.getSGrade()
-    << ", executing grade " << form.getEGrade() << "\n";
+    << ", executing grade " << form.getEGrade();
     return stream;
 }
 
@@ -59,7 +59,13 @@ int Form::getSGrade() const {
 int Form::getEGrade() const {
     return eGrade_;
 }
-
+void Form::checkGrades(int sGrade, int eGrade) {
+    if (sGrade > 150 || eGrade > 150) {
+        throw Form::GradeTooLowException();
+    } if (sGrade < 1 || eGrade < 1) {
+        throw Form::GradeTooHighException();
+    }
+}
 void Form::beSigned(const Bureaucrat &br) {
     if (br.getGrade() <= sGrade_) {
         signed_ = true;
