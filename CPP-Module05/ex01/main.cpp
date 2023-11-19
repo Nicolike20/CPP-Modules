@@ -3,10 +3,10 @@
 #include <exception>
 
 int main() {
-	Bureaucrat b1("Mark", 1);
+	Bureaucrat b1("Marshall", 1);
 	Form f1("The Ninja Report", 1, 1);
 	
-	try {
+	/*try {
 		std::cout  << b1 << "\n";
 		b1.downgrade(); //quitar esto? muxo texto;
 		b1.upgrade();
@@ -14,7 +14,7 @@ int main() {
 		b1.downgrade();
 	} catch (std::exception& e) {
 		std::cout << e.what();
-	}
+	}*/
 	
 	try {
 		f1.beSigned(b1);
@@ -26,7 +26,7 @@ int main() {
 
 	Bureaucrat b2("Larry", 145);
 	Form f2("X File", 115, 115);
-	try {
+	/*try {
 		b2.downgrade(); //quitar estos? muxo texto;
 		b2.downgrade();
 		b2.downgrade();
@@ -35,7 +35,7 @@ int main() {
 		b2.downgrade();
 	} catch (std::exception& e) {
 		std::cout << e.what();
-	}
+	}*/
 
 	try {
 		f1.beSigned(b2);

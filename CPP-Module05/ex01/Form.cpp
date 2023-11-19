@@ -21,7 +21,6 @@ Form::Form(const std::string &name, const int sGrade, const int eGrade)
 }
 
 Form& Form::operator=(const Form &other) {
-    //aqui klk
     std::cout << "Form assignment operator called\n";
     if (this != &other) {
         return *this; //esto que plan
