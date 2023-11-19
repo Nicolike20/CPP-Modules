@@ -1,8 +1,8 @@
 #include "Form.hpp"
 
-Form::Form() {}
+Form::Form() : name_("Form"), signed_(false), sGrade_(115), eGrade_(115) {}
 
-Form::Form(const Form &copy) {
+Form::Form(const Form &copy) : name_(copy.name_), signed_(copy.signed_), sGrade_(copy.sGrade_), eGrade_(copy.eGrade_){
     *this = copy; //cambiar esto y en bureaucrats?
     std::cout << "Form copy constructor called\n";
 }
@@ -11,8 +11,8 @@ Form::~Form() {
     std::cout << "Form destructor called\n";
 }
 
-Form::Form(const std::string &name, const int sGrade, const int eGrade) : 
- name_(name),
+Form::Form(const std::string &name, const int sGrade, const int eGrade)
+: name_(name),
  signed_(false),
  sGrade_(sGrade),
  eGrade_(eGrade) {
@@ -20,15 +20,20 @@ Form::Form(const std::string &name, const int sGrade, const int eGrade) :
     std::cout << *this << " created\n";
 }
 
-Form& Form::operator=(cosnt Form &other) {
+Form& Form::operator=(const Form &other) {
     //aqui klk
     std::cout << "Form assignment operator called\n";
+    if (this != &other) {
+        return *this; //esto que plan
+    }
+    return *this;
 }
 
 std::ostream& operator<<(std::ostream &stream, const Form &form) {
     stream << form.getName() << " form, currently " << (form.getBool() ? "signed" : "not signed") 
     << " signing grade " << form.getSGrade()
     << ", executing grade " << form.getEGrade() << "\n";
+    return stream;
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
@@ -39,23 +44,23 @@ const char* Form::GradeTooLowException::what() const throw() {
     return "Exception: Grade too low\n";
 }
 
-const std::string getName() {
-    return name_
+const std::string Form::getName() const {
+    return name_;
 }
 
-bool getBool() {
+bool Form::getBool() const {
     return signed_;
 }
 
-const int getSGrade() {
+int Form::getSGrade() const {
     return sGrade_;
 }
 
-const int getEGrade() {
+int Form::getEGrade() const {
     return eGrade_;
 }
 
-void beSigned(const Bureaucrat &br) {
+void Form::beSigned(const Bureaucrat &br) {
     if (br.getGrade() <= sGrade_) {
         signed_ = true;
         std::cout << br.getName() << " signed " << name_ << "\n";

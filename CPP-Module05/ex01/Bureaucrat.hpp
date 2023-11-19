@@ -7,6 +7,8 @@
 # include <iostream>
 # include <exception>
 
+class Form;
+
 class Bureaucrat {
 	public:
 		Bureaucrat(const Bureaucrat &copy);

@@ -7,6 +7,8 @@
 # include <iostream>
 # include <exception>
 
+class Bureaucrat; //para que compile en linux "main file cannot be included recursively..."
+
 class Form {
 	public:
 		Form(const std::string &name, const int sGrade, const int eGrade);
@@ -22,10 +24,10 @@ class Form {
 			public: const char* what() const throw();
 		};
 
-		const std::string getName();
-		bool getBool();
-		const int getSGrade();
-		const int getEGrade();
+		const std::string getName() const;
+		bool getBool() const;
+		int getSGrade() const;
+		int getEGrade() const;
 
 		void beSigned(const Bureaucrat &br);
 	private:
