@@ -30,8 +30,8 @@ Form& Form::operator=(const Form &other) {
 }
 
 std::ostream& operator<<(std::ostream &stream, const Form &form) {
-    stream << form.getName() << " form, currently " << (form.getBool() ? "signed" : "not signed") 
-    << " signing grade " << form.getSGrade()
+    stream << form.getName() << " form, currently " << (form.getBool() ? "signed." : "not signed.") 
+    << " Signing grade " << form.getSGrade()
     << ", executing grade " << form.getEGrade() << "\n";
     return stream;
 }
