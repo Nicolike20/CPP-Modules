@@ -2,8 +2,11 @@
 
 Form::Form() : name_("Form"), signed_(false), sGrade_(115), eGrade_(115) {}
 
-Form::Form(const Form &copy) : name_(copy.name_), signed_(copy.signed_), sGrade_(copy.sGrade_), eGrade_(copy.eGrade_){
-    *this = copy; //cambiar esto y en bureaucrats?
+Form::Form(const Form &copy) 
+: name_(copy.name_),
+signed_(copy.signed_),
+sGrade_(copy.sGrade_),
+eGrade_(copy.eGrade_) {
     std::cout << "Form copy constructor called\n";
 }
 
@@ -22,8 +25,8 @@ Form::Form(const std::string &name, const int sGrade, const int eGrade)
 
 Form& Form::operator=(const Form &other) {
     std::cout << "Form assignment operator called\n";
-    if (this != &other) {
-        return *this; //esto que plan
+    if (this == &other) {
+        return *this;
     }
     return *this;
 }
