@@ -2,8 +2,9 @@
 
 Bureaucrat::Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy) : name_(copy.name_), grade_(copy.grade_) {
-	//*this = copy????
+Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+: name_(copy.name_),
+grade_(copy.grade_) {
 	std::cout << "Bureaucrat copy constructor called\n";
 }
 
@@ -11,7 +12,9 @@ Bureaucrat::~Bureaucrat() {
 	std::cout << "Bureaucrat destructor called\n";
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : name_(name), grade_(grade) {
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+: name_(name),
+grade_(grade) {
 	checkGrade(grade_);
 	std::cout << *this << " created \n";
 }
