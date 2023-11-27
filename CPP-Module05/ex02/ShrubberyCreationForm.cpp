@@ -26,4 +26,5 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void ShrubberyCreationForm::validExecution() const {
 	//cosas de shrubbery n shit
+	std::cout << "Shrubbery Creation Form executed\n"; //TEMP
 }
