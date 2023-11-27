@@ -25,6 +25,7 @@ class Form {
 		};
 		//añadir excepcion por si el form no ta firmao;
 
+		const std::string getTarget() const; //not done
 		const std::string getName() const;
 		bool getBool() const;
 		int getSGrade() const;
@@ -37,7 +38,8 @@ class Form {
 		virtual void validExecution() const = 0; //aqui cada form hace sus cosas independientes si todo es valido;
 	private:
 		Form();
-		
+
+		const std::string target_; //esto aqui o en los otros
 		const std::string name_;
 		bool signed_;
 		const int sGrade_;

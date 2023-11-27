@@ -25,7 +25,7 @@ Form::Form(const std::string &name, const int sGrade, const int eGrade)
 
 Form& Form::operator=(const Form &other) {
     std::cout << "Form assignment operator called\n";
-    if (this == &other) {
+    if (this == &other) { //COMPARAR ESTO CON OTRA GENTE
         return *this;
     }
     return *this;
