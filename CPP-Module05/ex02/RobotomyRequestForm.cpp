@@ -1,14 +1,14 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : Form("Robotomy Request", "N/A", 72, 45) {}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", "N/A", 72, 45) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) 
-: Form("Robotomy Request", target, 72, 45) {
+: AForm("Robotomy Request", target, 72, 45) {
 	std::cout << "Robotomy Request Form constructor called\n";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) //getTaret()
-: Form(copy.getName(), copy.getTarget(), copy.getSGrade(), copy,getEGrade()) {
+: AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Robotomy Request Form copy constructor called\n";
 }
 

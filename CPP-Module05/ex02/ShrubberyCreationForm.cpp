@@ -1,14 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubbery Creation", "N/A", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", "N/A", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) 
-: Form("Shrubbery Creation", target, 145, 137) {
+: AForm("Shrubbery Creation", target, 145, 137) {
 	std::cout << "Shrubbery Creation Form constructor called\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) //getTaret()
-: Form(copy.getName(), copy.getTarget(), copy.getSGrade(), copy,getEGrade()) {
+: AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Shrubbery Creation Form copy constructor called\n";
 }
 

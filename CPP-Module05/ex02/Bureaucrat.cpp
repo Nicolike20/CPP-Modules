@@ -61,6 +61,6 @@ void Bureaucrat::checkGrade(int grade) {
 	}
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	form.beSigned(*this);
 }

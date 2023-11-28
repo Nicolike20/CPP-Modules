@@ -1,13 +1,13 @@
 #ifndef BUREAUCRAT_HPP_
 # define BUREAUCRAT_HPP_
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 # include <string>
 # include <iostream>
 # include <exception>
 
-class Form;
+class AForm; //linux?
 
 class Bureaucrat {
 	public:
@@ -30,8 +30,8 @@ class Bureaucrat {
 			public: const char* what() const throw();
 		};
 
-		void signForm(Form &form);
-		void executeForm(AForm const & form); //not done
+		void signForm(AForm &form);
+		void executeForm(AForm const & form); //NOT DONEEE
 	private:
 		Bureaucrat();
 	

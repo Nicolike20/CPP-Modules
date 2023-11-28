@@ -1,14 +1,14 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential Pardon", "N/A", 25, 5) {}
+PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", "N/A", 25, 5) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) 
-: Form("Presidential Pardon", target, 25, 5) {
+: AForm("Presidential Pardon", target, 25, 5) {
 	std::cout << "Presidential Pardon Form constructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) //getTaret()
-: Form(copy.getName(), copy.getTarget(), copy.getSGrade(), copy,getEGrade()) {
+: AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Presidential Pardon Form copy constructor called\n";
 }
 

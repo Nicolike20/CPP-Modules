@@ -1,5 +1,5 @@
-#ifndef FORM_HPP_
-# define FORM_HPP_
+#ifndef AFORM_HPP_
+# define AFORM_HPP_
 
 # include "Bureaucrat.hpp"
 
@@ -9,13 +9,13 @@
 
 class Bureaucrat; //para que compile en linux "main file cannot be included recursively..."
 
-class Form {
+class AForm {
 	public:
-		Form(const std::string &name, const int sGrade, const int eGrade);
-		Form(const Form &copy);
-		virtual ~Form();
+		AForm(const std::string &name, const std::string &target, const int sGrade, const int eGrade);
+		AForm(const AForm &copy);
+		virtual ~AForm();
 
-		Form& operator=(const Form &other);
+		AForm& operator=(const AForm &other);
 
 		class GradeTooHighException : public std::exception {
 			public: const char* what() const throw();
@@ -23,9 +23,11 @@ class Form {
 		class GradeTooLowException : public std::exception {
 			public: const char* what() const throw();
 		};
-		//añadir excepcion por si el form no ta firmao;
+		class FormNotSignedException : public std::exception {
+			public: const char* what() const throw();
+		};
 
-		const std::string getTarget() const; //not done
+		const std::string getTarget() const;
 		const std::string getName() const;
 		bool getBool() const;
 		int getSGrade() const;
@@ -34,18 +36,18 @@ class Form {
 		void checkGrades(int sGrade, int eGrade);
 		void beSigned(const Bureaucrat &br);
 
-		void execute(Bureaucrat const & executor) const; //not done (aqui check si hay nivel suficiente y si el form ta firmao y llamas a validExecution);
+		void execute(Bureaucrat const & executor) const; //check this
 		virtual void validExecution() const = 0; //aqui cada form hace sus cosas independientes si todo es valido;
 	private:
-		Form();
+		AForm();
 
-		const std::string target_; //esto aqui o en los otros
 		const std::string name_;
+		const std::string target_;
 		bool signed_;
 		const int sGrade_;
 		const int eGrade_;
 };
 
-std::ostream& operator<<(std::ostream &stream, const Form &form);
+std::ostream& operator<<(std::ostream &stream, const AForm &form);
 
 #endif
