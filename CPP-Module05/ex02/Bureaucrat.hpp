@@ -7,7 +7,7 @@
 # include <iostream>
 # include <exception>
 
-class AForm; //linux?
+class AForm;
 
 class Bureaucrat {
 	public:
@@ -31,7 +31,7 @@ class Bureaucrat {
 		};
 
 		void signForm(AForm &form);
-		void executeForm(AForm const & form); //NOT DONEEE
+		void executeForm(AForm const & form);
 	private:
 		Bureaucrat();
 	
