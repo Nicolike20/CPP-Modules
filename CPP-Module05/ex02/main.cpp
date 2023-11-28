@@ -1,9 +1,13 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <exception>
 
 int main() {
 	Bureaucrat b1("Marshall", 1);
+	ShrubberyCreationForm s1("tumare");
 	//AForm f1("The Ninja Report", 1, 1);
 	
 	/*try {
