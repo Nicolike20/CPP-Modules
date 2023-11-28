@@ -7,7 +7,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 	std::cout << "Robotomy Request Form constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) //getTaret()
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Robotomy Request Form copy constructor called\n";
 }

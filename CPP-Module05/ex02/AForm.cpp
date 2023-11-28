@@ -90,12 +90,13 @@ void AForm::beSigned(const Bureaucrat &br) {
 
 void AForm::execute(Bureaucrat const & executor) const {
     if (signed_ == false) {
-        std::cout << executor.getName() << "couldn't sign " << name_ << "\n";
+        std::cout << executor.getName() << " couldn't execute " << name_ << "\n";
         throw AForm::FormNotSignedException();
     } else if (executor.getGrade() > eGrade_) {
-        std::cout << executor.getName() << "couldn't sign " << name_ << "\n";
+        std::cout << executor.getName() << " couldn't execute " << name_ << "\n";
         throw AForm::GradeTooLowException();
     } else {
         validExecution(); //check to esto;
+        std::cout << executor.getName() << " executed " << name_ << "\n"; //esto aqui o encima del validExecution();
     }
 }

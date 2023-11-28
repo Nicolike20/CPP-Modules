@@ -10,6 +10,12 @@ int main() {
 	ShrubberyCreationForm s1("tumare");
 	//AForm f1("The Ninja Report", 1, 1);
 	
+	try {
+		s1.beSigned(b1);
+		b1.executeForm(s1);
+	} catch (std::exception& e) {
+		std::cout << e.what();
+	}
 	/*try {
 		f1.beSigned(b1);
 	} catch (std::exception& e) {

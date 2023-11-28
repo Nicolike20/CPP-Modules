@@ -7,7 +7,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 	std::cout << "Presidential Pardon Form constructor called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) //getTaret()
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Presidential Pardon Form copy constructor called\n";
 }

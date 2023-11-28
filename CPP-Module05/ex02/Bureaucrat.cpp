@@ -64,3 +64,7 @@ void Bureaucrat::checkGrade(int grade) {
 void Bureaucrat::signForm(AForm &form) {
 	form.beSigned(*this);
 }
+
+void Bureaucrat::executeForm(AForm const & form) {
+	form.execute(*this); //esto ta bien? y el signform? un try catch aqui maybe?
+}

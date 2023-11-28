@@ -7,7 +7,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 	std::cout << "Shrubbery Creation Form constructor called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) //getTaret()
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
 	std::cout << "Shrubbery Creation Form copy constructor called\n";
 }
