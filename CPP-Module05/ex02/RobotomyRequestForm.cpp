@@ -20,7 +20,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
 	std::cout << "Robotomy Request Form assignment operator called\n";
-	if (this == &other) { //COMPARAR ESTO CON OTRA GENTE
+	if (this == &other) {
 		return *this;
 	}
 	return *this;

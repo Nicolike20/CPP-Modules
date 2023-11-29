@@ -19,7 +19,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
 	std::cout << "Shrubbery Creation Form assignment operator called\n";
-	if (this == &other) { //COMPARAR ESTO CON OTRA GENTE
+	if (this == &other) {
 		return *this;
 	}
 	return *this;

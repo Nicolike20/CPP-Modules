@@ -27,8 +27,8 @@ target_(target),
 
 AForm& AForm::operator=(const AForm &other) {
     std::cout << "Form assignment operator called\n";
-    if (this == &other) { //COMPARAR ESTO CON OTRA GENTE
-        return *this;
+    if (this != &other) {
+        signed_ = other.getBool();
     }
     return *this;
 }
