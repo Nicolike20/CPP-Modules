@@ -37,7 +37,7 @@ class AForm {
 		void beSigned(const Bureaucrat &br);
 
 		void execute(Bureaucrat const & executor) const; //check this
-		virtual void validExecution() const = 0; //aqui cada form hace sus cosas independientes si todo es valido;
+		virtual void validExecution() const = 0;
 	private:
 		AForm();
 
