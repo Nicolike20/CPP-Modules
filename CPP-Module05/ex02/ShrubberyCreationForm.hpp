@@ -2,6 +2,7 @@
 # define SHRUBBERYCREATIONFORM_HPP_
 
 # include "AForm.hpp"
+# include "fstream"
 
 class ShrubberyCreationForm : public AForm {
 	public:

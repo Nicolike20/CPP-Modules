@@ -1,6 +1,4 @@
 #include "RobotomyRequestForm.hpp"
-#include "stdlib.h"
-#include "time.h"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", "N/A", 72, 45) {}
 
