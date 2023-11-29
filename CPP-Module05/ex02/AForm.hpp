@@ -7,7 +7,7 @@
 # include <iostream>
 # include <exception>
 
-class Bureaucrat; //para que compile en linux "main file cannot be included recursively..."
+class Bureaucrat;
 
 class AForm {
 	public:
@@ -36,7 +36,7 @@ class AForm {
 		void checkGrades(int sGrade, int eGrade);
 		void beSigned(const Bureaucrat &br);
 
-		void execute(Bureaucrat const & executor) const; //check this
+		void execute(Bureaucrat const & executor) const;
 		virtual void validExecution() const = 0;
 	private:
 		AForm();

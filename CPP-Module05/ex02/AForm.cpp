@@ -97,6 +97,6 @@ void AForm::execute(Bureaucrat const & executor) const {
         throw AForm::GradeTooLowException();
     } else {
         std::cout << executor.getName() << " executed " << name_ << "\n";
-        validExecution(); //check to esto;
+        validExecution();
     }
 }

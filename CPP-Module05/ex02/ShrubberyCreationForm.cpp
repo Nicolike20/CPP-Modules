@@ -4,12 +4,12 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", "N/
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) 
 : AForm("Shrubbery Creation", target, 145, 137) {
-	std::cout << "Shrubbery Creation Form constructor called\n";
+	std::cout << "Shrubbery Creation Form constructor called. Target: " << this->getTarget() << "\n";
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
-	std::cout << "Shrubbery Creation Form copy constructor called\n";
+	std::cout << "Shrubbery Creation Form copy constructor called. Target: " << this->getTarget() << "\n";
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {

@@ -4,12 +4,12 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target) 
 : AForm("Presidential Pardon", target, 25, 5) {
-	std::cout << "Presidential Pardon Form constructor called\n";
+	std::cout << "Presidential Pardon Form constructor called. Target: " << this->getTarget() << "\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
-	std::cout << "Presidential Pardon Form copy constructor called\n";
+	std::cout << "Presidential Pardon Form copy constructor called Target: " << this->getTarget() << "\n";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {

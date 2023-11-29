@@ -4,12 +4,12 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", "N/A", 72
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) 
 : AForm("Robotomy Request", target, 72, 45) {
-	std::cout << "Robotomy Request Form constructor called\n";
+	std::cout << "Robotomy Request Form constructor called. Target: " << this->getTarget() << "\n";
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getSGrade(), copy.getEGrade()) {
-	std::cout << "Robotomy Request Form copy constructor called\n";
+	std::cout << "Robotomy Request Form copy constructor called. Target: " << this->getTarget() << "\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {

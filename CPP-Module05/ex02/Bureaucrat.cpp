@@ -67,4 +67,5 @@ void Bureaucrat::signForm(AForm &form) {
 
 void Bureaucrat::executeForm(AForm const & form) {
 	form.execute(*this); //esto ta bien? y el signform? un try catch aqui maybe?
+	//comprobar esto con las hojas de evaluaciones (kasita);
 }
