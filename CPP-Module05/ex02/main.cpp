@@ -24,9 +24,16 @@ int main() {
 	//std::cout << "\n" << b1 << "\n" << f1 <<"\n\n";
 	std::cout << "\n" << b1 << "\n\n";
 
-	Bureaucrat b2("Larry", 145);
+	Bureaucrat b2("Larry", 45);
+	RobotomyRequestForm r1("mimare");
 	//AForm f2("X File", 115, 115);
 
+	try {
+		b2.signForm(r1);
+		r1.execute(b2);
+	} catch (std::exception& e) {
+		std::cout << e.what();
+	}
 	/*try {
 		f1.beSigned(b2);
 	} catch (std::exception& e) {
@@ -36,7 +43,15 @@ int main() {
 	//std::cout << "\n" << b2 << "\n" << f2 << "\n\n";
 	std::cout << "\n" << b2 << "\n\n";
 
-	Bureaucrat b3(b2);
+	Bureaucrat b3("Stan", 5);
+	PresidentialPardonForm p1("sumare");
+
+	try {
+		p1.beSigned(b3);
+		p1.execute(b3);
+	} catch (std::exception& e) {
+		std::cout << e.what();
+	}
 	/*//AForm f3("Grocery List", 144, 100);
 	try {
 //		b3.signForm(f3);

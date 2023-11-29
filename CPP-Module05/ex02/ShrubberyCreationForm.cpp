@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include "fstream"
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery Creation", "N/A", 145, 137) {}
 
@@ -25,6 +26,21 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::validExecution() const {
-	//cosas de shrubbery n shit
-	std::cout << "Shrubbery Creation Form executed\n"; //TEMP
+	//std::ofstream outfile(this->getTarget() + "_shrubbery"), std; //mirar opciones de creacion
+	std::ofstream outfile;
+	outfile.open(this->getTarget() + "_shrubbery", std::ofstream::trunc); //esta forma o la primera?
+	outfile << "        __ _.--..--._ _\n"
+			<< "     .-' _/   _/\\_   \\_'-.\n"
+			<< "    |__ /   _/\\__/\\_   \\__|\n"
+			<< "       |___/\\_\\__/  \\___|\n"
+			<< "              \\__/\n"
+			<< "              \\__/\n"
+			<< "               \\__/\n"
+			<< "                \\__/\n"
+			<< "             ____\\__/___\n"
+			<< "       . - '             ' - .\n"
+			<< "      /                        \\\n"
+			<< "~~~~~~~  ~~~~~  ~~~~~  ~~~  ~~~  ~~~~~\n"
+			<< "  ~~~   ~~~~~   ~~~~   ~~   ~ ~ ~ ~\n";
+	outfile.close();
 }

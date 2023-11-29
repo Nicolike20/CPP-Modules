@@ -1,4 +1,6 @@
 #include "RobotomyRequestForm.hpp"
+#include "stdlib.h"
+#include "time.h"
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy Request", "N/A", 72, 45) {}
 
@@ -25,6 +27,13 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 }
 
 void RobotomyRequestForm::validExecution() const {
-	//cosas de robotomy n shit
-	std::cout << "Robotomy Request Form executed\n"; //TEMP
+	std::cout << "*DRILING NOISES*\n";
+	std::srand(std::time(NULL));
+	//50%
+	if (std::rand() % 2 == 0) {
+		std::cout << this->getTarget() << " has been robotomized successfully.\n";
+	} else {
+		std::cout << this->getTarget() << "'s robotomy failed.\n";
+	}
+	
 }

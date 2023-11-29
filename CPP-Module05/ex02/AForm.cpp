@@ -96,7 +96,7 @@ void AForm::execute(Bureaucrat const & executor) const {
         std::cout << executor.getName() << " couldn't execute " << name_ << "\n";
         throw AForm::GradeTooLowException();
     } else {
+        std::cout << executor.getName() << " executed " << name_ << "\n";
         validExecution(); //check to esto;
-        std::cout << executor.getName() << " executed " << name_ << "\n"; //esto aqui o encima del validExecution();
     }
 }
