@@ -7,7 +7,7 @@
 # include <iostream>
 # include <exception>
 
-class Bureaucrat; //para que compile en linux "main file cannot be included recursively..."
+class Bureaucrat;
 
 class Form {
 	public:

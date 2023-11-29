@@ -6,7 +6,7 @@ int main() {
 	Bureaucrat b1("Marshall", 1);
 	Form f1("The Ninja Report", 1, 1);
 	
-	try {
+	try { //Sign test
 		f1.beSigned(b1);
 	} catch (std::exception& e) {
 		std::cout << e.what();
@@ -16,7 +16,7 @@ int main() {
 	Bureaucrat b2("Larry", 145);
 	Form f2("X File", 115, 115);
 
-	try {
+	try { //Low grade test
 		f1.beSigned(b2);
 	} catch (std::exception& e) {
 		std::cout << e.what();
