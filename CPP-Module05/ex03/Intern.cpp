@@ -5,7 +5,7 @@ Intern::Intern() {
 }
 
 Intern::Intern(const Intern &copy) {
-    *this = copy; //?
+    *this = copy; //? //CHECKEAR TODOS LOS CONSTRUCTORES DE COPIA
     std::cout << "Intern copy constructor called\n";
 }
 
@@ -15,15 +15,15 @@ Intern::~Intern() {
 
 Intern& Intern::operator=(const Intern &other) {
     std::cout << "Intern assignment operator called\n";
+    //(void) other; //y quitar lo demas¿ //CHECKEAR TODOS LOS OPERATORS
     if (this != &other) {
-        return *this; //?
+        return *this;
     }
     return *this;
 }
 
 AForm* Intern::makeForm(const std::string &name, const std::string &target) {
     std::string formTypes[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
-//    AForm *formArray[3] = {new *ShrubberyCreationForm, new *RobotomyRequestForm, new *PresidentialPardonForm};
     int n = -1;
     AForm *res = NULL;
 
