@@ -62,5 +62,9 @@ void Bureaucrat::checkGrade(int grade) {
 }
 
 void Bureaucrat::signForm(Form &form) {
-	form.beSigned(*this);
+	try {
+		form.beSigned(*this);
+	} catch (std::exception& e) {
+		std::cout << e.what();
+	}
 }
