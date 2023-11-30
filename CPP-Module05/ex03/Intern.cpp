@@ -51,7 +51,6 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target) {
 
     if (res != NULL) {
         std::cout << "Intern creates " << res->getName() <<  "form\n";
-        //std::cout << "Intern creates " << name << "\n";
     }
 
     return res;
