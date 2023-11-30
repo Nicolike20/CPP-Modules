@@ -75,5 +75,4 @@ void Bureaucrat::executeForm(AForm const & form) {
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
-	//comprobar esto con las hojas de evaluaciones
 }

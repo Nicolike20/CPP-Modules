@@ -25,9 +25,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::validExecution() const {
-	//std::ofstream outfile(this->getTarget() + "_shrubbery"), std; //mirar opciones de creacion
-	std::ofstream outfile;
-	outfile.open(this->getTarget() + "_shrubbery", std::ofstream::trunc); //esta forma o la primera?
+	std::ofstream outfile(this->getTarget() + "_shrubbery");
 	outfile << "        __ _.--..--._ _\n"
 			<< "     .-' _/   _/\\_   \\_'-.\n"
 			<< "    |__ /   _/\\__/\\_   \\__|\n"
