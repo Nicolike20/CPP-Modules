@@ -3,10 +3,11 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include <exception>
 
 int main() {
-	Bureaucrat b1("Marshall", 1);
+	/*Bureaucrat b1("Marshall", 1);
 	ShrubberyCreationForm s1("Island");
 	
 	try { //Shrubbery test
@@ -58,7 +59,32 @@ int main() {
 		std::cout << e.what();
 	}
 
+	std::cout << "\n";*/
+
+	Intern i;
+
+	AForm *f1;
+	AForm *f2;
+	AForm *f3;
+
+	f1 = i.makeForm("PresidentialPardonForm", "tumare");
 	std::cout << "\n";
+	std::cout << "\n";
+	f2 = i.makeForm("ShrubberyCreationForm", "mimare");
+	std::cout << "\n";
+	std::cout << "\n";
+	f3 = i.makeForm("RobotomyRequestForm", "sumare");
+	std::cout << "\n";
+	std::cout << "\n";
+	i.makeForm("test", "test");
+	std::cout << "\n";
+	std::cout << "\n";
+
+	delete f1;
+	delete f2;
+	delete f3;
 
 	return (0);
 }
+
+//	system("leaks -q bureaucrats");
