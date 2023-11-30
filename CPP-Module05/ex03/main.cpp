@@ -7,12 +7,26 @@
 #include <exception>
 
 int main() {
-	/*Bureaucrat b1("Marshall", 1);
-	ShrubberyCreationForm s1("Island");
+	Intern i;
+
+	AForm *f1;
+	AForm *f2;
+	AForm *f3;
+
+	f1 = i.makeForm("ShrubberyCreationForm", "Island");
+	std::cout << "\n";
+	f2 = i.makeForm("RobotomyRequestForm", "Marvin");
+	std::cout << "\n";
+	f3 = i.makeForm("PresidentialPardonForm", "Everyone");
+	std::cout << "\n";
+	i.makeForm("test", "test");
+	std::cout << "\n";
+
+	Bureaucrat b1("Marshall", 1);
 	
 	try { //Shrubbery test
-		s1.beSigned(b1);
-		b1.executeForm(s1);
+		f1->beSigned(b1);
+		b1.executeForm(*f1);
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
@@ -20,11 +34,10 @@ int main() {
 	std::cout << "\n";
 	
 	Bureaucrat b2("Larry", 45);
-	RobotomyRequestForm r1("Marvin");
 
 	try { //Robotomy test
-		b2.signForm(r1);
-		r1.execute(b2);
+		b2.signForm(*f2);
+		f2->execute(b2);
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
@@ -32,11 +45,10 @@ int main() {
 	std::cout << "\n";
 
 	Bureaucrat b3("Stan", 5);
-	PresidentialPardonForm p1("Everyone");
 
 	try { //Presidential test
-		p1.beSigned(b3);
-		p1.execute(b3);
+		f3->beSigned(b3);
+		f3->execute(b3);
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
@@ -44,7 +56,7 @@ int main() {
 	std::cout << "\n";
 
 	try { //Low grade test
-		p1.execute(b2);
+		f3->execute(b2);
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
@@ -59,25 +71,6 @@ int main() {
 		std::cout << e.what();
 	}
 
-	std::cout << "\n";*/
-
-	Intern i;
-
-	AForm *f1;
-	AForm *f2;
-	AForm *f3;
-
-	f1 = i.makeForm("PresidentialPardonForm", "tumare");
-	std::cout << "\n";
-	std::cout << "\n";
-	f2 = i.makeForm("ShrubberyCreationForm", "mimare");
-	std::cout << "\n";
-	std::cout << "\n";
-	f3 = i.makeForm("RobotomyRequestForm", "sumare");
-	std::cout << "\n";
-	std::cout << "\n";
-	i.makeForm("test", "test");
-	std::cout << "\n";
 	std::cout << "\n";
 
 	delete f1;
