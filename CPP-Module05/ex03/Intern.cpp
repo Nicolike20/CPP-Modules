@@ -34,7 +34,7 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target) {
         }
     }
     
-    switch (n) {
+    switch (n) { //check si esto ta bien con la evaluacion
         case 0:
             res = new ShrubberyCreationForm(target);
             break;
