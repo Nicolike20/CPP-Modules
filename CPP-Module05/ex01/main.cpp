@@ -27,7 +27,6 @@ int main() {
 	Bureaucrat b3(b2);
 	Form f3("Grocery List", 144, 100);
 	try {
-//		b3.signForm(f3);
 		b3.upgrade();
 		b3.signForm(f3);
 	} catch (std::exception& e) {
@@ -41,6 +40,8 @@ int main() {
 	} catch (std::exception& e) {
 		std::cout << e.what();
 	}
+
+	std::cout << "\n";
 
 	return (0);
 }
