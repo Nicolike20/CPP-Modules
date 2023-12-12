@@ -5,7 +5,7 @@ Intern::Intern() {
 }
 
 Intern::Intern(const Intern &copy) {
-    *this = copy; //? //CHECKEAR TODOS LOS CONSTRUCTORES DE COPIA
+    *this = copy;
     std::cout << "Intern copy constructor called\n";
 }
 
@@ -15,10 +15,7 @@ Intern::~Intern() {
 
 Intern& Intern::operator=(const Intern &other) {
     std::cout << "Intern assignment operator called\n";
-    //(void) other; //y quitar lo demas¿ //CHECKEAR TODOS LOS OPERATORS
-    if (this != &other) {
-        return *this;
-    }
+    (void) other;
     return *this;
 }
 

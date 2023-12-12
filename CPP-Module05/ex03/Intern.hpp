@@ -7,8 +7,6 @@
 # include "PresidentialPardonForm.hpp"
 # include <string>
 
-//class From; //PROBAR EN LINUX
-
 class Intern {
 	public:
 		Intern();
