@@ -31,7 +31,7 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target) {
         }
     }
     
-    switch (n) { //check si esto ta bien con la evaluacion
+    switch (n) {
         case 0:
             res = new ShrubberyCreationForm(target);
             break;
@@ -42,7 +42,7 @@ AForm* Intern::makeForm(const std::string &name, const std::string &target) {
             res = new PresidentialPardonForm(target);
             break;
         default:
-            std::cout << "Intern couldn't create that form\n"; //returns NULL
+            std::cout << "Intern couldn't create that form\n";
             break;
     }
 
