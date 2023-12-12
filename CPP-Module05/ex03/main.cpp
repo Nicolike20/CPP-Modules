@@ -13,11 +13,11 @@ int main() {
 	AForm *f2;
 	AForm *f3;
 
-	f1 = i.makeForm("ShrubberyCreationForm", "Island");
+	f1 = i.makeForm("shrubbery creation", "Island");
 	std::cout << "\n";
-	f2 = i.makeForm("RobotomyRequestForm", "Marvin");
+	f2 = i.makeForm("robotomy request", "Marvin");
 	std::cout << "\n";
-	f3 = i.makeForm("PresidentialPardonForm", "Everyone");
+	f3 = i.makeForm("presidential pardon", "Everyone");
 	std::cout << "\n";
 	i.makeForm("test", "test");
 	std::cout << "\n";

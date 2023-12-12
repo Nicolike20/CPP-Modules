@@ -19,35 +19,35 @@ Intern& Intern::operator=(const Intern &other) {
     return *this;
 }
 
+static AForm* newShrubbery(const std::string target) {
+    return new ShrubberyCreationForm(target);
+}
+
+static AForm* newRobotomy(const std::string target) {
+    return new RobotomyRequestForm(target);
+}
+
+static AForm* newPresidential(const std::string target) {
+    return new PresidentialPardonForm(target);
+}
+
+typedef AForm*(*newForms)(const std::string);
+
 AForm* Intern::makeForm(const std::string &name, const std::string &target) {
-    std::string formTypes[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
-    int n = -1;
     AForm *res = NULL;
+    const std::string formTypes[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+    newForms newForms[3] = {&newShrubbery, &newRobotomy, &newPresidential};
 
     for (int i = 0; i < 3; i++) {
         if (!formTypes[i].compare(name)) {
-            n = i;
+            res = newForms[i](target);
             break;
         }
     }
-    
-    switch (n) {
-        case 0:
-            res = new ShrubberyCreationForm(target);
-            break;
-        case 1:
-            res = new RobotomyRequestForm(target);
-            break;
-        case 2:
-            res = new PresidentialPardonForm(target);
-            break;
-        default:
-            std::cout << "Intern couldn't create that form\n";
-            break;
-    }
-
     if (res != NULL) {
-        std::cout << "Intern creates " << res->getName() <<  "form\n";
+        std::cout << "Intern creates " << res->getName() <<  " form\n";
+    } else {
+        std::cout << "Intern couldn't create that form\n";
     }
 
     return res;
