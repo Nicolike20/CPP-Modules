@@ -4,7 +4,7 @@ ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter default constructor called\n";
 }
 ScalarConverter::ScalarConverter(const ScalarConverter &copy) {
-	*this = copy; //klk;
+	*this = copy; //klk con esto;
 	std::cout << "ScalarConverter copy constructor called\n";
 }
 
@@ -16,8 +16,8 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 	if (this != &other) {
 		return *this;
 	}
-	return *this; //klk;
-} //cozas
+	return *this; //klk con esto;
+}
 
 //0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others;
 void ScalarConverter::convert(const std::string &lit) {
@@ -36,19 +36,18 @@ void ScalarConverter::convert(const std::string &lit) {
 						break;
 					}
 				}
-				break;
-			} if (lit[i] == '.' && (i == lit.size() - 2 || i == lit.size() - 3) && i > 0) {
-				if (type == 1) {
-					type = 0; //break?
-				} if (type != 2) {
+			} else if (lit[i] == '.') {
+				if ((!(i == lit.size() - 2 || i == lit.size() - 3) || i == 0) || type == 1) {
+					type = 0;
+				} else if (type != 2) {
 					type = 1;
 				}
-			} if (lit[i] == 'f') {
+			} else if (lit[i] == 'f' && type != 5) {
 				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4) {
 					type = 0;
-					break;
+				} else {
+					type = 2;
 				}
-				type = 2;
 			}
 		}
 	} else {
@@ -59,10 +58,10 @@ void ScalarConverter::convert(const std::string &lit) {
 			type = 4;
 		}
 	}
-	if (numbers) {
+	if (numbers) { //intentar limpiar esto
 		type = 3;
 	}
-	if ((type == 1 && type == 2 && !numbers)) {
+	if ((type == 1 && type == 2 && !numbers)) { //intentar limpiar esto
 		type = 0;
 	}
 	std::cout << "0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others\n"
@@ -73,13 +72,5 @@ void ScalarConverter::convert(const std::string &lit) {
 /*check longitud -> si tiene mas de 1 char comprobar si es numero o letra y hacer conversion*/
 /*si tiene mas de una letra -> comprobar si tiene f o ., y que no tenga mas de uno*/
 /*check si hay mas de una letra -> check si es nan/nanf/etc -> si no encaja es un input invalido*/
-
-//chars acting like ints
-
-//casos que fallan:
-//	f1
-//	.1 | 1.
-//	-1
-//	1.f
-//	1
-//	10
+/*compruebo que si hay un punto esté en su posicion, que si hay una f tambien lo esté, que no haya mas de una f o punto*/
+/*que haya mas cosas aparte de un punto y una f, que si hay negativo esté en su sito*/
