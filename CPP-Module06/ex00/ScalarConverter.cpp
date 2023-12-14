@@ -23,13 +23,19 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 void ScalarConverter::convert(const std::string &lit) {
 	int type = 0;
 	bool numbers = true;
+	std::string nans[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
+
 	if (lit.size() > 1) {
-		for (unsigned long i = 0; i < lit.size(); i++) { //<= size?
-			if (!isdigit(lit[i]) && (lit[i] != '-' || (lit[i] == '-' && i != 0))) { //test 123-123
+		for (unsigned long i = 0; i < lit.size(); i++) {
+			if (!isdigit(lit[i]) && (lit[i] != '-' || (lit[i] == '-' && i != 0))) {
 				numbers = false;
 			} if (!isdigit(lit[i]) && lit[i] != 'f' && lit[i] != '.' && lit[i] != '-') {
-				//podria ser nan/nanf/etc
-				type = 5; //faltaria comprobar si es valido
+				for (int j = 0; j < 6; j++) {
+					if (lit == nans[j]) {
+						type = 5;
+						break;
+					}
+				}
 				break;
 			} if (lit[i] == '.' && (i == lit.size() - 2 || i == lit.size() - 3) && i > 0) {
 				if (type == 1) {
@@ -44,9 +50,6 @@ void ScalarConverter::convert(const std::string &lit) {
 				}
 				type = 2;
 			}
-			/*if (lit[i] == '-' && i != 0) {
-				type = 0;
-			}*/
 		}
 	} else {
 		if (isdigit(lit[0])) {
