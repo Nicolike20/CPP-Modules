@@ -1,4 +1,4 @@
-NAME = bureaucrats
+NAME = sc
 
 CXX = c++
 

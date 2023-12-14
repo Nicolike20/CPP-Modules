@@ -1,14 +1,19 @@
 #ifndef SCALARCONVERTER_HPP_
 # define SCALARCONVERTER_HPP_
 
+# include <iostream> //quitar si no se usa
+# include <string>
+
 class ScalarConverter {
 	public:
-		ScalarConverter(); //constructores en privado?
-		ScalarConverter(const ScalarConverter &copy);
 		~ScalarConverter(); //y destructor?
 
-		ScalarConverter& operator=(const ScalarConverter &other);
+		ScalarConverter& operator=(const ScalarConverter &other); //priv¿?
 
-		void convert(/*que coño va aqui*/);
+		static void convert(const std::string &lit);
 	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter &copy);
 };
+
+#endif
