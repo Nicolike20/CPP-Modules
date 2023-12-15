@@ -60,8 +60,7 @@ void ScalarConverter::convert(const std::string &lit) {
 	}
 	if (numbers) { //intentar limpiar esto
 		type = 3;
-	}
-	if ((type == 1 && type == 2 && !numbers)) { //intentar limpiar esto
+	} else if (type == 1 && type == 2) { //intentar limpiar esto
 		type = 0;
 	}
 	std::cout << "0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others\n"

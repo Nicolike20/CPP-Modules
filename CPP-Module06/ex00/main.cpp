@@ -23,5 +23,6 @@ int main(void) {
     ScalarConverter::convert("-10.0");
     ScalarConverter::convert("-");
     ScalarConverter::convert("123-123");
+    ScalarConverter::convert("ff");
     return (0);
 }
