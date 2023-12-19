@@ -23,6 +23,10 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 void ScalarConverter::convert(const std::string &lit) {
 	int type = 0;
 	bool numbers = true;
+	//char	resChar;  //renta tener 4 variables?
+	//int		resInt; //investigar tipos de casteo c++
+	//float	resFloat;
+	//double	resDouble;
 	std::string nans[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 
 	if (lit.size() > 1) {
