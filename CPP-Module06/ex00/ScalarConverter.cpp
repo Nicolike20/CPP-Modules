@@ -131,10 +131,10 @@ void ScalarConverter::convert(const std::string &lit) {
 						<< "double:	" << resDouble << ".0\n";
 			break;
 		case 5:
-			std::cout	<< "char:	impossible\n" //esto solo funka con nan y nanf;
+			std::cout	<< "char:	impossible\n" //ver si es posible limpiar esto;
 						<< "int:	impossible\n"
-						<< "float:	" << lit << (lit.size() == 4 ? "\n" : "f\n")
-						<< "double:	" << (lit.size() == 4 ? lit.substr(0, lit.size() - 1) : lit) << "\n";
+						<< "float:	" << lit << ((lit.size() == 4 && lit[0] == 'n') || lit.size() == 5 ? "\n" : "f\n")
+						<< "double:	" << ((lit.size() == 4 && lit[0] == 'n') || lit.size() == 5 ? lit.substr(0, lit.size() - 1) : lit) << "\n";
 			break;
 	}
 }
