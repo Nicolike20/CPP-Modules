@@ -6,10 +6,10 @@ int main(void) {
     ScalarConverter::convert("asdf");
     ScalarConverter::convert("1.0");
     ScalarConverter::convert("1.0f");
-    ScalarConverter::convert("1");
-    ScalarConverter::convert("f");
+    ScalarConverter::convert("42");
+    ScalarConverter::convert("*");
     ScalarConverter::convert("nanf");
-    ScalarConverter::convert("-1");
+    /*ScalarConverter::convert("-1");
     ScalarConverter::convert("10");
     ScalarConverter::convert(".f");
     ScalarConverter::convert("f..");
@@ -23,6 +23,6 @@ int main(void) {
     ScalarConverter::convert("-10.0");
     ScalarConverter::convert("-");
     ScalarConverter::convert("123-123");
-    ScalarConverter::convert("ff");
+    ScalarConverter::convert("ff");*/
     return (0);
 }

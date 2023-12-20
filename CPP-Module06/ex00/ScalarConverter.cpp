@@ -23,10 +23,10 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 void ScalarConverter::convert(const std::string &lit) {
 	int type = 0;
 	bool numbers = true;
-	//char	resChar;  //renta tener 4 variables?
-	//int		resInt; //investigar tipos de casteo c++
-	//float	resFloat;
-	//double	resDouble;
+	char	resChar = '\0';  //usar string o algo?
+	int		resInt = 0; //investigar tipos de casteo c++
+	float	resFloat = 0;
+	double	resDouble = 0.0;
 	std::string nans[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
 
 	if (lit.size() > 1) {
@@ -67,9 +67,60 @@ void ScalarConverter::convert(const std::string &lit) {
 	} else if (type == 1 && type == 2) { //intentar limpiar esto
 		type = 0;
 	}
-	std::cout << "0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others\n"
-	<< "Num:  \"" << lit << "\"\n"
-	<< "Type: " << type << "\n\n";
+
+	/*if (type != 3) {
+		std::cout << "0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others\n"
+		<< "Num:  \"" << lit << "\"\n"
+		<< "Type: " << type << "\n\n";
+	} else {
+		resInt = std::atoi(lit.c_str());
+		resChar = static_cast<char>(resInt);
+		resDouble = static_cast<double>(resInt);
+		resFloat = static_cast<float>(resInt);
+		std::cout	<< "char:	" << resChar << "\n"
+					<< "int:	" << resInt << "\n"
+					<< "float:	" << resFloat << ".0f\n"
+					<< "double:	" << resDouble << ".0\n";
+	}*/
+
+	std::cout << "input -> " << lit << " (type " << type << ")\n"; //quitar
+	switch (type) {
+		case 0:
+			std::cout << "Invalid input\n";
+			break;
+		case 1:
+			std::cout << "double!\n";
+			break;
+		case 2:
+			std::cout << "float!\n";
+			break;
+		case 3:
+			resInt = std::atoi(lit.c_str());
+			resChar = static_cast<char>(resInt);
+			resFloat = static_cast<float>(resInt);
+			resDouble = static_cast<double>(resInt);
+			std::cout	<< "char:	" << resChar << "\n"
+						<< "int:	" << resInt << "\n"
+						<< "float:	" << resFloat << ".0f\n"
+						<< "double:	" << resDouble << ".0\n";
+			break;
+		case 4:
+			resChar = lit[0];
+			resInt = static_cast<int>(resChar);
+			resFloat = static_cast<float>(resChar);
+			resDouble = static_cast<double>(resChar);
+			std::cout	<< "char:	" << resChar << "\n"
+						<< "int:	" << resInt << "\n"
+						<< "float:	" << resFloat << ".0f\n"
+						<< "double:	" << resDouble << ".0\n";
+			break;
+		case 5:
+			std::cout	<< "char:	impossible\n"
+						<< "int:	impossible\n"
+						<< "float:	" << lit << (lit.size() == 4 ? "\n" : "f\n")
+						<< "double:	" << (lit.size() == 4 ? lit.substr(0, lit.size() - 1) : lit) << "\n";
+			break;
+	}
 }
 
 /*check longitud -> si tiene mas de 1 char comprobar si es numero o letra y hacer conversion*/
@@ -77,3 +128,8 @@ void ScalarConverter::convert(const std::string &lit) {
 /*check si hay mas de una letra -> check si es nan/nanf/etc -> si no encaja es un input invalido*/
 /*compruebo que si hay un punto esté en su posicion, que si hay una f tambien lo esté, que no haya mas de una f o punto*/
 /*que haya mas cosas aparte de un punto y una f, que si hay negativo esté en su sito*/
+
+
+/*In contrast to the C-style cast, the static cast will allow the compiler to check that the 
+pointer and pointee data types are compatible, which allows the programmer to catch this incorrect
+ pointer assignment during compilation.*/
