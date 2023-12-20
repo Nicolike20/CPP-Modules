@@ -89,10 +89,26 @@ void ScalarConverter::convert(const std::string &lit) {
 			std::cout << "Invalid input\n";
 			break;
 		case 1:
-			std::cout << "double!\n";
+			resDouble = std::atof(lit.c_str());
+			resChar = static_cast<char>(resDouble);
+			resInt = static_cast<int>(resDouble);
+			resFloat = static_cast<float>(resDouble);
+
+			std::cout << "\nfmod(resFloat, 1.0) = " << fmod(resFloat, 1.0) << "\n";
+			std::cout	<< "char:	" << resChar << "\n"
+						<< "int:	" << resInt << "\n"
+						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //esto funka bien con nums < 1? (0.7 por ejemplo)
+						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n"; //y con negativos?
 			break;
 		case 2:
-			std::cout << "float!\n";
+			resFloat = std::atof(lit.c_str());
+			resChar = static_cast<char>(resFloat); //castear esto desde el int en vez de float?
+			resInt = static_cast<int>(resFloat);
+			resDouble = static_cast<double>(resFloat);
+			std::cout	<< "char:	" << resChar << "\n"
+						<< "int:	" << resInt << "\n"
+						<< "float:	" << resFloat << (fmod(resFloat, 10.0) ? "f" : ".0f") << "\n" //cuidao que aqui no sale .0f si es exacto;
+						<< "double:	" << resDouble << (fmod(resDouble, 10.0) ? "" : ".0" ) << "\n"; //cuidao que aqui no sale .0 si es exacto;
 			break;
 		case 3:
 			resInt = std::atoi(lit.c_str());
@@ -115,7 +131,7 @@ void ScalarConverter::convert(const std::string &lit) {
 						<< "double:	" << resDouble << ".0\n";
 			break;
 		case 5:
-			std::cout	<< "char:	impossible\n"
+			std::cout	<< "char:	impossible\n" //esto solo funka con nan y nanf;
 						<< "int:	impossible\n"
 						<< "float:	" << lit << (lit.size() == 4 ? "\n" : "f\n")
 						<< "double:	" << (lit.size() == 4 ? lit.substr(0, lit.size() - 1) : lit) << "\n";
