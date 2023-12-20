@@ -34,4 +34,6 @@ int main(int argc, char **argv) {
 }
 
 //casos raros:
+//  controlar los chars
 //  02
+//  -4.0f vs -4.0
