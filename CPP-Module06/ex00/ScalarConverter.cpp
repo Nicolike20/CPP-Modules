@@ -43,6 +43,12 @@ void ScalarConverter::convert(const std::string &lit) {
 					}
 				}
 			} else if (lit[i] == '.') {
+				if (!resDouble) {
+					resDouble = 1.0;
+				} else {
+					type = 0;
+					break;
+				}
                 //std::cout << "ENTRA EN TERCER IF\n"; //quitar
 				if ((!(i == lit.size() - 2 || i == lit.size() - 3) || i == 0) || type == 1 || !isdigit(lit[i - 1])) {
                     //std::cout << "  IF\n"; //quitar
@@ -52,6 +58,12 @@ void ScalarConverter::convert(const std::string &lit) {
 					type = 1;
 				}
 			} else if (lit[i] == 'f' && type != 5) {
+				if (!resFloat) {
+					resFloat = 1;
+				} else {
+					type = 0;
+					break;
+				}
                 //std::cout << "ENTRA EN CUARTO IF\n"; //quitar
 				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4 || !isdigit(lit[i - 3])) {
                     //std::cout << "  IF\n"; //quitar

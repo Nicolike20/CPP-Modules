@@ -1,9 +1,9 @@
 #include "ScalarConverter.hpp"
 
 int main(int argc, char **argv) {
-//    (void)argc;
-//    std::string s = argv[1];
-    /*ScalarConverter::convert("asdf");
+    /*(void)argc;
+    std::string s = argv[1];
+    ScalarConverter::convert("asdf");
     ScalarConverter::convert("1.0");
     ScalarConverter::convert("42.2f");
     ScalarConverter::convert("42");
