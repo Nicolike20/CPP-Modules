@@ -95,7 +95,6 @@ void ScalarConverter::convert(const std::string &lit) {
 			resInt = static_cast<int>(resDouble);
 			resFloat = static_cast<float>(resDouble);
             aux = resChar;
-			std::cout << "\nfmod(resFloat, 1.0) = " << fmod(resFloat, 1.0) << "\n"; //quitar
 			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //esto funka bien con nums < 1? (0.7 por ejemplo)
@@ -109,8 +108,8 @@ void ScalarConverter::convert(const std::string &lit) {
             aux = resChar;
 			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
-						<< "float:	" << resFloat << (fmod(resFloat, 10.0) ? "f" : ".0f") << "\n" //cuidao que aqui no sale .0f si es exacto;
-						<< "double:	" << resDouble << (fmod(resDouble, 10.0) ? "" : ".0" ) << "\n"; //cuidao que aqui no sale .0 si es exacto;
+						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //cuidao que aqui no sale .0f si es exacto;
+						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n"; //cuidao que aqui no sale .0 si es exacto;
 			break;
 		case 3:
 			resInt = std::atoi(lit.c_str());
