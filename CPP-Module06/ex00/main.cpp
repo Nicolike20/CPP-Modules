@@ -38,3 +38,4 @@ int main(int argc, char **argv) {
 //  12.12 (checkea 12.10)
 //  1234567 || -1234567
 //  headers para numerical limits? and special values?
+//  checkear mas cosas
