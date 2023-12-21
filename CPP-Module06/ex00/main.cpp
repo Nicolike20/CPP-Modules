@@ -34,4 +34,5 @@ int main(int argc, char **argv) {
 }
 
 //casos raros:
+//  -.0
 //  02
