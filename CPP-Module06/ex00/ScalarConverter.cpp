@@ -4,7 +4,7 @@ ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter default constructor called\n";
 }
 ScalarConverter::ScalarConverter(const ScalarConverter &copy) {
-	*this = copy; //klk con esto;
+	*this = copy;
 	std::cout << "ScalarConverter copy constructor called\n";
 }
 
@@ -100,8 +100,8 @@ void ScalarConverter::convert(const std::string &lit) {
             aux = resChar;
 			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
-						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //esto funka bien con nums < 1? (0.7 por ejemplo)
-						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n"; //y con negativos?
+						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n"
+						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n";
 			break;
 		case 2:
 			resFloat = std::atof(lit.c_str());
@@ -111,8 +111,8 @@ void ScalarConverter::convert(const std::string &lit) {
             aux = resChar;
 			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
-						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //cuidao que aqui no sale .0f si es exacto;
-						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n"; //cuidao que aqui no sale .0 si es exacto;
+						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n"
+						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n";
 			break;
 		case 3:
 			resInt = std::atoi(lit.c_str());

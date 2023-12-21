@@ -1,13 +1,13 @@
 #ifndef SCALARCONVERTER_HPP_
 # define SCALARCONVERTER_HPP_
 
-# include <iostream> //quitar si no se usa
+# include <iostream>
 # include <math.h> //sure?
 # include <string>
 
 class ScalarConverter {
 	public:
-		~ScalarConverter(); //y destructor?
+		~ScalarConverter();
 
 		static void convert(const std::string &lit);
 	private:
