@@ -1,7 +1,24 @@
 #include "ScalarConverter.hpp"
 
 int main(int argc, char **argv) {
-    /*(void)argc;
+    if (argc == 2) {
+        std::string lit = argv[1];
+        ScalarConverter::convert(lit);
+    } else {
+        std::cout << "Invalid number of arguments\n";
+    }
+    return (0);
+}
+
+//casos raros:
+//  02
+//  12.12 (checkea 12.10)
+//  1234567 || -1234567
+//  headers para numerical limits? and special values?
+//  checkear mas cosas
+
+    /*
+    (void)argc;
     std::string s = argv[1];
     ScalarConverter::convert("asdf");
     ScalarConverter::convert("1.0");
@@ -23,19 +40,5 @@ int main(int argc, char **argv) {
     ScalarConverter::convert("-10.0");
     ScalarConverter::convert("-");
     ScalarConverter::convert("123-123");
-    ScalarConverter::convert("ff");*/
-    if (argc == 2) {
-        std::string lit = argv[1];
-        ScalarConverter::convert(lit);
-    } else {
-        std::cout << "Invalid number of arguments\n";
-    }
-    return (0);
-}
-
-//casos raros:
-//  02
-//  12.12 (checkea 12.10)
-//  1234567 || -1234567
-//  headers para numerical limits? and special values?
-//  checkear mas cosas
+    ScalarConverter::convert("ff");
+    */
