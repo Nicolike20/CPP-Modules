@@ -23,8 +23,8 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 void ScalarConverter::convert(const std::string &lit) {
 	int type = 0;
 	bool numbers = true;
-	char	resChar = '\0';  //usar string o algo?
-	int		resInt = 0; //investigar tipos de casteo c++
+	char	resChar = '\0';
+	int		resInt = 0;
 	float	resFloat = 0;
 	double	resDouble = 0.0;
 	std::string nans[6] = {"-inff", "+inff", "nanf", "-inf", "+inf", "nan"};
@@ -70,9 +70,9 @@ void ScalarConverter::convert(const std::string &lit) {
 			type = 4;
 		}
 	}
-	if (numbers) { //intentar limpiar esto
+	if (numbers) {
 		type = 3;
-	} else if (type == 1 && type == 2) { //intentar limpiar esto
+	} else if (type == 1 && type == 2) {
 		type = 0;
 	}
 
@@ -95,7 +95,7 @@ void ScalarConverter::convert(const std::string &lit) {
 			break;
 		case 2:
 			resFloat = std::atof(lit.c_str());
-			resChar = static_cast<char>(resFloat); //castear esto desde el int en vez de float?
+			resChar = static_cast<char>(resFloat);
 			resInt = static_cast<int>(resFloat);
 			resDouble = static_cast<double>(resFloat);
             aux = resChar;
@@ -126,7 +126,7 @@ void ScalarConverter::convert(const std::string &lit) {
 						<< "double:	" << resDouble << ".0\n";
 			break;
 		case 5:
-			std::cout	<< "char:	impossible\n" //ver si es posible limpiar esto;
+			std::cout	<< "char:	impossible\n"
 						<< "int:	impossible\n"
 						<< "float:	" << lit << ((lit.size() == 4 && lit[0] == 'n') || lit.size() == 5 ? "\n" : "f\n")
 						<< "double:	" << ((lit.size() == 4 && lit[0] == 'n') || lit.size() == 5 ? lit.substr(0, lit.size() - 1) : lit) << "\n";
