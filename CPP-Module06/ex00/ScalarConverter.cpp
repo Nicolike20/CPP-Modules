@@ -32,8 +32,10 @@ void ScalarConverter::convert(const std::string &lit) {
 	if (lit.size() > 1) {
 		for (unsigned long i = 0; i < lit.size(); i++) {
 			if (!isdigit(lit[i]) && (lit[i] != '-' || (lit[i] == '-' && i != 0))) {
+                //std::cout << "ENTRA EN PRIMER IF\n"; //quitar
 				numbers = false;
 			} if (!isdigit(lit[i]) && lit[i] != 'f' && lit[i] != '.' && lit[i] != '-') {
+                //std::cout << "ENTRA EN SEGUNDO IF\n"; //quitar
 				for (int j = 0; j < 6; j++) {
 					if (lit == nans[j]) {
 						type = 5;
@@ -41,15 +43,21 @@ void ScalarConverter::convert(const std::string &lit) {
 					}
 				}
 			} else if (lit[i] == '.') {
-				if ((!(i == lit.size() - 2 || i == lit.size() - 3) || i == 0) || type == 1) {
+                //std::cout << "ENTRA EN TERCER IF\n"; //quitar
+				if ((!(i == lit.size() - 2 || i == lit.size() - 3) || i == 0) || type == 1 || !isdigit(lit[i - 1])) {
+                    //std::cout << "  IF\n"; //quitar
 					type = 0;
 				} else if (type != 2) {
+                    //std::cout << "  ELSE IF\n"; //quitar
 					type = 1;
 				}
 			} else if (lit[i] == 'f' && type != 5) {
-				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4) {
+                //std::cout << "ENTRA EN CUARTO IF\n"; //quitar
+				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4 || !isdigit(lit[i - 3])) {
+                    //std::cout << "  IF\n"; //quitar
 					type = 0;
 				} else {
+                    //std::cout << "  ELSE\n"; //quitar
 					type = 2;
 				}
 			}
@@ -67,21 +75,6 @@ void ScalarConverter::convert(const std::string &lit) {
 	} else if (type == 1 && type == 2) { //intentar limpiar esto
 		type = 0;
 	}
-
-	/*if (type != 3) {
-		std::cout << "0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others\n"
-		<< "Num:  \"" << lit << "\"\n"
-		<< "Type: " << type << "\n\n";
-	} else {
-		resInt = std::atoi(lit.c_str());
-		resChar = static_cast<char>(resInt);
-		resDouble = static_cast<double>(resInt);
-		resFloat = static_cast<float>(resInt);
-		std::cout	<< "char:	" << resChar << "\n"
-					<< "int:	" << resInt << "\n"
-					<< "float:	" << resFloat << ".0f\n"
-					<< "double:	" << resDouble << ".0\n";
-	}*/
 
 	std::cout << "input -> " << lit << " (type " << type << ")\n"; //quitar
     std::string aux;
