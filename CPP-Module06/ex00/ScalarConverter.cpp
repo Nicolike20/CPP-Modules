@@ -84,6 +84,7 @@ void ScalarConverter::convert(const std::string &lit) {
 	}*/
 
 	std::cout << "input -> " << lit << " (type " << type << ")\n"; //quitar
+    std::string aux;
 	switch (type) {
 		case 0:
 			std::cout << "Invalid input\n";
@@ -93,9 +94,9 @@ void ScalarConverter::convert(const std::string &lit) {
 			resChar = static_cast<char>(resDouble);
 			resInt = static_cast<int>(resDouble);
 			resFloat = static_cast<float>(resDouble);
-
-			std::cout << "\nfmod(resFloat, 1.0) = " << fmod(resFloat, 1.0) << "\n";
-			std::cout	<< "char:	" << resChar << "\n"
+            aux = resChar;
+			std::cout << "\nfmod(resFloat, 1.0) = " << fmod(resFloat, 1.0) << "\n"; //quitar
+			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << (fmod(resFloat, 1.0) ? "f" : ".0f") << "\n" //esto funka bien con nums < 1? (0.7 por ejemplo)
 						<< "double:	" << resDouble << (fmod(resDouble, 1.0) ? "" : ".0" ) << "\n"; //y con negativos?
@@ -105,7 +106,8 @@ void ScalarConverter::convert(const std::string &lit) {
 			resChar = static_cast<char>(resFloat); //castear esto desde el int en vez de float?
 			resInt = static_cast<int>(resFloat);
 			resDouble = static_cast<double>(resFloat);
-			std::cout	<< "char:	" << resChar << "\n"
+            aux = resChar;
+			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << (fmod(resFloat, 10.0) ? "f" : ".0f") << "\n" //cuidao que aqui no sale .0f si es exacto;
 						<< "double:	" << resDouble << (fmod(resDouble, 10.0) ? "" : ".0" ) << "\n"; //cuidao que aqui no sale .0 si es exacto;
@@ -115,7 +117,8 @@ void ScalarConverter::convert(const std::string &lit) {
 			resChar = static_cast<char>(resInt);
 			resFloat = static_cast<float>(resInt);
 			resDouble = static_cast<double>(resInt);
-			std::cout	<< "char:	" << resChar << "\n"
+            aux = resChar;
+			std::cout	<< "char:	" << (resInt >= 32 && resInt <= 126 ? aux : "Non displayable") << "\n"
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << ".0f\n"
 						<< "double:	" << resDouble << ".0\n";
@@ -125,7 +128,7 @@ void ScalarConverter::convert(const std::string &lit) {
 			resInt = static_cast<int>(resChar);
 			resFloat = static_cast<float>(resChar);
 			resDouble = static_cast<double>(resChar);
-			std::cout	<< "char:	" << resChar << "\n"
+			std::cout	<< "char:	" << resChar << "\n" //cambiar esto de char tb como los de arriba?
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << ".0f\n"
 						<< "double:	" << resDouble << ".0\n";
