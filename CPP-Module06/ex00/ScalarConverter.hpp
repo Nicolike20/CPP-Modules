@@ -9,12 +9,12 @@ class ScalarConverter {
 	public:
 		~ScalarConverter(); //y destructor?
 
-		ScalarConverter& operator=(const ScalarConverter &other); //priv¿?
-
 		static void convert(const std::string &lit);
 	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &copy);
+
+		ScalarConverter& operator=(const ScalarConverter &other);
 };
 
 #endif

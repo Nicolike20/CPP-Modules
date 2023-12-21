@@ -13,10 +13,8 @@ ScalarConverter::~ScalarConverter() {
 }
 
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
-	if (this != &other) {
-		return *this;
-	}
-	return *this; //klk con esto;
+	(void) other;
+	return *this;
 }
 
 //0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others;
