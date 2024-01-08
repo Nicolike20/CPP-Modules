@@ -18,6 +18,7 @@ int main(int argc, char **argv) {
 //  checkear mas cosas
 //  A QUE SE REFIERE CON CONVERT EXPLICITLY EN EL SUBJECT?
 //  CHECKEAR SUBJECT DE CORRECCION
+//  POR QUE STATIC CAST?
 
     /*
     (void)argc;
