@@ -2,7 +2,14 @@
 # define SERIALIZER_HPP_
 
 # include <iostream>
+# include <string>
 # include <stdint.h>
+
+struct Data {
+    std::string s;
+    int n;
+    //string?
+};
 
 class Serializer {
     public:

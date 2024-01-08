@@ -18,18 +18,18 @@ Serializer& Serializer::operator=(const Serializer &other){
 	return *this;
 }
 
-static uintptr_t Serializer::serialize(Data* ptr) {
+uintptr_t Serializer::serialize(Data* ptr) {
 	uintptr_t ui;
 
 	ui = reinterpret_cast<uintptr_t>(ptr); //algo asin;
 	return ui;
 } //revisar lo de static
 
-static Data* Serialize::deserialize(uintptr_t raw) {
+Data* Serializer::deserialize(uintptr_t raw) {
 	Data* d; //reservar memoria pa esto?
 			//crear estructura data;
 
-	data = reinterpret_cast<Data*>(raw);
+	d = reinterpret_cast<Data*>(raw);
 	return d;
 }
 
