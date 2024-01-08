@@ -32,5 +32,5 @@ static Data* Serialize::deserialize(uintptr_t raw) {
 	data = reinterpret_cast<Data*>(raw);
 	return d;
 }
-		//reinterpret_cast o static_cast? (puedo usar reinterpret?)
-		//stdint.h para incluir uintptr_t
+
+//reinterpret_cast o static_cast? (puedo usar reinterpret?)
