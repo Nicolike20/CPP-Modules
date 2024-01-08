@@ -2,6 +2,7 @@
 # define SERIALIZER_HPP_
 
 # include <iostream>
+# include <stdint.h>
 
 class Serializer {
     public:
