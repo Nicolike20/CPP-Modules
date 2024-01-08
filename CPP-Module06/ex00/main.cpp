@@ -11,11 +11,13 @@ int main(int argc, char **argv) {
 }
 
 //casos raros:
-//  02
-//  12.12 (checkea 12.10)
+//  02 //renta preocuparse por esto?
+//  12.12 (checkea 12.10) // renta preocuparse por esto?
 //  1234567 || -1234567
 //  headers para numerical limits? and special values?
 //  checkear mas cosas
+//  A QUE SE REFIERE CON CONVERT EXPLICITLY EN EL SUBJECT?
+//  CHECKEAR SUBJECT DE CORRECCION
 
     /*
     (void)argc;
