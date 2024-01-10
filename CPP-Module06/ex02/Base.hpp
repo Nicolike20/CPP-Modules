@@ -1,9 +1,9 @@
 #ifndef BASE_HPP_
 # define BASE_HPP_
 
-class BASE {
+class Base {
 	public:
-	private:
+        virtual ~Base();
 };
 
 #endif
