@@ -7,14 +7,10 @@ int main() {
     d->s = "Test";
     d->n = 42;
 
-    d2->s = "Test2"; //
-    d2->n = 1234; //
-
     std::cout   << "data: s -> " << d->s
                 << "\n      n -> " << d->n << "\n\n";
 
     uintptr_t raw = Serializer::serialize(d);
-    raw = Serializer::serialize(d2); //
 
     std::cout << "Raw: " << raw << "\n\n";
 
@@ -26,5 +22,3 @@ int main() {
     delete d;
     return (0);
 }
-
-// -> quitar comment

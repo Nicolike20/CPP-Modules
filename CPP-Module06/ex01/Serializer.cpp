@@ -21,12 +21,12 @@ Serializer& Serializer::operator=(const Serializer &other){
 uintptr_t Serializer::serialize(Data* ptr) {
 	uintptr_t ui;
 
-	ui = reinterpret_cast<uintptr_t>(ptr); //algo asin;
+	ui = reinterpret_cast<uintptr_t>(ptr);
 	return ui;
 }
 
 Data* Serializer::deserialize(uintptr_t raw) {
-	Data* d; //reservar memoria pa esto?
+	Data* d;
 
 	d = reinterpret_cast<Data*>(raw);
 	return d;
