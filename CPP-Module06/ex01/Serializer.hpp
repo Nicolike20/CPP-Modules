@@ -8,7 +8,6 @@
 struct Data {
     std::string s;
     int n;
-    //string?
 };
 
 class Serializer {
@@ -23,7 +22,5 @@ class Serializer {
 
         Serializer& operator=(const Serializer &other);
 };
-
-//data structure?
 
 #endif

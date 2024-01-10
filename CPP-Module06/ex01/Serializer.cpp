@@ -23,11 +23,10 @@ uintptr_t Serializer::serialize(Data* ptr) {
 
 	ui = reinterpret_cast<uintptr_t>(ptr); //algo asin;
 	return ui;
-} //revisar lo de static
+}
 
 Data* Serializer::deserialize(uintptr_t raw) {
 	Data* d; //reservar memoria pa esto?
-			//crear estructura data;
 
 	d = reinterpret_cast<Data*>(raw);
 	return d;
