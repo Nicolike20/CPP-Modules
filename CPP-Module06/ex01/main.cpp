@@ -1,18 +1,20 @@
 #include "Serializer.hpp"
 
 int main() {
-//    (void)argc;
-//    (void)argv;
-
     Data *d = new Data;
+    Data *d2 = new Data;
 
     d->s = "Test";
     d->n = 42;
+
+    d2->s = "Test2"; //
+    d2->n = 1234; //
 
     std::cout   << "data: s -> " << d->s
                 << "\n      n -> " << d->n << "\n\n";
 
     uintptr_t raw = Serializer::serialize(d);
+    raw = Serializer::serialize(d2); //
 
     std::cout << "Raw: " << raw << "\n\n";
 
@@ -22,7 +24,7 @@ int main() {
                 << "\n              n -> " << deser->n << "\n";
 
     delete d;
-
-//    system("leaks -q serializer");
     return (0);
 }
+
+// -> quitar comment
