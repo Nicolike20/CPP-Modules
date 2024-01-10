@@ -1,4 +1,4 @@
-NAME = serializer
+NAME = base
 
 CXX = c++
 
@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp Serializer.cpp
+SRCS = main.cpp Base.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
