@@ -1,5 +1,7 @@
 #include "ScalarConverter.hpp"
 
+//POR QUE STATIC_CAST??
+
 int main(int argc, char **argv) {
     if (argc == 2) {
         std::string lit = argv[1];

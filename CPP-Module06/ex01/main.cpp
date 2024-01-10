@@ -1,5 +1,7 @@
 #include "Serializer.hpp"
 
+//POR QUE REINTERPRET_CAST?
+
 int main() {
     Data *d = new Data;
     Data *d2 = new Data;
