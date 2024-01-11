@@ -2,7 +2,7 @@
 # define SCALARCONVERTER_HPP_
 
 # include <iostream>
-# include <math.h> //sure?
+# include <math.h>
 # include <string>
 
 class ScalarConverter {

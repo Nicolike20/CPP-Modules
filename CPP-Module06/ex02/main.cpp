@@ -7,8 +7,6 @@
 
 //POR QUE DYNAMIC_CAST?
 
-//https://stackoverflow.com/questions/351845/finding-the-type-of-an-object-in-c
-
 Base * generate(void) {
     std::srand(std::time(NULL));
     int mod = rand() % 3;
@@ -23,7 +21,7 @@ Base * generate(void) {
         return (new C);
     }
     std::cout << "Error: couldn't instanciate class\n";
-    return NULL; //cambiar
+    return NULL;
 }
 
 void identify(Base* p) {

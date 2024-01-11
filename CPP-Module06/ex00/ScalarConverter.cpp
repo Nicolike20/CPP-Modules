@@ -94,7 +94,6 @@ void ScalarConverter::convert(const std::string &lit) {
 		type = 0;
 	}
 
-	std::cout << "input -> " << lit << " (type " << type << ")\n"; //quitar
     std::string aux;
 	switch (type) {
 		case 0:
@@ -138,7 +137,7 @@ void ScalarConverter::convert(const std::string &lit) {
 			resInt = static_cast<int>(resChar);
 			resFloat = static_cast<float>(resChar);
 			resDouble = static_cast<double>(resChar);
-			std::cout	<< "char:	" << resChar << "\n" //cambiar esto de char tb como los de arriba?
+			std::cout	<< "char:	" << resChar << "\n"
 						<< "int:	" << resInt << "\n"
 						<< "float:	" << resFloat << ".0f\n"
 						<< "double:	" << resDouble << ".0\n";
