@@ -2,6 +2,8 @@
 #include <iostream> //
 #include <string> //
 
+//TODO: comprobar que los parametros son de la misma clase en min() y max()
+
 int main(void) {
     int a = 2;
     int b = 3;
