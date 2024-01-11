@@ -1,4 +1,4 @@
-NAME = sc
+NAME = temp
 
 CXX = c++
 
