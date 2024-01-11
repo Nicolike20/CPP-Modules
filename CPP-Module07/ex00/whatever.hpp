@@ -6,5 +6,7 @@ template <class T> void swap(T &x, T &y) {
     x = y;
     y = temp;
 }
-//void* min(/*arguments*/) {}
-//void* max(/*arguments*/) {}
+
+template <class T> T min(T x, T y) {} //check esto
+
+template <class T> T max(T x, T y) {} //check esto
