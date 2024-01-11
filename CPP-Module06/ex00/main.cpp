@@ -11,9 +11,3 @@ int main(int argc, char **argv) {
     }
     return (0);
 }
-
-//casos raros:
-//126.20 sí, pero 126.20f no
-//  A QUE SE REFIERE CON CONVERT EXPLICITLY EN EL SUBJECT?
-//  CHECKEAR SUBJECT DE CORRECCION
-//  POR QUE STATIC CAST?

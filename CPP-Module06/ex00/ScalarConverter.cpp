@@ -47,9 +47,9 @@ void ScalarConverter::convert(const std::string &lit) {
 					type = 0;
 					break;
 				}
-                //std::cout << "ENTRA EN TERCER IF\n"; //quitar
-				if ((!(i == lit.size() - 2 || i == lit.size() - 3) || i == 0) || type == 1 || !isdigit(lit[i - 1])) {
-                    std::cout << "  IF\n"; //quitar
+                if ((lit.size() - i > 3 || (lit.size() - i == 3 && lit[lit.size() - 1 != 'f']) || i == lit.size() - 1)
+                        || type == 1 || !isdigit(lit[i - 1])) {
+                    //std::cout << "  IF\n"; //quitar
 					type = 0;
 				} else if (type != 2) {
                     //std::cout << "  ELSE IF\n"; //quitar
@@ -62,15 +62,6 @@ void ScalarConverter::convert(const std::string &lit) {
 					type = 0;
 					break;
 				}
-                //std::cout << "ENTRA EN CUARTO IF\n"; //quitar
-                /*std::cout << "\n\ntests:\ntype:" << type
-                << (i != lit.size() - 1 ? "\ntrue" : "\nfalse")
-                << (lit[i - 2] != '.' ? "\ntrue" : "\nfalse")
-                << "\nlit.size()=" << lit.size()
-                << (!isdigit(lit[i - 3]) ? "\ntrue" : "\nfalse")
-                << "\ni = " << i
-                << "\n i - 2 = " << lit[i - 2]
-                << "\n i - 3 = " << lit[i - 3] << "\n\n";*/
 				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4 || !isdigit(lit[i - 3])) {
                     //std::cout << "  IF\n"; //quitar
 					type = 0;
