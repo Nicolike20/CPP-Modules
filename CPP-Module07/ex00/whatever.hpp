@@ -7,10 +7,14 @@ template <class T> void swap(T &x, T &y) {
     y = temp;
 }
 
-template <class T> T min(T x, T y) {
-    return x >= y ? y : x; //como checkeo que x e y son del mismo tipo? y que se pueden comparar?
+template <class T> const T& min(const T& x, const T& y) {
+    return x >= y ? y : x;
 }
 
-template <class T> T max(T x, T y) {
-    return x <= y ? y : x; //como checkeo que x e y son del mismo tipo? y que se pueden comparar?
+template <class T> const T& max(const T& x, const T& y) {
+    return x <= y ? y : x;
 }
+
+/*The only requirement is
+that the two arguments must have the same type and must support all the comparison
+operators.*/
