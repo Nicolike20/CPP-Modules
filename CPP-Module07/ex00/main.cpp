@@ -1,6 +1,6 @@
 #include "whatever.hpp"
-#include <iostream> //
-#include <string> //
+#include <iostream>
+#include <string>
 
 //TODO: comprobar que los parametros son de la misma clase en min() y max()
 
