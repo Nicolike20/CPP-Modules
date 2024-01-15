@@ -1,7 +1,7 @@
 #ifndef ITER_HPP_
 # define ITER_HPP_
 
-template <class T> void iter(T *arr, T len, void (*f) (T /*const T&?q*/)) { //int len? size_t len?
+template <class T> void iter(T *arr, int len, void (*f) (const T& i)) { //int len? size_t len?
     for (int i = 0; i < len; i++) {
         f(arr[i]);
     }
