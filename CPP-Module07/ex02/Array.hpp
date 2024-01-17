@@ -9,18 +9,33 @@
 
 template <class T> class Array {
     public:
-        Array();
-        Array(unsigned int n);
-        Array(const Array& copy);
-        ~Array();
+        Array() {
+            //do stuff here;
+        }
+        Array(unsigned int n) {
+            //do stuff here;
+        }
+        Array(const Array& copy) {
+            //do stuff here;
+        }
+        ~Array() {
+            //do stuff here;
+        }
 
-        Array& operator=(const Array& other);
-        int size() const; //unsigned int?
+        Array& operator=(const Array& other) {
+            //do stuff here;
+        }
+        int size() const {
+            //do stuff here;
+        } //unsigned int? size_t?
+
+        //add exception for out of index call
     private:
+        //private attributes?
 };
 
 //figure out how to work with class templates, define what the constructors and destructor do
-//(either in this file or in a .tpp file)
+//(either in this file or in a .tpp file) -> figure out if i should use .tpp files (it doesn't seem to matter that much)
 //add header to work with exceptions
 //why the need to use new[]
 //Try to compile int * a = new int(); then display *a
