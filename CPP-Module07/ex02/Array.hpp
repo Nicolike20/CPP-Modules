@@ -19,4 +19,10 @@ template <class T> class Array {
     private:
 };
 
+//figure out how to work with class templates, define what the constructors and destructor do
+//(either in this file or in a .tpp file)
+//add header to work with exceptions
+//why the need to use new[]
+//Try to compile int * a = new int(); then display *a
+
 #endif
