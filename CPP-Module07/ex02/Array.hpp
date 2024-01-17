@@ -2,6 +2,10 @@
 # define ARRAY_HPP_
 
 //optional file Array.tpp?
+//  |
+//  v
+//It's typically used to denote that the source file contains implementations of 
+//templated methods (as opposed to putting the implementation in the header file).
 
 template <class T> class Array {
     public:
