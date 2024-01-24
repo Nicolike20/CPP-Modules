@@ -2,24 +2,27 @@
 # define ARRAY_HPP_
 
 # include <exception>
+# include <iostream>
 
 template <class T> class Array {
     public:
         Array() : array_(NULL), size_(0) {
-            //std::cout?;
+            std::cout << "Array default constructor called\n"; //quitar?
         }
         Array(unsigned int n) : array_(new T[n]), size_(n) {
-            //std::cout?;
+            std::cout << "Array constructor called\n"; //quitar?
         }
         Array(const Array& copy) /*Array()?*/ /*: array_(NULL)?*/ {
             *this = copy;
-            //std::cout?;
+            std::cout << "Array copy constructor called\n"; //quitar?
         }
         ~Array() {
+            std::cout << "Array destructor called\n"; //quitar?
             delete[] array_;
         }
 
         Array& operator=(const Array& other) {
+            std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
                     delete[] array_;
