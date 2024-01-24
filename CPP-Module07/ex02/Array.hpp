@@ -38,7 +38,9 @@ template <class T> class Array {
         }
 
         class InvalidIndexException : public std::exception {
-            public: const char* what() const throw(); //do stuff here;
+            public: const char* what() const throw() {
+                return "Invalid index: index is out of bounds"; //\n?
+            }
         };
     private:
         T *array_;
