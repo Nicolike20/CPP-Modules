@@ -21,13 +21,13 @@ template <class T> class Array {
 
         Array& operator=(const Array& other) {
             if (this != &other) {
-                if (this->array_ != NULL) {
-                    delete[] this->array_; //quitar los this->?;
+                if (array_ != NULL) {
+                    delete[] array_; //quitar los this->?;
                 }
-                this->array_ = new T[other.size_];
-                this->size_ = other.size_;
-                for (int i = 0; i < this->size_; i++) {
-                    this->array_[i] = other.array_[i];
+                array_ = new T[other.size_];
+                size_ = other.size_;
+                for (int i = 0; i < size_; i++) {
+                    array_[i] = other.array_[i];
                 }
                 return *this;
             }
