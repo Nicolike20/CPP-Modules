@@ -25,11 +25,11 @@ template <class T> class Array {
             std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
-                    delete[] array_;
+                    delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
                 }
                 array_ = new T[other.size_];
                 size_ = other.size_;
-                for (int i = 0; i < size_; i++) {
+                for (std::size_t i = 0; i < size_; i++) { //size_t pa que no haya problemas al comparar
                     array_[i] = other.array_[i];
                 }
                 return *this;
@@ -44,6 +44,7 @@ template <class T> class Array {
                 return array_[index];
             }
         }
+        //^^^necesito la version const de eso? INVESTIGAR
 
         unsigned int size() const {
             return size_;
