@@ -16,13 +16,13 @@ template <class T> class Array {
             //std::cout?;
         }
         ~Array() {
-            delete[] array_; //this->array_?
+            delete[] array_;
         }
 
         Array& operator=(const Array& other) {
             if (this != &other) {
                 if (array_ != NULL) {
-                    delete[] array_; //quitar los this->?;
+                    delete[] array_;
                 }
                 array_ = new T[other.size_];
                 size_ = other.size_;
@@ -34,19 +34,17 @@ template <class T> class Array {
             return *this;
         }
         unsigned int size() const {
-            return size_; //this->size_?
-        } //unsigned int? size_t?
+            return size_;
+        }
 
         class InvalidIndexException : public std::exception {
-            public: const char* what() const throw(); //do stuff here?;
+            public: const char* what() const throw(); //do stuff here;
         };
     private:
         T *array_;
         unsigned int size_;
 };
 
-//figure out how to work with class templates, define what the constructors and destructor do
-//add header to work with exceptions
 //why the need to use new[]
 //Try to compile int * a = new int(); then display *a
 
