@@ -5,6 +5,9 @@ int main(void) {
     std::cout << "hola\n";
     Array<int> a(5);
     std::cout << a.size() << "\n";
-    //TODO: ver subject, investigar class templates, añadir archivos necesarios
+
+    a[0] = 115;
+    std::cout << a[0] << "\n";
+    //TODO: operator[], check copy constructor and assignment operator, check leaks;
     return (0);
 }

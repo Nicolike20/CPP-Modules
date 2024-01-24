@@ -36,6 +36,15 @@ template <class T> class Array {
             }
             return *this;
         }
+
+        T& operator[](std::size_t index) { //const T& ........ const? //size_t porque si no da problemas al compararlo con index
+            if (index >= size_ || index < 0) {
+                throw Array::InvalidIndexException();
+            } else {
+                return array_[index];
+            }
+        }
+
         unsigned int size() const {
             return size_;
         }
