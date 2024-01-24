@@ -12,7 +12,7 @@ template <class T> class Array {
             //std::cout?;
         }
         Array(const Array& copy) /*Array()?*/ /*: array_(NULL)?*/ {
-            this* = copy;
+            *this = copy;
             //std::cout?;
         }
         ~Array() {
