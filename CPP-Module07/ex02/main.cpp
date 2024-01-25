@@ -2,22 +2,49 @@
 #include <iostream>
 
 int main(void) {
-    std::cout << "hola\n";
-    Array<int> a(5);
-    std::cout << a.size() << "\n";
+    /*default constructor*/
+    Array<int> a(10);
+    std::cout << "size: " << a.size() << "\n";
 
-    a[0] = 115;
-    std::cout << a[0] << "\n";
+    for (int i = 0; i < 10; i++) {
+        a[i] = i;
+    }
+    for (int i = 0; i < 10; i++) {
+        std::cout << a[i] << " ";
+    }
+    std::cout << "\n";
 
-    const Array<int> tumare(2);
-    std::cout << tumare[0] << "\n";
+    /*copy constructor*/
+    const Array<int> b(a);
+    std::cout << "size: " << b.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << a[i] << " ";
+    }
+    std::cout << "\n";
+    
+    /*out of bounds test*/
+    try {
+        a[-1] = 0;
+    } catch (std::exception &e) {
+        std::cout << e.what();
+    }
+
+    try {
+        a[10] = 0;
+    } catch (std::exception &e) {
+        std::cout << e.what();
+    }
+
+
+
+
+
 
     //Try to compile int * a = new int(); then display *a
-    int * b = new int();
-    std::cout << *b << "\n";
+    //int * b = new int();
+    //std::cout << *b << "\n";
 
-    system("leaks -q array"); //POR QUE NO DA LEAKS
-    //TODO: check copy constructor and assignment operator, check leaks;
+    system("leaks -q array");
     //TODO: remove comments (and std::couts?) in constructors
     return (0);
 }

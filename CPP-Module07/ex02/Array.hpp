@@ -59,7 +59,7 @@ template <class T> class Array {
 
         class InvalidIndexException : public std::exception {
             public: const char* what() const throw() {
-                return "Invalid index: index is out of bounds"; //\n?
+                return "Invalid index: index is out of bounds\n"; //\n?
             }
         };
     private:
