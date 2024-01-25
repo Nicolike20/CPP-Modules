@@ -37,7 +37,7 @@ template <class T> class Array {
             return *this;
         }
 
-        T& operator[](std::size_t index) { //const T& ........ const? //size_t pa que no haya problemas al comparar
+        T& operator[](std::size_t index) { //size_t pa que no haya problemas al comparar
             if (index >= size_ || index < 0) {
                 throw Array::InvalidIndexException();
             } else {
@@ -67,7 +67,6 @@ template <class T> class Array {
         unsigned int size_;
 };
 
-//why the need to use new[]
 //Try to compile int * a = new int(); then display *a
 
 #endif
