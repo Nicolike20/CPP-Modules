@@ -6,26 +6,19 @@
 
 template <class T> class Array {
     public:
-        Array() : array_(NULL), size_(0) {
-            //std::cout << "Array default constructor called\n"; //quitar?
-        }
-        Array(unsigned int n) : array_(new T[n]), size_(n) {
-            //std::cout << "Array constructor called\n"; //quitar?
-        }
+        Array() : array_(NULL), size_(0) {}
+        Array(unsigned int n) : array_(new T[n]), size_(n) {}
         Array(const Array& copy) : array_(NULL) {
-            //std::cout << "Array copy constructor called\n"; //quitar?
             *this = copy;
         }
         ~Array() {
-            //std::cout << "Array destructor called\n"; //quitar?
             delete[] array_;
         }
 
         Array& operator=(const Array& other) {
-            //std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
-                    delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
+                    delete[] array_;
                 }
                 array_ = new T[other.size_];
                 size_ = other.size_;
