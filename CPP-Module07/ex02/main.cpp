@@ -10,9 +10,14 @@ int main(void) {
     std::cout << a[0] << "\n";
 
     const Array<int> tumare(2);
-    //tumare[0] = 115;
     std::cout << tumare[0] << "\n";
+
+    //Try to compile int * a = new int(); then display *a
+    int * b = new int();
+    std::cout << *b << "\n";
+
     system("leaks -q array"); //POR QUE NO DA LEAKS
     //TODO: check copy constructor and assignment operator, check leaks;
+    //TODO: remove comments (and std::couts?) in constructors
     return (0);
 }

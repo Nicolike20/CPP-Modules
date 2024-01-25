@@ -12,9 +12,9 @@ template <class T> class Array {
         Array(unsigned int n) : array_(new T[n]), size_(n) {
             std::cout << "Array constructor called\n"; //quitar?
         }
-        Array(const Array& copy) /*Array()?*/ /*: array_(NULL)?*/ {
-            *this = copy;
+        Array(const Array& copy) : array_(NULL) {
             std::cout << "Array copy constructor called\n"; //quitar?
+            *this = copy;
         }
         ~Array() {
             std::cout << "Array destructor called\n"; //quitar?
@@ -25,7 +25,7 @@ template <class T> class Array {
             std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
-                    //delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
+                    delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
                 }
                 array_ = new T[other.size_];
                 size_ = other.size_;
@@ -66,7 +66,5 @@ template <class T> class Array {
         T *array_;
         unsigned int size_;
 };
-
-//Try to compile int * a = new int(); then display *a
 
 #endif
