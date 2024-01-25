@@ -49,5 +49,6 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
+    system("leaks -q array");
     return 0;
 }

@@ -25,7 +25,7 @@ template <class T> class Array {
             std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
-                    delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
+                    //delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
                 }
                 array_ = new T[other.size_];
                 size_ = other.size_;

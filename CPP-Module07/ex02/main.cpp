@@ -12,6 +12,7 @@ int main(void) {
     const Array<int> tumare(2);
     //tumare[0] = 115;
     std::cout << tumare[0] << "\n";
-    //TODO: operator[], check copy constructor and assignment operator, check leaks;
+    system("leaks -q array"); //POR QUE NO DA LEAKS
+    //TODO: check copy constructor and assignment operator, check leaks;
     return (0);
 }
