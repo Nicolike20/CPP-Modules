@@ -30,7 +30,7 @@ template <class T> class Array {
             return *this;
         }
 
-        T& operator[](std::size_t index) { //size_t pa que no haya problemas al comparar
+        T& operator[](std::size_t index) { //size_t por lo mismo
             if (index >= size_ || index < 0) {
                 throw Array::InvalidIndexException();
             } else {
