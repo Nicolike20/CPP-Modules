@@ -94,12 +94,12 @@ int main(void) {
 
     /*int * test = new int();
     std::cout << "test: " << *test << "\n";*/
-
     //Try to compile int * a = new int(); then display *a
-    //int * b = new int();
-    //std::cout << *b << "\n";
 
-    //TODO: remove comments (and std::couts?) in constructors
+
+    //TODO ex00: comprobar en el subject si es importante lo de que sean la misma clase
+    //TODO ex01: comprobar qué funciones suele hacer la gente para los test
+    //TODO ex02: plantear mas tests y check subject
     return (0);
 }
 
