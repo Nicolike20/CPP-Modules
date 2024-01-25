@@ -7,22 +7,22 @@
 template <class T> class Array {
     public:
         Array() : array_(NULL), size_(0) {
-            std::cout << "Array default constructor called\n"; //quitar?
+            //std::cout << "Array default constructor called\n"; //quitar?
         }
         Array(unsigned int n) : array_(new T[n]), size_(n) {
-            std::cout << "Array constructor called\n"; //quitar?
+            //std::cout << "Array constructor called\n"; //quitar?
         }
         Array(const Array& copy) : array_(NULL) {
-            std::cout << "Array copy constructor called\n"; //quitar?
+            //std::cout << "Array copy constructor called\n"; //quitar?
             *this = copy;
         }
         ~Array() {
-            std::cout << "Array destructor called\n"; //quitar?
+            //std::cout << "Array destructor called\n"; //quitar?
             delete[] array_;
         }
 
         Array& operator=(const Array& other) {
-            std::cout << "Array assignment operator called\n"; //quitar?
+            //std::cout << "Array assignment operator called\n"; //quitar?
             if (this != &other) {
                 if (array_ != NULL) {
                     delete[] array_; //ESTE DELETE DA PROBLEMAS CON EL MAIN DE 42 -> INVESTIGAR
@@ -59,7 +59,7 @@ template <class T> class Array {
 
         class InvalidIndexException : public std::exception {
             public: const char* what() const throw() {
-                return "Invalid index: index is out of bounds\n"; //\n?
+                return "Invalid index: index is out of bounds";
             }
         };
     private:

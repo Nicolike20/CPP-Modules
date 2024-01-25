@@ -13,14 +13,11 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
-        std::cout << "hola\n";
     //SCOPE
     {
         Array<int> tmp = numbers;
-        std::cout << "hola1\n";
         Array<int> test(tmp);
     }
-        std::cout << "hola2\n";
 
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -52,6 +49,7 @@ int main(int, char**)
         numbers[i] = rand();
     }
     delete [] mirror;//
-    system("leaks -q array");
     return 0;
 }
+
+//system("leaks -q array");

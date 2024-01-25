@@ -1,50 +1,106 @@
 #include "Array.hpp"
+#include <string>
 #include <iostream>
 
 int main(void) {
     /*default constructor*/
-    Array<int> a(10);
-    std::cout << "size: " << a.size() << "\n";
-
+    Array<int> intArr(10);
+    Array<std::string> strArr(5);
+    
     for (int i = 0; i < 10; i++) {
-        a[i] = i;
+        intArr[i] = i;
     }
+
+    strArr[0] = "Hello";
+    strArr[1] = "World";
+    strArr[2] = "aaa";
+    strArr[3] = "bbb";
+    strArr[4] = "ccc";
+
+    std::cout << "-int array-\nsize: " << intArr.size() << "\n";
     for (int i = 0; i < 10; i++) {
-        std::cout << a[i] << " ";
+        std::cout << intArr[i] << " ";
+    }
+    std::cout << "\n";
+    
+    std::cout << "\n-string array-\nsize: " << strArr.size() << "\n";
+    for (int i = 0; i < 5; i++) {
+        std::cout << strArr[i] << " ";
     }
     std::cout << "\n";
 
     /*copy constructor*/
-    const Array<int> b(a);
-    std::cout << "size: " << b.size() << "\n";
+    const Array<int> intCopy(intArr);
+    const Array<std::string> strCopy(strArr);
+    std::cout << "\n-int copy array-\nsize: " << intCopy.size() << "\n";
     for (int i = 0; i < 10; i++) {
-        std::cout << a[i] << " ";
+        std::cout << intCopy[i] << " ";
     }
     std::cout << "\n";
     
+    std::cout << "\n-string copy array-\nsize: " << strCopy.size() << "\n";
+    for (int i = 0; i < 5; i++) {
+        std::cout << strCopy[i] << " ";
+    }
+    std::cout << "\n\n";
+    
     /*out of bounds test*/
     try {
-        a[-1] = 0;
+        intArr[-1] = 0;
     } catch (std::exception &e) {
-        std::cout << e.what();
+        std::cout << e.what() << "\n";
     }
 
     try {
-        a[10] = 0;
+        intArr[10] = 0;
     } catch (std::exception &e) {
-        std::cout << e.what();
+        std::cout << e.what() << "\n";
     }
 
+    /*testing copies*/
+    Array<int> tmp(intArr);
+    std::cout << "\n-temp copy array-\nsize: " << tmp.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << tmp[i] << " ";
+    }
 
+    for (int i = 0; i < 10; i++) { //change every number in tmp to 1
+        tmp[i] = 1;
+    }
 
+    std::cout << "\n-int array-\nsize: " << intArr.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << intArr[i] << " ";
+    }
 
+    std::cout << "\n-temp copy array-\nsize: " << tmp.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << tmp[i] << " ";
+    }
 
+    for (int i = 0; i < 10; i++) { //change every number in intArr to 2
+        intArr[i] = 2;
+    }
+
+    std::cout << "\n-int array-\nsize: " << intArr.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << intArr[i] << " ";
+    }
+
+    std::cout << "\n-temp copy array-\nsize: " << tmp.size() << "\n";
+    for (int i = 0; i < 10; i++) {
+        std::cout << tmp[i] << " ";
+    }
+
+    /*int * test = new int();
+    std::cout << "test: " << *test << "\n";*/
 
     //Try to compile int * a = new int(); then display *a
     //int * b = new int();
     //std::cout << *b << "\n";
 
-    system("leaks -q array");
     //TODO: remove comments (and std::couts?) in constructors
     return (0);
 }
+
+//system("leaks -q array");
