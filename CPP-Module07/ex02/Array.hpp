@@ -37,14 +37,21 @@ template <class T> class Array {
             return *this;
         }
 
-        T& operator[](std::size_t index) { //const T& ........ const? //size_t porque si no da problemas al compararlo con index
+        T& operator[](std::size_t index) { //const T& ........ const? //size_t pa que no haya problemas al comparar
             if (index >= size_ || index < 0) {
                 throw Array::InvalidIndexException();
             } else {
                 return array_[index];
             }
         }
-        //^^^necesito la version const de eso? INVESTIGAR
+
+        const T& operator[](std::size_t index) const { //const porque si no no se pueden usar objetos const
+            if (index >= size_ || index < 0) {
+                throw Array::InvalidIndexException();
+            } else {
+                return array_[index];
+            }
+        }
 
         unsigned int size() const {
             return size_;
