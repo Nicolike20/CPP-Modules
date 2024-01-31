@@ -20,4 +20,4 @@ template <class T> const T& max(const T& x, const T& y) {
 
 /*The only requirement is
 that the two arguments must have the same type and must support all the comparison
-operators.*/
+operators.*/ //comprobar si esto cuela que no lo compruebe segun el subject de la correccion;

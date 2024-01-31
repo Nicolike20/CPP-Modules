@@ -6,7 +6,7 @@ template <class T> void printIter(const T& i) {
     std::cout << i << "\n";
 }
 
-template <class T> void doublePrint(const T& i) {
+template <class T> void doublePrint(const T& i) { //esta funcion renta? o mejor lo cambio por otra cosa
     std::cout << i + i << "\n";
 }
 
