@@ -1,4 +1,4 @@
-NAME = temp
+NAME = easyfind
 
 CXX = c++
 
