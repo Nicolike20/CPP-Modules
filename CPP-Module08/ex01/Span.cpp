@@ -25,7 +25,7 @@ Span& Span::operator=(const Span& other) {
 
 void    Span::printSpan() const {
     /////////temp//////////
-    std::cout << "Span:";
+    std::cout << "Span:"; //si voy a dejar esto, quito esta parte? ya veremo
     for (std::vector<int>::const_iterator it = v_.begin(); it != v_.end(); it++) {
         std::cout << " " << *it;
     }
@@ -45,11 +45,15 @@ void    Span::addNumber(int num) {
 } //unsigned int?
 
 
+int     Span::longestSpan() {
+    if (v_.size() <= 1) {
+        throw EmptySpanException();
+    }
+    return *max_element(v_.begin(), v_.end()) - *min_element(v_.begin(), v_.end());
+} //unsigned int? //const?
+
+
         int     Span::shortestSpan() {
-            std::cout << "does nothing\n";
-            return 0; //cambiar;
-        } //unsigned int? //const?
-        int     Span::longestSpan() {
             std::cout << "does nothing\n";
             return 0; //cambiar;
         } //unsignedd int? //const?

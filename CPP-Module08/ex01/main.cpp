@@ -10,9 +10,9 @@ int main(void) {
         s.addNumber(1);
         s.addNumber(1);
         s.addNumber(5);
+        s.addNumber(4);
         s.addNumber(5);
-        s.addNumber(5);
-        s.addNumber(5);
+        s.addNumber(6);
         s.addNumber(7);
         s.addNumber(8);
         s.addNumber(9);
@@ -21,6 +21,11 @@ int main(void) {
     } catch (std::exception &e) {
         std::cout << e.what() << "\n";
     }
+
+    std::cout << "Span after adding numbers:";
+    s.printSpan();
+
+    std::cout << "Longest span: " << s.longestSpan() << "\n"; //meter tests try catch con spans vacios
 
     return (0);
 }
