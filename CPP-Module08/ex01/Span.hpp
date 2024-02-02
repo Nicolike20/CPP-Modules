@@ -2,6 +2,7 @@
 # define SPAN_HPP_
 
 # include <exception>
+# include <vector>
 
 class Span {
 	public:
@@ -25,7 +26,9 @@ class Span {
         };
 	private:
         Span();
-        //?
+        std::vector<int> v_;
+        unsigned int size_;
+        
 };
 
 //wtf

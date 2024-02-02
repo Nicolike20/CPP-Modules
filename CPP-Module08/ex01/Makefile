@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -MMD
 
 # Sources
 
-SRCS = main.cpp
+SRCS = main.cpp Span.cpp
 
 OBJS = $(SRCS:%.cpp=%.o)
 
