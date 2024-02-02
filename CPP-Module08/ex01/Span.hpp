@@ -5,17 +5,16 @@
 
 class Span {
 	public:
-        Span(); //private?
-        Span(const Span& copy); //private? dont think so;
+        Span(const Span& copy);
         Span(unsigned int N); //subject
         ~Span();
 
         Span& operator=(const Span& other);
 
-        void addNumber(int num); //unsigned int?
-        int shortestSpan();
-        int longestSpan();
-        //function to add many numbers at once using a range of iterators;
+        void    addNumber(int num); //unsigned int?
+        int     shortestSpan(); //unsigned int? //const?
+        int     longestSpan(); //unsignedd int? //const?
+        void    addMore(int num); //unsigned int?
 
         class FullSpanException : public std::exception {
             public: const char* what() const throw();
@@ -25,6 +24,7 @@ class Span {
             public: const char* what() const throw();
         };
 	private:
+        Span();
         //?
 };
 
