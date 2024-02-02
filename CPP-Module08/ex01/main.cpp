@@ -3,21 +3,23 @@
 int main(void) {
     //TODO: investigar lo de los rangos, investigar que algoritmo o container usar en este modulo
     //probar primero con el main easy del subject, y ya despues preocuparse por los 10000 numeros
+    //TODO: testear a fondo shortest y longes spans y crear tests decentes. probar los tests del subject
+    //crear la funcion para añadir muchos numeros
 
     Span s(10);
 
     try {
         s.addNumber(1);
-        s.addNumber(1);
+        s.addNumber(3);
         s.addNumber(5);
-        s.addNumber(4);
-        s.addNumber(5);
-        s.addNumber(6);
         s.addNumber(7);
-        s.addNumber(8);
-        s.addNumber(9);
+        s.addNumber(700);
+        s.addNumber(7000);
+        s.addNumber(7487);
+        s.addNumber(74578);
+        s.addNumber(7457756);
         s.addNumber(10);
-        s.addNumber(11);
+        s.addNumber(114567);
     } catch (std::exception &e) {
         std::cout << e.what() << "\n";
     }
@@ -26,6 +28,7 @@ int main(void) {
     s.printSpan();
 
     std::cout << "Longest span: " << s.longestSpan() << "\n"; //meter tests try catch con spans vacios
+    std::cout << "Shortest span: " << s.shortestSpan() << "\n";
 
     return (0);
 }

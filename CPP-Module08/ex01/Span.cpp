@@ -53,10 +53,26 @@ int     Span::longestSpan() {
 } //unsigned int? //const?
 
 
-        int     Span::shortestSpan() {
-            std::cout << "does nothing\n";
-            return 0; //cambiar;
-        } //unsignedd int? //const?
+int     Span::shortestSpan() {
+    if (v_.size() <= 1) {
+        throw EmptySpanException();
+    }
+    std::vector<int> sorted(v_);
+    sort(sorted.begin(), sorted.end());
+    std::vector<int>::const_iterator it = sorted.begin();
+    int sp = *(it + 1) - *it;
+    while (it + 1 != sorted.end()) {
+        //std::cout << "*(it + 1): " << *(it + 1) << "\n*it: " << *it << "\n";
+        //std::cout << "*(it + 1) - *it: " << *(it + 1) - *it << "\n\n";
+        if ((*(it + 1) - *it) < sp) {
+            sp = *(it + 1) - *it;
+        }
+        it++;
+    }
+    return sp;
+} //unsignedd int? //const?
+
+
         void    Span::addMore(int num) {
             (void) num;
             std::cout << "does nothing\n";
