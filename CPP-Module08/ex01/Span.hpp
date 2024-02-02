@@ -1,6 +1,7 @@
 #ifndef SPAN_HPP_
 # define SPAN_HPP_
 
+# include <iostream>
 # include <exception>
 # include <vector>
 
@@ -16,6 +17,8 @@ class Span {
         int     shortestSpan(); //unsigned int? //const?
         int     longestSpan(); //unsignedd int? //const?
         void    addMore(int num); //unsigned int?
+
+        void    printSpan() const; //TEMP;
 
         class FullSpanException : public std::exception {
             public: const char* what() const throw();

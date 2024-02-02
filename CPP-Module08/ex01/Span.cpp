@@ -1,5 +1,5 @@
 #include "Span.hpp"
-#include <iostream> //quitar?
+
 Span::Span() {} //private;
 
 Span::Span(const Span& copy) {
@@ -23,10 +23,28 @@ Span& Span::operator=(const Span& other) {
     return *this;
 }
 
-        void    Span::addNumber(int num) {
-            std::cout << "does nothing\n";
-            (void) num;
-        } //unsigned int?
+void    Span::printSpan() const {
+    /////////temp//////////
+    std::cout << "Span:";
+    for (std::vector<int>::const_iterator it = v_.begin(); it != v_.end(); it++) {
+        std::cout << " " << *it;
+    }
+    std::cout << "\n";
+    ///////////////////////   
+}
+
+void    Span::addNumber(int num) {
+    if (v_.size() < size_) {
+        v_.push_back(num);
+    } else {
+        throw (FullSpanException());
+    }
+    /////////temp//////////
+    printSpan();
+    ///////////////////////
+} //unsigned int?
+
+
         int     Span::shortestSpan() {
             std::cout << "does nothing\n";
             return 0; //cambiar;
