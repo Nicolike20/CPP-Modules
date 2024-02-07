@@ -17,9 +17,9 @@ int main(void) {
         s.addNumber(7000);
         s.addNumber(7487);
         s.addNumber(74578);
-        s.addNumber(7457756);
+        s.addNumber(74577);
         s.addNumber(10);
-        s.addNumber(114567);
+        s.addNumber(11);
     } catch (std::exception &e) {
         std::cout << e.what() << "\n";
     }
