@@ -1,8 +1,6 @@
 #include "Span.hpp"
 
 int main(void) {
-    //TODO: deberia estar usando mas algoritmos en addMore()?
-
     //*
 
     //testing normal span
@@ -27,7 +25,7 @@ int main(void) {
     std::cout << "Span after adding numbers:";
     s.printSpan();
 
-    std::cout << "Longest span: " << s.longestSpan() << "\n"; //meter tests try catch con spans vacios
+    std::cout << "Longest span: " << s.longestSpan() << "\n";
     std::cout << "Shortest span: " << s.shortestSpan() << "\n";
 
     //testing empty span
@@ -62,6 +60,7 @@ int main(void) {
     }
     /*/
 
+    //test del subject
     Span sp = Span(5);
     sp.addNumber(6);
     sp.addNumber(3);

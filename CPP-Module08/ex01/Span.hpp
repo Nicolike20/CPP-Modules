@@ -7,8 +7,8 @@
 
 class Span {
 	public:
-        Span(const Span& copy);
         Span(unsigned int N); //subject
+        Span(const Span& copy);
         ~Span();
 
         Span& operator=(const Span& other);

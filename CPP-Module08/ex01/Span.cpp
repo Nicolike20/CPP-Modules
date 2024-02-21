@@ -40,8 +40,13 @@ void    Span::addNumber(int num) {
 }
 
 void    Span::addMore(std::vector<int>::iterator b, std::vector<int>::iterator e) { //b = begin, e = end
-    for (std::vector<int>::iterator it = b; it != e; it++) {
+    /*for (std::vector<int>::iterator it = b; it != e; it++) {
             addNumber(*it);
+    }*/
+    if (v_.size() + std::distance(b, e) > size_) {
+        throw FullSpanException();
+    } for (std::vector<int>::iterator it = b; it != e; it++) {
+        v_.push_back(*it);
     }
 }
 
