@@ -1,7 +1,7 @@
 #ifndef SPAN_HPP_
 # define SPAN_HPP_
 
-# include <iostream>
+# include <iostream> //solo se usa en printSpan (quitar si lo quito)
 # include <exception>
 # include <vector>
 
@@ -14,8 +14,8 @@ class Span {
         Span& operator=(const Span& other);
 
         void    addNumber(int num);
-        int     shortestSpan(); //unsigned int? //const?
-        int     longestSpan(); //unsignedd int? //const?
+        unsigned int    shortestSpan()  const;
+        unsigned int    longestSpan()   const;
         void    addMore(std::vector<int>::iterator b, std::vector<int>::iterator e);
 
         void    printSpan() const; //TEMP;
@@ -33,7 +33,5 @@ class Span {
         unsigned int size_;
         
 };
-
-//wtf
 
 #endif

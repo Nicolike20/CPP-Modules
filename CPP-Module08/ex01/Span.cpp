@@ -1,19 +1,14 @@
 #include "Span.hpp"
 
-Span::Span() {} //private;
+Span::Span() {}
 
 Span::Span(const Span& copy) {
-    //std::cout <<  "Span copy constructor called\n"; //quitar seguramente;
     *this = copy;
 }
 
-Span::Span(unsigned int N) : size_(N) {
-    //std::cout << "Span parameter constructor called\n"; //quitar seguramente;
-}
+Span::Span(unsigned int N) : size_(N) {}
 
-Span::~Span() {
-    //std::cout << "Span destructor called\n"; //quitar seguramente;
-}
+Span::~Span() {}
 
 Span& Span::operator=(const Span& other) {
     if (this != &other) {
@@ -50,15 +45,15 @@ void    Span::addMore(std::vector<int>::iterator b, std::vector<int>::iterator e
     }
 }
 
-int     Span::longestSpan() {
+unsigned int    Span::longestSpan() const {
     if (v_.size() <= 1) {
         throw EmptySpanException();
     }
     return *max_element(v_.begin(), v_.end()) - *min_element(v_.begin(), v_.end());
-} //unsigned int? //const?
+}
 
 
-int     Span::shortestSpan() {
+unsigned int    Span::shortestSpan() const {
     if (v_.size() <= 1) {
         throw EmptySpanException();
     }
@@ -75,7 +70,7 @@ int     Span::shortestSpan() {
         it++;
     }
     return sp;
-} //unsignedd int? //const?
+}
 
 
 
