@@ -6,6 +6,8 @@ int main(void) {
     //TODO: testear a fondo shortest y longes spans y crear tests decentes. probar los tests del subject
     //crear la funcion para añadir muchos numeros
 
+
+    //*
     Span s(10);
 
     try {
@@ -31,5 +33,19 @@ int main(void) {
     std::cout << "Shortest span: " << s.shortestSpan() << "\n";
     
     //meter tests probando a añadir varios numeros a la vez pero que no quepan en el vector
+
+    /*/
+
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+
+    //*/
+
     return (0);
 }
