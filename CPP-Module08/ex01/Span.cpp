@@ -73,10 +73,10 @@ int     Span::shortestSpan() {
 } //unsignedd int? //const?
 
 
-        void    Span::addMore(int num) {
-            (void) num;
-            std::cout << "does nothing\n";
-        } //unsigned int?
+void    Span::addMore(int num) {
+    (void) num;
+    std::cout << "does nothing\n";
+} //unsigned int?
 
 const char* Span::FullSpanException::what() const throw() {
     return "Exception: Span is full";
