@@ -62,8 +62,6 @@ unsigned int    Span::shortestSpan() const {
     std::vector<int>::const_iterator it = sorted.begin();
     int sp = *(it + 1) - *it;
     while (it + 1 != sorted.end()) {
-        //std::cout << "*(it + 1): " << *(it + 1) << "\n*it: " << *it << "\n";
-        //std::cout << "*(it + 1) - *it: " << *(it + 1) - *it << "\n\n";
         if ((*(it + 1) - *it) < sp) {
             sp = *(it + 1) - *it;
         }
