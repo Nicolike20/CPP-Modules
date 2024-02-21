@@ -8,4 +8,9 @@ template <class T> class MutantStack : public Stack {
     private:
 }
 
+//investigar stack
+//investigar como añadir iteradores
+// "         si estoy montando el template bien
+//wtf
+
 #endif
