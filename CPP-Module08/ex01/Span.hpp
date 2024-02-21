@@ -16,7 +16,7 @@ class Span {
         void    addNumber(int num); //unsigned int?
         int     shortestSpan(); //unsigned int? //const?
         int     longestSpan(); //unsignedd int? //const?
-        void    addMore(int num); //unsigned int?
+        void    addMore(std::vector<int>::iterator b, std::vector<int>::iterator e); //unsigned int?
 
         void    printSpan() const; //TEMP;
 

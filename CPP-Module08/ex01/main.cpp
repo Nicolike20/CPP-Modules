@@ -29,6 +29,7 @@ int main(void) {
 
     std::cout << "Longest span: " << s.longestSpan() << "\n"; //meter tests try catch con spans vacios
     std::cout << "Shortest span: " << s.shortestSpan() << "\n";
-
+    
+    //meter tests probando a añadir varios numeros a la vez pero que no quepan en el vector
     return (0);
 }

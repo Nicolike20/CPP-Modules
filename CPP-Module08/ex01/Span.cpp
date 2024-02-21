@@ -73,9 +73,10 @@ int     Span::shortestSpan() {
 } //unsignedd int? //const?
 
 
-void    Span::addMore(int num) {
-    (void) num;
-    std::cout << "does nothing\n";
+void    Span::addMore(std::vector<int>::iterator b, std::vector<int>::iterator e) { //b = begin, e = end
+    for (std::vector<int>::iterator it = b; it != e; it++) {
+        addNumber(*it);
+    } //cuela const_iterator?
 } //unsigned int?
 
 const char* Span::FullSpanException::what() const throw() {
