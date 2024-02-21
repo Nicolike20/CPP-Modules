@@ -13,10 +13,10 @@ class Span {
 
         Span& operator=(const Span& other);
 
-        void    addNumber(int num); //unsigned int?
+        void    addNumber(int num);
         int     shortestSpan(); //unsigned int? //const?
         int     longestSpan(); //unsignedd int? //const?
-        void    addMore(std::vector<int>::iterator b, std::vector<int>::iterator e); //unsigned int?
+        void    addMore(std::vector<int>::iterator b, std::vector<int>::iterator e);
 
         void    printSpan() const; //TEMP;
 

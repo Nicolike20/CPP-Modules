@@ -3,16 +3,16 @@
 Span::Span() {} //private;
 
 Span::Span(const Span& copy) {
-    std::cout <<  "Span copy constructor called\n"; //quitar seguramente;
+    //std::cout <<  "Span copy constructor called\n"; //quitar seguramente;
     *this = copy;
 }
 
 Span::Span(unsigned int N) : size_(N) {
-    std::cout << "Span parameter constructor called\n"; //quitar seguramente;
+    //std::cout << "Span parameter constructor called\n"; //quitar seguramente;
 }
 
 Span::~Span() {
-    std::cout << "Span destructor called\n"; //quitar seguramente;
+    //std::cout << "Span destructor called\n"; //quitar seguramente;
 }
 
 Span& Span::operator=(const Span& other) {
@@ -40,10 +40,15 @@ void    Span::addNumber(int num) {
         throw (FullSpanException());
     }
     /////////temp//////////
-    printSpan();
+    //printSpan();
     ///////////////////////
-} //unsigned int?
+}
 
+void    Span::addMore(std::vector<int>::iterator b, std::vector<int>::iterator e) { //b = begin, e = end
+    for (std::vector<int>::iterator it = b; it != e; it++) {
+            addNumber(*it);
+    }
+}
 
 int     Span::longestSpan() {
     if (v_.size() <= 1) {
@@ -73,11 +78,7 @@ int     Span::shortestSpan() {
 } //unsignedd int? //const?
 
 
-void    Span::addMore(std::vector<int>::iterator b, std::vector<int>::iterator e) { //b = begin, e = end
-    for (std::vector<int>::iterator it = b; it != e; it++) {
-        addNumber(*it);
-    } //cuela const_iterator?
-} //unsigned int?
+
 
 const char* Span::FullSpanException::what() const throw() {
     return "Exception: Span is full";

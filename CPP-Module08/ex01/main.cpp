@@ -1,11 +1,8 @@
 #include "Span.hpp"
 
 int main(void) {
-    //TODO: investigar lo de los rangos, investigar que algoritmo o container usar en este modulo
-    //probar primero con el main easy del subject, y ya despues preocuparse por los 10000 numeros
     //TODO: testear a fondo shortest y longes spans y crear tests decentes. probar los tests del subject
-    //crear la funcion para añadir muchos numeros
-
+    //TODO: deberia estar usando mas algoritmos en addMore()?
 
     //*
     Span s(10);
@@ -26,14 +23,27 @@ int main(void) {
         std::cout << e.what() << "\n";
     }
 
+    
+
     std::cout << "Span after adding numbers:";
     s.printSpan();
 
     std::cout << "Longest span: " << s.longestSpan() << "\n"; //meter tests try catch con spans vacios
     std::cout << "Shortest span: " << s.shortestSpan() << "\n";
     
-    //meter tests probando a añadir varios numeros a la vez pero que no quepan en el vector
+    std::vector<int> v(10000);
+    for (int i = 0; i < 10000; i++) {
+        v[i] = i;
+    }
 
+    Span s2(10000);
+    try {
+        s2.addMore(v.begin(), v.end());
+        std::cout << "Longest span: " << s2.longestSpan() << "\n";
+        std::cout << "Shortest span: " << s2.shortestSpan() << "\n";
+    } catch (std::exception& e) {
+        std::cout << e.what() << "\n";
+    }
     /*/
 
     Span sp = Span(5);
