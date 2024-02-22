@@ -7,8 +7,8 @@ template <class T, class Container = std::deque<T> > class MutantStack
 : public std::stack<T, Container> {
     public:
         MutantStack() {}
-        MutantStack(const MutantStack& copy) : std::stack<T, Container>(const MutantStack& copy) { //lo de std::stack<T, C> está bien?
-            *this : other;
+        MutantStack(const MutantStack& copy) : std::stack<T, Container>(copy) { //lo de std::stack<T, C> está bien?
+            *this = copy;
         }
         ~MutantStack() {}
 
@@ -20,6 +20,12 @@ template <class T, class Container = std::deque<T> > class MutantStack
         }
 
         typedef typename std::stack<T, Container>::container_type::iterator iterator;
+
+        iterator begin() {return std::stack<T, Container>::c.begin();} 
+        //entender por qué hay que usar ::c.begin() para que funcione
+        //creo que lo que hace es crear un objeto? ni idea la vd
+        //probar con gpt a ve si lo pilla
+        iterator end() {return std::stack<T,Container>::c.end();}
     private:
 };
 
@@ -30,4 +36,6 @@ template <class T, class Container = std::deque<T> > class MutantStack
 //::container_type accede al tipo de container que usa stack (esto se puede explicar mejor) en este caso deque<T>
 //deque tiene dentro un typedef iterator, el cual estamos accediendo para crear nuestro iterador. "typedef typename _Base::iterator                   iterator;"
 //https://learn.microsoft.com/es-es/cpp/standard-library/deque-class?view=msvc-170
+//https://users.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterator-define.html
+//^^^^ejemplo de como definir el iterador
 #endif
