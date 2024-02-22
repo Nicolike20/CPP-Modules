@@ -3,7 +3,7 @@
 
 # include <stack>
 
-template <class T> class MutantStack : public Stack {
+template <class T> class MutantStack : public std::stack<T, Container> {
     public:
     private:
 }
