@@ -25,6 +25,7 @@ Base * generate(void) {
 }
 
 void identify(Base* p) {
+    std::cout << "yeah base *p  vvv\n";
     if (dynamic_cast<A*>(p) != NULL) {
         std::cout << "CLASS TYPE A\n";
     } else if (dynamic_cast<B*>(p) != NULL) {
@@ -32,9 +33,11 @@ void identify(Base* p) {
     } else if (dynamic_cast<C*>(p) != NULL) {
         std::cout << "CLASS TYPE C\n";
     }
+    std::cout << "yeah base *p  ^^^\n";
 }
 
 void identify(Base& p) {
+    std::cout << "yeah base &p  vvv\n";
     try {
         A &tmp = dynamic_cast<A&>(p);
         std::cout << "CLASS TYPE A\n";
@@ -50,6 +53,7 @@ void identify(Base& p) {
         std::cout << "CLASS TYPE C\n";
         (void) tmp;
     } catch (std::bad_cast e) {}
+    std::cout << "yeah base &p  ^^^\n";
 }
  /*Yes, this is correct behaviour. The reason is that you can have a null pointer,
  but not a null reference - any reference has to be bound to an object.
@@ -61,8 +65,8 @@ return a null reference, so an exception is the only reasonable way to signal a 
 int main() {
     
     Base *b = generate();
-    identify(b);
-    identify(*b);
+    identify(b);  //puntero
+    identify(*b); //ref
     delete b;
     return (0);
 }
