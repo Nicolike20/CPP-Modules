@@ -79,10 +79,12 @@ void ScalarConverter::convert(const std::string &lit) {
 		type = 0; //en teoria nunca deberia entrar aqui
 	}
 
+    //TODO
     //testear esto a full, ver si puedo quitar un par de cosas reduntantes
+    //investigar tema de converssion impliccita
 
     std::string aux;
-	switch (type) {
+	switch (type) { //segun el type hace la conversion pertinente 
 		case 0:
 			std::cout << "Invalid input\n";
 			break;
