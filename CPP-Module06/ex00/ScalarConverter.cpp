@@ -29,12 +29,10 @@ void ScalarConverter::convert(const std::string &lit) {
 
 	if (lit.size() > 1) {
 		for (unsigned long i = 0; i < lit.size(); i++) {
-			if (!isdigit(lit[i]) && (lit[i] != '-' || (lit[i] == '-' && i != 0))) {
-                //std::cout << "ENTRA EN PRIMER IF\n"; //quitar
+			if (!isdigit(lit[i]) && (lit[i] != '-' || (lit[i] == '-' && i != 0))) { //aqui basicamente hace una comprobacion de si hay algo aparte de numeros en el input
 				numbers = false;
 			} if (!isdigit(lit[i]) && lit[i] != 'f' && lit[i] != '.' && lit[i] != '-') {
-                //std::cout << "ENTRA EN SEGUNDO IF\n"; //quitar
-				for (int j = 0; j < 6; j++) {
+				for (int j = 0; j < 6; j++) { //comprueba si hay allgun caracter que no sean {f . -}, y si lo hay, comprueba si el input coincide con los nans
 					if (lit == nans[j]) {
 						type = 5;
 						break;
@@ -42,48 +40,46 @@ void ScalarConverter::convert(const std::string &lit) {
 				}
 			} else if (lit[i] == '.') {
 				if (!resDouble) {
-					resDouble = 1.0;
+					resDouble = 1.0; //eto por que?
 				} else {
-					type = 0;
+					type = 0; //creo que comprueba si hay algun punto, si no lo hay cambia el valor de resdouble a modo de flag, si ya lo hay, cambia el type a 0 por invalido
 					break;
 				}
                 if ((lit.size() - i > 3 || (lit.size() - i == 3 && lit[lit.size() - 1 != 'f']) || i == lit.size() - 1)
-                        || type == 1 || !isdigit(lit[i - 1])) {
-                    //std::cout << "  IF\n"; //quitar
+                        || type == 1 || !isdigit(lit[i - 1])) { //aqui hace mil comprobaciones para ver si el punto está colocado correctamente en el input
 					type = 0;
-				} else if (type != 2) {
-                    //std::cout << "  ELSE IF\n"; //quitar
-					type = 1;
+				} else if (type != 2) { //si no hemos detectado antes que sea float, por ahora ponemos que es doube
+					type = 1; //esto es reduntante? si encontramos un punto despues de una f siempre sera invalido
 				}
-			} else if (lit[i] == 'f' && type != 5) {
+			} else if (lit[i] == 'f' && type != 5) { //si encontramos f y no es de inf o nanf
 				if (!resFloat) {
-					resFloat = 1;
+					resFloat = 1; //lo mismo que la "flag" de los double pero con floats
 				} else {
-					type = 0;
+					type = 0; //si ya habia una f antes mamin and yupin
 					break;
 				}
 				if (type == 2 || i != lit.size() - 1 || lit[i - 2] != '.' || lit.size() < 4 || !isdigit(lit[i - 3])) {
-                    //std::cout << "  IF\n"; //quitar
-					type = 0;
+					type = 0; //aqui comprobamos si la f está en su lugar, si lo está type pasa a ser 2, si no será 0 por invalido
 				} else {
-                    //std::cout << "  ELSE\n"; //quitar
 					type = 2;
 				}
 			}
 		}
-	} else {
+	} else { //si el input solo tiene un character de longitud, o es int o es char
 		if (isdigit(lit[0])) {
-			type = 3;
+			type = 3; //si el caracter es un digito tenemos un int
 		} else {
 			numbers = false;
-			type = 4;
+			type = 4; //si no pues tenemos un char
 		}
 	}
-	if (numbers) {
+	if (numbers) { //estos ultimos if y else if hacen falta?
 		type = 3;
-	} else if (type == 1 && type == 2) {
-		type = 0;
+	} else if (type == 1 && type == 2) { //??????? esto deberia ser un or?
+		type = 0; //en teoria nunca deberia entrar aqui
 	}
+
+    //testear esto a full, ver si puedo quitar un par de cosas reduntantes
 
     std::string aux;
 	switch (type) {
