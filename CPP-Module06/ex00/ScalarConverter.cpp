@@ -17,6 +17,11 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 	return *this;
 }
 
+//TODO
+    //testear esto a full, ver si puedo quitar un par de cosas reduntantes
+    //investigar tema de converssion impliccita
+    // tipos de casteo (leetelo):https://stackoverflow.com/questions/332030/when-should-static-cast-dynamic-cast-const-cast-and-reinterpret-cast-be-used
+
 //0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others;
 void ScalarConverter::convert(const std::string &lit) {
 	int type = 0;
@@ -78,10 +83,6 @@ void ScalarConverter::convert(const std::string &lit) {
 	} else if (type == 1 && type == 2) { //??????? esto deberia ser un or?
 		type = 0; //en teoria nunca deberia entrar aqui
 	}
-
-    //TODO
-    //testear esto a full, ver si puedo quitar un par de cosas reduntantes
-    //investigar tema de converssion impliccita
 
     std::string aux;
 	switch (type) { //segun el type hace la conversion pertinente 
