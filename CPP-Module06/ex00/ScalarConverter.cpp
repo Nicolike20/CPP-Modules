@@ -17,8 +17,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 	return *this;
 }
 
-//TODO
-    //check leaks
+//TODO: remove some comments, leave only the most importants
 
 //0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others;
 void ScalarConverter::convert(const std::string &lit) {
