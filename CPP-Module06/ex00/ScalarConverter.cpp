@@ -18,8 +18,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){
 }
 
 //TODO
-    //investigar tema de converssion impliccita
-    // tipos de casteo (leetelo):https://stackoverflow.com/questions/332030/when-should-static-cast-dynamic-cast-const-cast-and-reinterpret-cast-be-used
+    //check leaks
 
 //0 invalid; 1 double; 2 float; 3 int; 4 char; 5 others;
 void ScalarConverter::convert(const std::string &lit) {
