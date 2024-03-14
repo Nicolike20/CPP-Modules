@@ -31,6 +31,3 @@ Data* Serializer::deserialize(uintptr_t raw) {
 	d = reinterpret_cast<Data*>(raw);
 	return d;
 }
-
-/*reinterpret_cast only guarantees that if you cast a pointer to a different type, 
-and then reinterpret_cast it back to the original type, you get the original value.*/
