@@ -22,7 +22,7 @@ template <class T, class Container = std::deque<T> > class MutantStack
         typedef typename std::stack<T, Container>::container_type::iterator iterator;
 
         iterator begin() {return std::stack<T, Container>::c.begin();} 
-        //check std::stack en cppreference. 'c' es un miemrbo de stack que permite acceder al container
+        //check std::stack en cppreference. 'c' es un miembro de stack que permite acceder al container
         iterator end() {return std::stack<T,Container>::c.end();}
     private:
 };
