@@ -27,8 +27,6 @@ template <class T, class Container = std::deque<T> > class MutantStack
     private:
 };
 
-//necesito implementar los otros iteradores de deque? (const_iterator, const_reverse_iterator, reverse_iterator)
-
 //lo de container = std::deque<T> es para poder implementar los iterators?
 //typedef typename -> https://stackoverflow.com/questions/18385418/c-meaning-of-a-statement-combining-typedef-and-typename
 //::container_type accede al tipo de container que usa stack (esto se puede explicar mejor) en este caso deque<T>
