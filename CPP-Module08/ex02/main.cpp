@@ -6,7 +6,7 @@
 
 int main(void) {
 
-    MutantStack<int> iStack;                             //My test
+    MutantStack<int> iStack;                            //My test
     MutantStack<char> cStack;
     MutantStack<std::string> sStack;
 
@@ -118,7 +118,7 @@ int main(void) {
 
     std::cout << "List test:\n";
 
-    std::list<int> lstack;                               //Subject test (with lists)
+    std::list<int> lstack;                              //Subject test (with lists)
     lstack.push_back(5);
     lstack.push_back(17);
     std::cout << lstack.back() << std::endl;
