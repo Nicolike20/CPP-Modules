@@ -7,11 +7,13 @@
 class BitcoinExchange {
 	public:
 		BitcoinExchange();
-		BitcoinExchange(const BitcoinExchange& copy);
 		~BitcoinExchange();
 
-		BitcoinExchange& operator=(const BitcoinExchange& other);
+
 	private:
+		BitcoinExchange(const BitcoinExchange& copy); //priv?
+		
+		BitcoinExchange& operator=(const BitcoinExchange& other); //priv?
 };
 
 #endif
