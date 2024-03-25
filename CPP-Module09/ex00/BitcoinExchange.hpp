@@ -9,10 +9,11 @@ class BitcoinExchange {
 		BitcoinExchange();
 		~BitcoinExchange();
 
-
+		void readDB(); //const?
+		void readFile(std::string input) //const? //reference?
 	private:
 		BitcoinExchange(const BitcoinExchange& copy); //priv?
-		
+
 		BitcoinExchange& operator=(const BitcoinExchange& other); //priv?
 };
 
