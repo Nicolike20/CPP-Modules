@@ -1,12 +1,23 @@
 #ifndef ITER_HPP_
 # define ITER_HPP_
 
-template <class T> void iter(T *arr, int len, void (*f) (const T&)) { //int len? size_t len?
-    for (int i = 0; i < len; i++) {
+# include <cstddef>
+# include <iostream>
+
+template <class T> void printIter(T& i) {
+    std::cout << i << " ";
+}
+
+template <class T> void printSum(T& i) {
+    std::cout << i + i << " ";
+}
+
+template <class T> void iter(T *arr, size_t len, void (*f) (T&)) {
+	if (arr == NULL || f == NULL)
+		return ;
+    for (size_t i = 0; i < len; i++) {
         f(arr[i]);
     }
 };
 
 #endif
-
-/*"There is no semantic difference between class and typename in a type-parameter-key."*/
