@@ -7,8 +7,8 @@
 template <class T> class Array {
     public:
         Array() : array_(NULL), size_(0) {}
-        Array(unsigned int n) : array_(new T[n]), size_(n) {}
-        Array(const Array& copy) : array_(NULL) {
+        Array(unsigned int n) : array_(new T[n]), size_(n) {} //deberia proteger esto por si falla la el new?
+        Array(const Array& copy) : array_(NULL), size_(0) {
             *this = copy;
         }
         ~Array() {
@@ -20,7 +20,7 @@ template <class T> class Array {
                 if (array_ != NULL) {
                     delete[] array_;
                 }
-                array_ = new T[other.size_];
+                array_ = new T[other.size_]; //proteger esto tb o na?
                 size_ = other.size_;
                 for (std::size_t i = 0; i < size_; i++) { //size_t pa que no haya problemas al comparar
                     array_[i] = other.array_[i];
