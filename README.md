@@ -157,8 +157,7 @@ cpp_modules/
 ---
 
 ## 📁 Project Status
-
-✅ All modules implemented, compiled, and tested  
+ 
 🧪 Bonus exercises and tests included where applicable  
 📌 Clean and modular code following C++98 practices
 
